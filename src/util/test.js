@@ -2,21 +2,18 @@ import fs from 'fs';
 import readline from 'readline';
 import { DateTime } from 'luxon';
 
-
 let arrSchedule = [];
 
-fs.readFile('./calendar/schedules.txt', (err, data) => {
+fs.readFile('./schedules.txt', (err, data) => {
   if (err) {
     console.log(err);
     throw err;
   }
 
-  //console.log(data.toString()); 
-
-  let schedule = "schedule-a"; // Example schedule
+  let schedule = "holiday"; // Example schedule
 
   const file = readline.createInterface({
-    input: fs.createReadStream('./calendar/schedules.txt'),
+    input: fs.createReadStream('./schedules.txt'),
     output: process.stdout,
     terminal: false
   });
@@ -36,22 +33,21 @@ fs.readFile('./calendar/schedules.txt', (err, data) => {
   });
 
   file.on('close', () => {
-    for (let item of arrSchedule) {
-      console.log(item)
-    }
     countdown();
-  })
+  });
 });
 
 
 async function countdown() {
   const date = DateTime.now(); // repetition; watt made it a usecontext could do that yeah
-  const time = [date.toFormat('hh'), date.toFormat('mm'), date.toFormat('ss')];
+  const time = [date.toFormat('HH'), date.toFormat('mm'), date.toFormat('ss')];
+  // ie. ['08', '16', '11']
   console.log(time);
 
   let upcomingEvent;
   let secondsUntilEvent;
   
+  console.log(arrSchedule);
   for (let event of arrSchedule) {
     let eventHour, eventMinute;
     if (event[1] === ':') {
