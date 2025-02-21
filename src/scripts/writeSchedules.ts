@@ -16,7 +16,7 @@ function writeSchedules() {
     } else {
       const time = line.substring(0, line.indexOf(' '));
       const str = line.substring(line.indexOf(' ')+1);
-      schedules[currentSchedule] = { ...schedules[currentSchedule], [time]: str };
+      schedules[currentSchedule]['schedule'] = { ...schedules[currentSchedule]['schedule'], [time]: str };
     }
   }
   

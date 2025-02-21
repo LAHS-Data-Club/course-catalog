@@ -16,7 +16,6 @@ function Home() {
       <div className="font-bold text-2xl w-fit">{date.weekdayLong}</div>
       <div className="text-lg w-fit">{date.toLocaleString(DateTime.DATE_FULL)}</div>
       <Timer />
-      <div className="h-35 bg-amber-50 w-2/3 rounded"></div>
     </div>
   )
 }

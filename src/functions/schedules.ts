@@ -1,9 +1,7 @@
 import { DateTime } from 'luxon';
 
 // we could also just make this a txt file idkkk if calendar is better :skull:
-async function getSpecialSchedule() {
-  const date = DateTime.now(); // repetition; watt made it a usecontext could do that yeah
-
+async function getSpecialSchedule(date: DateTime) {
   const calendarUrl = 'c_e281ee0055e616856c4f83178cad4a88da4cd3e11bc8b5354efb1ea14f45617e@group.calendar.google.com';
   const key = 'AIzaSyDk2Ugd-qDjl3NQPCxJ6mibVgrbdv6J_5o'; 
   const timeMin = date.startOf('day').toISO();
@@ -50,38 +48,31 @@ async function getSpecialSchedule() {
 function getScheduleFromDate(weekday: number) {
   switch(weekday) {
     case 1:
-      return 'a-schedule';
+      return 'schedule-a';
     case 2:
     case 4:
-      return 'b-schedule';
+      return 'schedule-b';
     case 3:
     case 5:
-      return 'c-schedule';
+      return 'schedule-c';
   }
 }
 
-// given a date, return the name of the schedule
-// change later so its based on a datetime input
-async function getScheduleName() {
-  const date = DateTime.now(); // replace this w usecontext or something later
+async function getScheduleName(date: DateTime) {
   const weekday = date.weekday;
 
   if (weekday === 6 || weekday === 7) return 'weekend'; 
   // else check is there a special schedule on this day
-  const specialSchedule = await getSpecialSchedule();
-  console.log(specialSchedule);
+  const specialSchedule = await getSpecialSchedule(date);
   if (specialSchedule) return specialSchedule;
   // if not get normal schedule
   return getScheduleFromDate(weekday);
 }
 
-// current way it gives todays schedule
-async function getSchedule() {
+async function getSchedule(date: DateTime) {
   const res = await fetch('http://localhost:3000/api/schedules'); // idkkkkkkkkk ahhhhhh
   const data = await res.json();
-
-  const scheduleName = await getScheduleName();
-  console.log(scheduleName);
+  const scheduleName = await getScheduleName(date);
   try {
     return data[scheduleName];
   } catch(err) {
@@ -90,7 +81,7 @@ async function getSchedule() {
   }
 }
 
-export default getSchedule;
+export { getSchedule, getScheduleName };
 
 
 
