@@ -1,22 +1,33 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { DateTime, Duration } from 'luxon';
+import { getNextEvent } from "../functions/util";
 
 function Countdown() {
-  /**  mock that returns dateTime of next event  */
-  function getNextDateTime() {
-    return DateTime.now().plus({ seconds: 10 });
-  }
+  // /**  mock that returns dateTime of next event  */
+  // function getNextDateTime() {
+  //   return DateTime.now().plus({ seconds: 10 });
+  // }
 
   // datetime, duration objects respectively
-  const [endTime, setEndTime] = useState(getNextDateTime());
-  const [timeRemaining, setTimeRemaining] = useState(endTime.diff(DateTime.now()));
-  
+  const [endTime, setEndTime] = useState(null);
+  const [timeRemaining, setTimeRemaining] = useState();
+
   useEffect(() => {
-    const countdownInterval = setInterval(() => {
+    async function initialize() {
+      setEndTime(await getNextEvent());
+      console.log(endTime);
+      setTimeRemaining(endTime.diff(DateTime.now()));
+    }
+    initialize();
+  }, []);
+  
+  // fix akghhhaisdhoqwheihqwehqiuwheoiqwheoiffhHAHHHH it kinda works (lie)
+  useEffect(() => {
+    const countdownInterval = setInterval(async () => {
       const now = DateTime.now(); 
       let remaining = endTime.diff(now);
       if (remaining <= 0) { // think can just do <= 0
-        const newEnd = getNextDateTime();
+        const newEnd = await getNextEvent();
         remaining = newEnd.diff(now).minus({ seconds: 1 }); // idkkk
         setEndTime(newEnd);
       }

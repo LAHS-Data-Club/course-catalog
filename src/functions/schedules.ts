@@ -1,4 +1,5 @@
 import { DateTime } from 'luxon';
+import scheduleData from '../scripts/output/schedules.json'; 
 
 // we could also just make this a txt file idkkk if calendar is better :skull:
 async function getSpecialSchedule(date: DateTime) {
@@ -70,11 +71,12 @@ async function getScheduleName(date: DateTime) {
 }
 
 async function getSchedule(date: DateTime) {
-  const res = await fetch('http://localhost:3000/api/schedules'); // idkkkkkkkkk ahhhhhh
-  const data = await res.json();
+  // ehhhh idk why i did this
+  // const res = await fetch('http://localhost:3000/api/schedules', { mode: 'cors' });
+  // const data = await res.json();
   const scheduleName = await getScheduleName(date);
   try {
-    return data[scheduleName];
+    return scheduleData[scheduleName];
   } catch(err) {
     console.log(err);
     throw new Error('wuh oh');
