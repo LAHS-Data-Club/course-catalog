@@ -71,9 +71,6 @@ async function getScheduleName(date: DateTime) {
 }
 
 async function getSchedule(date: DateTime) {
-  // ehhhh idk why i did this
-  // const res = await fetch('http://localhost:3000/api/schedules', { mode: 'cors' });
-  // const data = await res.json();
   const scheduleName = await getScheduleName(date);
   try {
     return scheduleData[scheduleName];

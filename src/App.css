@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+@theme {
+  --color-secondary: #222222;
+  --color-blue-secondary: #5b80a2;
+}
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -7,7 +12,8 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #4a9ae4;
+  background-color: #2f2f2f;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;

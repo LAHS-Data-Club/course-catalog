@@ -5,7 +5,7 @@ function AppLayout() {
   return (
     <div className="flex h-screen">
       <Sidebar />
-      <div className="w-full">
+      <div className="w-full ml-15 mt-5 overflow-y-scroll">
         <Outlet />
       </div>
     </div>
