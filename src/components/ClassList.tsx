@@ -1,31 +1,28 @@
+import { DateTime } from 'luxon';
 import { getSchedule } from '../functions/schedules';
 import { useEffect, useState } from 'react';
+import bird from '../../public/bird.jpg';
 
 // im so sorry this might be the worst code ive ever written someone help pls
 // i also have no clue when to add types im just doing it when red underline
-
 interface Period {
   startTime: string,
   endTime: string,
   name: string,
 }
 
-function ClassList({ date }) {
+interface Props {
+  date: DateTime
+  periods: Record<string, string>
+}
+
+function ClassList({ date, periods }: Props) {
+
+  console.log(periods)
 
   const [schedule, setSchedule] = useState<Period[]>([]);
   const [loaded, setLoaded] = useState(false);
 
-  // dummy data
-  const periods = {
-    "{Period 1}": "Math",
-    "{Period 2}": "Science",
-    "{Period 3}": "English",
-    "{Period 4}": "History",
-    "{Period 5}": "PE",
-    "{Period 6}": "Art",
-    "{Period 7}": "Music"
-  }
-  
   // i should start error handling at some point :sob:
   useEffect(() => {
     async function formatSchedule() {
@@ -57,6 +54,7 @@ function ClassList({ date }) {
             <div className="text-white px-5 py-1.5 flex justify-between h-16 w-full bg-secondary rounded-md">
               <div className="self-center">
                 <div className="text-lg font-semibold">{item.name.replace(/[{}]/g, '')}</div>
+                {/** this doesnt work for ie. Period 2/A, Period 2/B fix at some point */}
                 {periods[item.name] && (<div className='text-sm'>{periods[item.name]}</div>)}
               </div>
               <div className="self-end">{item.startTime} - {item.endTime}</div>
@@ -65,7 +63,10 @@ function ClassList({ date }) {
         ) : (
           <>
             <div className="text-lg">No School!</div>
-            <div className="h-60 w-80 p-7 bg-secondary">something here because its so empty</div>
+            <div className="h-fit w-80 p-7 bg-secondary">
+              something here because its so empty
+              <img src={bird} />
+            </div>
           </>
         )
       )}

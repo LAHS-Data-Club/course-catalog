@@ -1,16 +1,27 @@
 import { getSchedule } from './schedules';
 import { DateTime } from 'luxon';
 
+const offset = { hours: 0 }; // for testing
+
 // idk what to name file
-const offset = { days: 0 }; // for testing 
+// function takes a long time bc im really stupid and did bad api call system
+async function getCurrentEvent() {
+  const currentTime = DateTime.now().setZone('America/Los_Angeles').plus(offset);
+  const currentSchedule = await getSchedule(currentTime);
 
-async function getNextEvent(): DateTime {
-  let checkingDate = DateTime.now().plus(offset);
-  let schedule = await getSchedule(checkingDate);
+  const endTime = await getEventEnd(currentTime, currentSchedule);
+  const { startTime, name } = await getEventStart(currentTime, currentSchedule); 
+  const scheduleType = currentSchedule.name;
+ 
+  return { endTime, startTime, scheduleType, name };
+}
 
-  while (true) { // prolly exit in case error super long for sum reason
-    if (schedule.schedule) { // truly peak names :sob: fix
-      for (const period of Object.keys(schedule.schedule)) {
+async function getEventEnd(startDate, startSchedule) {
+  let checkingDate = startDate;
+  let res = startSchedule;
+  while (true) { // prolly exit in case error super long for some reason
+    if (res.schedule) {
+      for (const period of Object.keys(res.schedule)) {
         const [hours, minutes] = period.split(':');
         const periodTime = checkingDate.set({ 
           hour: parseInt(hours), 
@@ -19,23 +30,23 @@ async function getNextEvent(): DateTime {
           millisecond: 0,
         });
         if (periodTime > checkingDate) {
-          return periodTime; 
+          return periodTime;
         }
       }
     } 
     checkingDate = checkingDate.plus({ days: 1 }).startOf('day');
-    schedule = await getSchedule(checkingDate);
+    res = await getSchedule(checkingDate);
   }
 }
 
-// the same exact function but like 3 changes, wtv.
-async function getLastEvent() {
-  let checkingDate = DateTime.now().plus(offset);
-  let schedule = await getSchedule(checkingDate);
-
-  while (true) { // prolly exit in case error super long for sum reason
-    if (schedule.schedule) { // truly peak names :sob: fix
-      for (const period of Object.keys(schedule.schedule).reverse()) {
+// the same exact function but like 3 changes + bad return asdjkl
+// i dont know how to code :sob: someone fix the repetition and this file :pray: ty
+async function getEventStart(startDate, startSchedule) {
+  let checkingDate = startDate;
+  let res = startSchedule;
+  while (true) { // prolly exit in case error super long for some reason
+    if (res.schedule) { 
+      for (const period of Object.keys(res.schedule).reverse()) {
         const [hours, minutes] = period.split(':');
         const periodTime = checkingDate.set({ 
           hour: parseInt(hours), 
@@ -44,13 +55,14 @@ async function getLastEvent() {
           millisecond: 0,
         });
         if (periodTime < checkingDate) {
-          return periodTime; 
+          const formattedKey = periodTime.toFormat('H:mm');
+          return { startTime: periodTime, name: res.schedule[formattedKey] };
         }
       }
     } 
     checkingDate = checkingDate.plus({ days: -1 }).endOf('day');
-    schedule = await getSchedule(checkingDate);
+    res = await getSchedule(checkingDate);
   }
 }
 
-export { getNextEvent, getLastEvent };
+export default getCurrentEvent;

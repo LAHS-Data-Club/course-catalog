@@ -1,25 +1,35 @@
 import { useState, useEffect, useRef } from "react";
 import { DateTime, Duration } from 'luxon';
-import { getNextEvent } from "../functions/util";
-import { square } from 'ldrs'
-square.register()
+import getCurrentEvent from "../functions/util";
+import { square } from 'ldrs';
+square.register();
 
-function Countdown() {
+const offset = { hours: 0 }; // for testing
+
+interface Event {
+  endTime: DateTime,
+  startTime: DateTime, 
+  scheduleType: string,
+  name: string
+}
+
+function Timer({ periods }) {
   const [loaded, setLoaded] = useState(false);
-  const [endTime, setEndTime] = useState<DateTime>(null);
+  const [currentEvent, setCurrentEvent] = useState<Event>(null);
   const [timeRemaining, setTimeRemaining] = useState<Duration>(null);
   const showNextRef = useRef(true); // i dont know someone save me aosndoajsdoiasdoasdddddd
 
   /** i have no clue how to code someone fixif dixifixiifixifixifiisxifixi please thanks
-   * race conditions due to async cause weird transition between events
-   * off by bell by 1 sec
+   * bad transition between events due to async
+   * off by bell by 1 sec :skull:
    * maybe we can just steal from bell lol
    */
   useEffect(() => {
     async function initialize() {
-      const nextEvent = await getNextEvent();
-      setEndTime(nextEvent);
-      setTimeRemaining(nextEvent.diff(DateTime.now().plus({ days: 0 }))); // testing
+      const currentEvent = await getCurrentEvent();
+      const now = DateTime.now().setZone('America/Los_Angeles').plus(offset);
+      setCurrentEvent(currentEvent);
+      setTimeRemaining(currentEvent.endTime.diff(now));
       setLoaded(true);
     }
     initialize();
@@ -28,40 +38,48 @@ function Countdown() {
   useEffect(() => {
     const countdownInterval = setInterval(async () => {
       if (loaded && showNextRef.current) {
-        const now = DateTime.now().plus({ days: 0 });
-        let remaining = endTime.diff(now);
+        const now = DateTime.now().setZone('America/Los_Angeles').plus(offset);
+        let remaining = currentEvent.endTime.diff(now);
         if (remaining <= 0) { 
-          showNextRef.current = false; // its so bad someone helop save meaoshdioqwoiejqowiheoiqhweoihqwoiehqoiwehoqiwehoi
+          showNextRef.current = false; 
           setLoaded(false);
-          const newEnd = await getNextEvent();
-          remaining = newEnd.diff(now);
-          setEndTime(newEnd);
+          const newEvent = await getCurrentEvent();
+          remaining = newEvent.endTime.diff(now);
+          setCurrentEvent(newEvent);
           showNextRef.current = true;
           setLoaded(true);
         }
         setTimeRemaining(remaining);
       }
-    }, 100); // this might be too much but it was out of sync when i had 1000
+    }, 200); // this might be too much but it was out of sync when i had 500
 
     return (() => clearInterval(countdownInterval));
-  }, [endTime]); 
+  }, [currentEvent]); 
 
   const formattedTime = Duration.fromObject({ milliseconds: timeRemaining }).toFormat('h:mm:ss');
+  
+  let percentDone;
+  if (currentEvent) {
+    const total = currentEvent.endTime.diff(currentEvent.startTime);
+    const passed = total - timeRemaining;
+    percentDone = passed/total * 100;
+  }
 
-  return(
+  return (
     <div className="w-[calc(43%+120px)] mt-4">
-      {/** replace - bar representing how far into clas will go here */}
-      <div className="bg-blue-secondary h-1.5 w-2/3"></div> 
+      {/** bar randomly shows up its kinda weird */}
+      <div style={{width: (percentDone || 0) + '%'}} className="bg-blue-secondary h-1.5"></div>
       <div className=" h-35 p-6 bg-secondary flex-wrap min-w-fit flex items-center justify-between rounded-r-md rounded-bl-md">
         {loaded ? (
           <>
             <div className="text-6xl drop-shadow-lg">{formattedTime}</div>
             <div className="text-right self-end">
-              <div>Period 4</div> {/** replace */}
-              <div>Even Block</div> {/** replace */}
+              <div>{periods[currentEvent.name] || currentEvent.name.replace(/[{}]/g, '')}</div>
+              {/** shows odd block/schedule name even when its free -- should we keep that ? */}
+              <div>{currentEvent.scheduleType}</div>
             </div>
           </>
-        ): (
+        ) : (
           <l-square className="w-full flex justify-center" size="35" stroke="5" stroke-length="0.25" bg-opacity="0.1" speed="1.2" color="white"></l-square>
         )}
       </div>
@@ -70,4 +88,4 @@ function Countdown() {
   );
 }
 
-export default Countdown;
+export default Timer;

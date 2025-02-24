@@ -1,14 +1,12 @@
 import { DateTime } from 'luxon';
 import scheduleData from '../scripts/output/schedules.json'; 
 
-// we could also just make this a txt file idkkk if calendar is better :skull:
+// we could also just make this with a txt file :skull:
 async function getSpecialSchedule(date: DateTime) {
   const calendarUrl = 'c_e281ee0055e616856c4f83178cad4a88da4cd3e11bc8b5354efb1ea14f45617e@group.calendar.google.com';
   const key = 'AIzaSyDk2Ugd-qDjl3NQPCxJ6mibVgrbdv6J_5o'; 
   const timeMin = date.startOf('day').toISO();
   const timeMax = date.endOf('day').toISO();
-  // const timeMin = '2025-03-20T00:00:00-07:00';
-  // const timeMax = '2025-03-20T23:59:00-07:00'; 
   const params = `timeMin=${timeMin}&timeMax=${timeMax}&timeZone=America/Los_Angeles`;
 
   const url = 
@@ -62,11 +60,10 @@ function getScheduleFromDate(weekday: number) {
 async function getScheduleName(date: DateTime) {
   const weekday = date.weekday;
 
+  // if its a weekend, no need to check 
   if (weekday === 6 || weekday === 7) return 'weekend'; 
-  // else check is there a special schedule on this day
   const specialSchedule = await getSpecialSchedule(date);
   if (specialSchedule) return specialSchedule;
-  // if not get normal schedule
   return getScheduleFromDate(weekday);
 }
 

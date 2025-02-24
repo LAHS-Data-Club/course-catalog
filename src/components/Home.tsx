@@ -1,23 +1,32 @@
 import { useState } from 'react';
 import { DateTime } from 'luxon';
-
-// TODO, DEAL WITH TIMEZONES
 import Timer from './Timer';
-import ClassList from './ClassList';
+import ClassList from './ClassList';  
 
 function Home() {
-  const [displayDate, setDisplayDate] = useState(DateTime.now());
-  const showPopup = !DateTime.now().hasSame(displayDate, 'day');
+  const now = DateTime.now().setZone('America/Los_Angeles'); 
+  const [displayDate, setDisplayDate] = useState(now);
+  const showPopup = !now.hasSame(displayDate, 'day');
+
+  // dummy data for now
+  const periods = {
+    "{Period 1}": "Math",
+    "{Period 2}": "Science",
+    "{Period 3}": "English",
+    "{Period 4}": "History",
+    "{Period 5}": "PE",
+    "{Period 6}": "Art",
+    "{Period 7}": "Music"
+  }
 
   return (
     <div className="flex flex-col p-6 items-center">
-
       {/** i think im just purely stealing from watt oops but like */}
       {showPopup && (
         <div className='flex justify-between fixed bg-black top-5 py-2 px-4 rounded opacity-75 min-w-fit w-[calc(53%+100px)]'>
           <div>You are viewing the schedule for {displayDate.toFormat('LLL dd')}</div>
           <div className='flex gap-3'>
-            <div className='underline cursor-pointer' onClick={() => setDisplayDate(DateTime.now())}>Jump to Present</div>
+            <div className='underline cursor-pointer' onClick={() => setDisplayDate(DateTime.now().setZone('America/Los_Angeles'))}>Jump to Present</div>
             <div className='cursor-pointer'>x</div> {/** add functionality */}
           </div>
         </div>
@@ -35,9 +44,9 @@ function Home() {
       </div>
       
       {/** css silly when smaller window fix later */}
-      <Timer />
+      <Timer periods={periods} />
       <hr className="text-neutral-700 w-[calc(43%+120px)] my-4 border-2 rounded" />
-      <ClassList date={displayDate}/>
+      <ClassList date={displayDate} periods={periods}/> 
     </div>
   )
 }
