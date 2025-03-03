@@ -1,10 +1,11 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useContext } from "react";
 import { DateTime, Duration } from 'luxon';
-import getCurrentEvent from "../functions/util";
+import getCurrentEvent from "./functions/util";
+import { PeriodsContext } from "./PeriodsContext";
 import { square } from 'ldrs';
 square.register();
 
-const offset = { hours: 0 }; // for testing
+const offset = { days: 0 }; // for testing
 
 interface Event {
   endTime: DateTime,
@@ -13,20 +14,22 @@ interface Event {
   name: string
 }
 
-function Timer({ periods }) {
+// its like one second off from bell LOL someone add it ig asdhjkl
+function Timer() {
+  const { periods } = useContext(PeriodsContext);
   const [loaded, setLoaded] = useState(false);
   const [currentEvent, setCurrentEvent] = useState<Event>(null);
   const [timeRemaining, setTimeRemaining] = useState<Duration>(null);
-  const showNextRef = useRef(true); // i dont know someone save me aosndoajsdoiasdoasdddddd
+  const showNextRef = useRef(true); // i dont know why this exists someone save me aaaaaaaaaaaaaa
 
-  /** i have no clue how to code someone fixif dixifixiifixifixifiisxifixi please thanks
-   * bad transition between events due to async
-   * off by bell by 1 sec :skull:
-   * maybe we can just steal from bell lol
-   */
   useEffect(() => {
     async function initialize() {
+
+      const start = performance.now();
       const currentEvent = await getCurrentEvent();
+      const end = performance.now();
+      console.log(`Execution time: ${end - start} ms`);
+
       const now = DateTime.now().setZone('America/Los_Angeles').plus(offset);
       setCurrentEvent(currentEvent);
       setTimeRemaining(currentEvent.endTime.diff(now));
@@ -51,12 +54,12 @@ function Timer({ periods }) {
         }
         setTimeRemaining(remaining);
       }
-    }, 200); // this might be too much but it was out of sync when i had 500
+    }, 100); 
 
     return (() => clearInterval(countdownInterval));
   }, [currentEvent]); 
 
-  const formattedTime = Duration.fromObject({ milliseconds: timeRemaining }).toFormat('h:mm:ss');
+  const formattedTime = Duration.fromObject({ milliseconds: timeRemaining-1 }).toFormat('h:mm:ss');
   
   let percentDone;
   if (currentEvent) {
@@ -68,6 +71,7 @@ function Timer({ periods }) {
   return (
     <div className="w-[calc(43%+120px)] mt-4">
       {/** bar randomly shows up its kinda weird */}
+      {/** annoying css for small screens -- like the free/no school part bounces around */}
       <div style={{width: (percentDone || 0) + '%'}} className="bg-blue-secondary h-1.5"></div>
       <div className=" h-35 p-6 bg-secondary flex-wrap min-w-fit flex items-center justify-between rounded-r-md rounded-bl-md">
         {loaded ? (

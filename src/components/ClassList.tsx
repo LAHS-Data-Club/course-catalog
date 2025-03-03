@@ -1,9 +1,8 @@
 import { DateTime } from 'luxon';
-import { getSchedule } from '../functions/schedules';
-import { useEffect, useState } from 'react';
-import bird from '../../public/bird.jpg';
+import { getSchedule } from './functions/schedules';
+import { useEffect, useState, useContext } from 'react';
+import { PeriodsContext } from './PeriodsContext';
 
-// im so sorry this might be the worst code ive ever written someone help pls
 // i also have no clue when to add types im just doing it when red underline
 interface Period {
   startTime: string,
@@ -13,38 +12,45 @@ interface Period {
 
 interface Props {
   date: DateTime
-  periods: Record<string, string>
 }
 
-function ClassList({ date, periods }: Props) {
-
-  console.log(periods)
-
+function ClassList({ date }: Props) {
+  const { periods } = useContext(PeriodsContext);
   const [schedule, setSchedule] = useState<Period[]>([]);
   const [loaded, setLoaded] = useState(false);
+  const [error, setError] = useState(false);
 
-  // i should start error handling at some point :sob:
+  // make this disaster more readable
   useEffect(() => {
     async function formatSchedule() {
       setLoaded(false);
-      const res = await getSchedule(date);
-      if (res.schedule) {
-        const keys = Object.keys(res.schedule);
-        const formattedSchedule = keys
-          .map((curr, index) => ({
-            startTime: curr,
-            endTime: keys[index + 1],
-            name: res.schedule[curr]
-          }))
-          .filter(item => !item.name.includes('Passing') && !item.name.includes('Free'));
-        setSchedule(formattedSchedule);
-      } else {
-        setSchedule([]);
+      // fix the try catch wrapping too much
+      try {
+        const res = await getSchedule(date); // an error occurs here, but its not working
+        if (res.schedule) {
+          const keys = Object.keys(res.schedule);
+          const formattedSchedule = keys
+            .map((curr, index) => ({
+              startTime: curr,
+              endTime: keys[index + 1],
+              name: res.schedule[curr]
+            }))
+            .filter(item => !item.name.includes('Passing') && !item.name.includes('Free'));
+          setSchedule(formattedSchedule);
+        } else {
+          setSchedule([]);
+        }
+      } catch (err) {
+        console.log('okokokokokok')
+        setError(true);
+        console.log(err);
       }
       setLoaded(true);
     }
     formatSchedule();
   }, [date]);
+
+  if (error) return <div>Sorry, an error occurred.</div>
 
   return (
     <div className='w-[calc(43%+120px)] flex flex-col gap-4 items-center'>
@@ -65,7 +71,6 @@ function ClassList({ date, periods }: Props) {
             <div className="text-lg">No School!</div>
             <div className="h-fit w-80 p-7 bg-secondary">
               something here because its so empty
-              <img src={bird} />
             </div>
           </>
         )

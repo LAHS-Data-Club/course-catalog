@@ -12,6 +12,7 @@
   "dependencies": {
     "@tailwindcss/vite": "^4.0.7",
     "express": "^4.21.2",
+    "node-cache": "^5.1.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "tailwindcss": "^4.0.7"
@@ -21,6 +22,7 @@
     "@types/react": "^19.0.8",
     "@types/react-dom": "^19.0.3",
     "@vitejs/plugin-react": "^4.3.4",
+    "cors": "^2.8.5",
     "eslint": "^9.19.0",
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.18",

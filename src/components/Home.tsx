@@ -8,19 +8,8 @@ function Home() {
   const [displayDate, setDisplayDate] = useState(now);
   const showPopup = !now.hasSame(displayDate, 'day');
 
-  // dummy data for now
-  const periods = {
-    "{Period 1}": "Math",
-    "{Period 2}": "Science",
-    "{Period 3}": "English",
-    "{Period 4}": "History",
-    "{Period 5}": "PE",
-    "{Period 6}": "Art",
-    "{Period 7}": "Music"
-  }
-
   return (
-    <div className="flex flex-col p-6 items-center">
+    <div className="flex flex-col p-6 items-center mt-5">
       {/** i think im just purely stealing from watt oops but like */}
       {showPopup && (
         <div className='flex justify-between fixed bg-black top-5 py-2 px-4 rounded opacity-75 min-w-fit w-[calc(53%+100px)]'>
@@ -44,9 +33,9 @@ function Home() {
       </div>
       
       {/** css silly when smaller window fix later */}
-      <Timer periods={periods} />
+      <Timer />
       <hr className="text-neutral-700 w-[calc(43%+120px)] my-4 border-2 rounded" />
-      <ClassList date={displayDate} periods={periods}/> 
+      <ClassList date={displayDate} /> 
     </div>
   )
 }
