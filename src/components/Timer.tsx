@@ -11,10 +11,10 @@ interface Event {
   endTime: DateTime,
   startTime: DateTime, 
   scheduleType: string,
-  name: string
+  name: string 
 }
 
-// its like one second off from bell LOL someone add it ig asdhjkl
+// its like one second off from bell LOL someone add it ig
 function Timer() {
   const { periods } = useContext(PeriodsContext);
   const [loaded, setLoaded] = useState(false);
@@ -22,18 +22,14 @@ function Timer() {
   const [timeRemaining, setTimeRemaining] = useState<Duration>(null);
   const showNextRef = useRef(true); // i dont know why this exists someone save me aaaaaaaaaaaaaa
 
+  // prolly good to try catch and handle error but im lazy and its fine it just status on loading :sob:
   useEffect(() => {
     async function initialize() {
-
-      const start = performance.now();
       const currentEvent = await getCurrentEvent();
-      const end = performance.now();
-      console.log(`Execution time: ${end - start} ms`);
-
       const now = DateTime.now().setZone('America/Los_Angeles').plus(offset);
       setCurrentEvent(currentEvent);
       setTimeRemaining(currentEvent.endTime.diff(now));
-      setLoaded(true);
+      setLoaded(true);      
     }
     initialize();
   }, []);
@@ -84,6 +80,7 @@ function Timer() {
             </div>
           </>
         ) : (
+          // ehhhhhhhhhhhhh
           <l-square className="w-full flex justify-center" size="35" stroke="5" stroke-length="0.25" bg-opacity="0.1" speed="1.2" color="white"></l-square>
         )}
       </div>

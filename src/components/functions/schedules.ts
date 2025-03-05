@@ -2,33 +2,27 @@ import { DateTime } from 'luxon';
 import scheduleData from '../../scripts/output/schedules.json'; 
 
 async function getSpecialSchedule(date: DateTime) {
-  try {
-    const url = `http://localhost:3000/api/calendar/${date.toFormat('M-dd-yyyy')}`;
-    const response = await fetch(url, { mode: 'cors' });
-    const events = await response.json();
+  const url = `http://localhost:3000/api/calendar/${date.toFormat('M-dd-yyyy')}`;
+  const response = await fetch(url, { mode: 'cors' });
+  const events = await response.json();
 
-    // todo this
-    // TODO :
-    // add finals schedule (includes final)
-    // psat/sat schedule
-    // handle weekend/holidays
-    for (const event of events) {
-      const name = event.summary.toLowerCase();
-      if (name.includes('recess') || name.includes('no school')) {
-        return 'no-school';   
-      }
-      if (name.includes('schedule')) {
-        const schedule = event.summary.substring(0, 10).toLowerCase().replace(' ', '-');
-        return schedule;
-      // gets a lil dubious from here on out
-      } else if (name === 'a day') { 
-        return 'schedule-a';
-      }
-    }
-    return false;
-  } catch (err) { // deal with error handling at some point
-    console.log(err);
-  } 
+  for (const event of events) {
+    const name = event.summary.toLowerCase();
+    // gets a lil (VERY) dubious from here on out
+    // not super reusable :sob: may need to update based on what they name things
+    if (name.includes('recess') || name.includes('no school')) {
+      return 'no-school';   
+    } else if (name.includes('schedule')) {
+      return name.substring(0, 10).replace(' ', '-');
+    } else if (name.substring(2, 5) === 'day') { 
+      return 'schedule-' + name.substring(0, 1).toLowerCase();
+    } else if (name.substring(0, 6) === 'finals') {
+      return 'finals-' + date.weekdayShort.toLowerCase();
+    } else if (name.includes('psat')) {
+      return 'psat-testing';
+    } 
+  }
+  return false;
 }
 
 // 1-7 where monday is 1 and sunday is 7
@@ -55,14 +49,10 @@ async function getScheduleName(date: DateTime) {
   return getScheduleFromDate(weekday);
 }
 
+// oops i got rid of everything and this has one line now
 async function getSchedule(date: DateTime) {
   const scheduleName = await getScheduleName(date);
-  try {
-    return scheduleData[scheduleName];
-  } catch(err) {
-    console.log(err); // deal with errors at some point
-    throw new Error('wuh oh');
-  }
+  return scheduleData[scheduleName];
 }
 
-export { getSchedule, getScheduleName };
+export { getSchedule };

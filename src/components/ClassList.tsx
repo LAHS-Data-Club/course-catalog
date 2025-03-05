@@ -20,13 +20,12 @@ function ClassList({ date }: Props) {
   const [loaded, setLoaded] = useState(false);
   const [error, setError] = useState(false);
 
-  // make this disaster more readable
+  // make this more readable
   useEffect(() => {
     async function formatSchedule() {
       setLoaded(false);
-      // fix the try catch wrapping too much
       try {
-        const res = await getSchedule(date); // an error occurs here, but its not working
+        const res = await getSchedule(date); 
         if (res.schedule) {
           const keys = Object.keys(res.schedule);
           const formattedSchedule = keys
@@ -40,17 +39,16 @@ function ClassList({ date }: Props) {
         } else {
           setSchedule([]);
         }
-      } catch (err) {
-        console.log('okokokokokok')
-        setError(true);
+      } catch(err) {
         console.log(err);
+        setError(true);
       }
       setLoaded(true);
     }
     formatSchedule();
   }, [date]);
 
-  if (error) return <div>Sorry, an error occurred.</div>
+  if (error) return <div>Sorry, a network error occurred.</div>
 
   return (
     <div className='w-[calc(43%+120px)] flex flex-col gap-4 items-center'>

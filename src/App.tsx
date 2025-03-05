@@ -13,6 +13,9 @@ function App() {
           <Route element={<AppLayout />}>
             <Route path='/' element={<Home />} />
             <Route path='/profile' element={<Profile />} />
+            <Route path='/clubs' element={<Profile />} />
+            <Route path='/classes' element={<Profile />} />
+            <Route path='/pathways' element={<Profile />} />
           </Route>
         </Routes>
       </BrowserRouter>

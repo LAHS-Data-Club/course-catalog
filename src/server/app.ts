@@ -12,14 +12,12 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 app.get('/api/calendar/:date', async (req, res, next) => {
-  // deal with error handling and redundant try catch later
   try {
     const { date } = req.params;
     const events = await cache.get(date, () => fetchCalendarData(date));
     res.json(events);
   } catch (err) {
-    console.log(err);
-    next(err);
+    res.status(500).send(); // not sure if this is right
   }
 });
 

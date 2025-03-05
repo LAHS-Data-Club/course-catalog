@@ -151,8 +151,8 @@
       "15:09": "Free"
     }
   },
-  "finals-tues": {
-    "name": "Tuesday Finals",
+  "finals-wed": {
+    "name": "Wednesday Finals",
     "schedule": {
       "8:30": "{Period 1} ",
       "10:30": "Brunch",
@@ -164,8 +164,8 @@
       "15:37": "Free"
     }
   },
-  "finals-wed": {
-    "name": "Wednesday Finals",
+  "finals-thu": {
+    "name": "Thursday Finals",
     "schedule": {
       "8:30": "{Period 2}",
       "10:30": "Brunch",
@@ -174,8 +174,8 @@
       "12:50": "Free"
     }
   },
-  "finals-thurs": {
-    "name": "Thursday Finals",
+  "finals-fri": {
+    "name": "Friday Finals",
     "schedule": {
       "8:30": "{Period 3}",
       "10:30": "Brunch",
