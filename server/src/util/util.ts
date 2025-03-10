@@ -1,9 +1,11 @@
+import dotenv from 'dotenv';
+dotenv.config();
 import { DateTime } from 'luxon';
 
 async function fetchCalendarData(formattedDate: string) {
   const date = DateTime.fromFormat(formattedDate, 'M-dd-yyyy'); 
   const calendarUrl = 'c_e281ee0055e616856c4f83178cad4a88da4cd3e11bc8b5354efb1ea14f45617e@group.calendar.google.com';
-  const key = process.env.REACT_APP_API_KEY;
+  const key = process.env.API_KEY;
   const timeMin = date.startOf('week');
   const timeMax = date.endOf('week');
   const params = `timeMin=${timeMin.toISO()}&timeMax=${timeMax.toISO()}&timeZone=America/Los_Angeles`;
