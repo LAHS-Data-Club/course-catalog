@@ -3,7 +3,7 @@ import { DateTime } from 'luxon';
 async function fetchCalendarData(formattedDate: string) {
   const date = DateTime.fromFormat(formattedDate, 'M-dd-yyyy'); 
   const calendarUrl = 'c_e281ee0055e616856c4f83178cad4a88da4cd3e11bc8b5354efb1ea14f45617e@group.calendar.google.com';
-  const key = 'AIzaSyDiFaCxAmoBF1z7C5H2R0UYav-3NbaXlDQ'; // shhh
+  const key = process.env.REACT_APP_API_KEY;
   const timeMin = date.startOf('week');
   const timeMax = date.endOf('week');
   const params = `timeMin=${timeMin.toISO()}&timeMax=${timeMax.toISO()}&timeZone=America/Los_Angeles`;
