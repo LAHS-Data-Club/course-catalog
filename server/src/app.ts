@@ -1,7 +1,7 @@
-import { fetchCalendarData } from './util.js';
+import { fetchCalendarData } from './util/util.ts';
 import express from 'express';
 import cors from 'cors';
-import Cache from './cache.js';
+import Cache from './util/cache.js';
 const app = express();
 const cache = new Cache();
 
@@ -11,6 +11,7 @@ const corsOptions = {
 };
 app.use(cors(corsOptions));
 
+// routes
 app.get('/api/calendar/:date', async (req, res, next) => {
   try {
     const { date } = req.params;

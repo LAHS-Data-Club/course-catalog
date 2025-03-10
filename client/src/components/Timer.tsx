@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, useContext } from "react";
 import { DateTime, Duration } from 'luxon';
 import getCurrentEvent from "./functions/util";
-import { PeriodsContext } from "./PeriodsContext";
+import { PeriodsContext } from "./contexts/PeriodsContext";
 import { square } from 'ldrs';
 square.register();
 
@@ -68,7 +68,7 @@ function Timer() {
     <div className="w-[calc(43%+120px)] mt-4">
       {/** bar randomly shows up its kinda weird */}
       {/** annoying css for small screens -- like the free/no school part bounces around */}
-      <div style={{width: (percentDone || 0) + '%'}} className="bg-blue-secondary h-1.5"></div>
+      <div style={{width: (percentDone || 0) + '%'}} className="bg-blue-400 h-1.5"></div>
       <div className=" h-35 p-6 bg-secondary flex-wrap min-w-fit flex items-center justify-between rounded-r-md rounded-bl-md">
         {loaded ? (
           <>

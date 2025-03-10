@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { PeriodsContext } from "./PeriodsContext";
+import { PeriodsContext } from "./contexts/PeriodsContext";
 
 function Profile () {
   const { periods, setPeriods } = useContext(PeriodsContext);
@@ -18,6 +18,7 @@ function Profile () {
         <div className="bg-neutral-600 min-w-60 flex-1 h-full rounded"></div>
 
         <div className="bg-neutral-600 flex-2 flex flex-col min-w-80 rounded p-6 gap-3 items-center">
+          {/** empty labels? */}
           {Object.keys(periods).map(period => (
             <input 
               key={period}

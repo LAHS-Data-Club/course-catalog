@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Sidebar from "../components/Sidebar";
-import { PeriodsContext } from "../components/PeriodsContext";
+import { PeriodsContext } from "../components/contexts/PeriodsContext";
 
 function AppLayout() {
   // maybe could just pass down instead of using context 

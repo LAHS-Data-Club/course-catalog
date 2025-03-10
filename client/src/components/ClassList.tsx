@@ -1,7 +1,7 @@
 import { DateTime } from 'luxon';
 import { getSchedule } from './functions/schedules';
 import { useEffect, useState, useContext } from 'react';
-import { PeriodsContext } from './PeriodsContext';
+import { PeriodsContext } from './contexts/PeriodsContext';
 
 // i also have no clue when to add types im just doing it when red underline
 interface Period {

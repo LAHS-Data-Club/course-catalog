@@ -8,7 +8,7 @@ function Sidebar() {
         <NavLink to='/'>
           <div className="cursor-pointer w-5 h-5 bg-amber-50"></div>
         </NavLink>
-        <NavLink>
+        <NavLink to='/courses'>
           <div className="w-5 h-5 bg-amber-50"></div>
         </NavLink>
         <NavLink to='/profile'>

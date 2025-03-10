@@ -1,0 +1,4422 @@
+{
+  "pe": {
+    "classes": [
+      {
+        "Name": "PE (9th Grade)",
+        "id": 100,
+        "Description": "PE is designed to develop self-awareness and a desire to learn life-long skills for maintaining personal fitness. A wellness unit focuses on stress reduction and character choices. Students will take the mandatory California State Fitness Test.",
+        "Level": {
+          "name": "Year 1"
+        },
+        "Tags": ["Required"],
+        "Prerequisite": [],
+        "Recommendations": "",
+        "Units":[
+          { "unit": "Swimming" },
+          { "unit": "Tennis" },
+          { "unit": "Soccer" },
+          { "unit": "Pickleball" },
+          { "unit": "Basketball" },
+          { "unit": "Volleyball" },
+          { "unit": "Ultimate Frisbee" },
+          { "unit": "Weight Training" },
+          { "unit": "Badminton" }
+        ],
+        "Grading-categories": [
+          {
+            "name": "Participation",
+            "weight": 70
+          },
+          {
+            "name": "Knowledge",
+            "weight": 5
+          }, 
+          {
+            "name": "Skills",
+            "weight": 5
+          },
+          {
+            "name": "Fitness",
+            "weight": 20
+          }
+        ],
+        "Grading-description": [
+          "Late work practices: Students are expected to make-up absences by attending PE make ups during ACT. Make ups must be completed by the end of the current semester.",
+          "Sport skill and fitness tests are based on performance rubrics.",
+          "Written tests will be given on rules and strategies of each activity using multiple choice, matching and short answer formats."
+        ],
+        "Grade-distribution": [],
+        "Contacts": [
+          "bryan.edwards@mvla.net",
+          "bob.mcfarlane@mvla.net",
+          "jim.phillips@mvla.net",
+          "kiernan.raffo@mvla.net"
+        ],
+        "Books": [],
+        "Links": []
+      },
+      {
+        "Name": "PE (10-12th Grade)",
+        "id": 101,
+        "Description": "PE is designed to develop self-awareness and a desire to learn life-long skills for maintaining personal fitness.",
+        "Level": {
+          "name": "Year 2"
+        },
+        "Tags": [],
+        "Prerequisite": [100],
+        "Recommendations": "",
+        "Units":[
+          { "unit": "Flag Football" },
+          { "unit": "Volleyball" },
+          { "unit": "Soccer" },
+          { "unit": "Basketball" },
+          { "unit": "Volleyball" },
+          { "unit": "Ultimate Frisbee" },
+          { "unit": "Gymnastics" },
+          { "unit": "Softball" },
+          { "unit": "Tennis" }
+        ],
+        "Grading-categories": [
+          {
+            "name": "Participation",
+            "weight": 70
+          },
+          {
+            "name": "Knowledge",
+            "weight": 5
+          }, 
+          {
+            "name": "Skills",
+            "weight": 5
+          },
+          {
+            "name": "Fitness",
+            "weight": 20
+          }
+        ],
+        "Grading-description": [
+          "Late work practices: Students are expected to make-up absences by attending PE make ups during ACT. Make ups must be completed by the end of the current semester.",
+          "Sport skill and fitness tests are based on performance rubrics.",
+          "Written tests will be given on rules and strategies of each activity using multiple choice, matching and short answer formats."
+        ],
+        "Grade-distribution": [],
+        "Contacts": [
+          "bryan.edwards@mvla.net",
+          "bob.mcfarlane@mvla.net",
+          "jim.phillips@mvla.net",
+          "kiernan.raffo@mvla.net"
+        ],
+        "Books": [],
+        "Links": []	
+      },
+      {
+        "Name": "Weight Lifting",
+        "id": 102,
+        "Description": "In this course, students will learn the fundamentals of weight training and increase their strength, muscle mass, and mobility through specific weight training programming. The class will also focus on the individualized programming needs geared toward student weight-lifting goals.",
+        "Level": {
+          "name": "Year 2"
+        },
+        "Tags": [],
+        "Prerequisite": [100],
+        "Recommendations": "",
+        "Units":[
+          { "unit": "Strength block" },
+          { "unit": "Hypertropy block" },
+          { "unit": "Circuit training" },
+          { "unit": "Other individaulized programs" }
+        ],
+        "Grading-categories": [
+          {
+            "name": "Participation",
+            "weight": 70
+          },
+          {
+            "name": "Knowledge",
+            "weight": 5
+          }, 
+          {
+            "name": "Skills",
+            "weight": 5
+          },
+          {
+            "name": "Fitness",
+            "weight": 20
+          }
+        ],
+        "Grading-description": [
+          "Late work practices: Students are expected to make-up absences by attending PE make ups during ACT. Make ups must be completed by the end of the current semester.",
+          "Sport skill and fitness tests are based on performance rubrics.",
+          "Written tests will be given on rules and strategies of each activity using multiple choice, matching and short answer formats."
+        ],
+        "Grade-distribution": [],
+        "Contacts": [
+          "bryan.edwards@mvla.net",
+          "jim.phillips@mvla.net"
+        ],
+        "Books": [],
+        "Links": []	
+      },
+      {
+        "Name": "Yoga PE",
+        "id": 103,
+        "Description": "In Yoga PE, students are introduced to a variety of yoga styles, postures, and practices. They will learn the proper form of postures while building strength, flexibility, and mental awareness.",
+        "Level": {
+          "name": "Year 2"
+        },
+        "Tags": [],
+        "Prerequisite": [100],
+        "Recommendations": "",
+        "Units":[],
+        "Grading-categories": [
+          {
+            "name": "Participation",
+            "weight": 80
+          },
+          {
+            "name": "Written Work and Assessments",
+            "weight": 20
+          }
+        ],
+        "Grading-description": [
+          "Missed classes may be made up by attending PE makeups during ACT.",
+          "Written work and assessments include written and performed quizzes, self-evaluations, and final exams."
+        ],
+        "Grade-distribution": [],
+        "Contacts": [
+          "carrie.abelshaffer@mvla.net"
+        ],
+        "Books": [],
+        "Links": []	
+      },
+      {
+        "Name": "Health",
+        "id": 104,
+        "Description": "",
+        "Level": {
+          "name": "Year 1"
+        },
+        "Tags": ["Required"],
+        "Prerequisite": [],
+        "Recommendations": "",
+        "Units":[],
+        "Grading-categories": [],
+        "Grading-description": [],
+        "Grade-distribution": [],
+        "Contacts": [],
+        "Books": [],
+        "Links": []	
+      }
+    ],
+    "extras": {
+      "Media": [],
+      "Description": "talk about PE uniform policies maybe",
+      "ApprovedBy": "name of teacher who approved if approved",
+      "Status": [
+        { "name": "ie. approved, pending, unverified" }
+      ]
+    }
+  },
+  "electives": {
+    "classes": [],
+    "extras": {}
+  },
+  "english": {
+    "classes": [
+      {
+        "Name": "Survey Skills",
+        "id": 300,
+        "Description": "This course is a second period of English for students who need extra support to take alongside Survey, with a particular focus on supporting English Language Learners. The main focus will be on building English language skills through direct teaching, additional assignments, small group work, individual work, and one-on-one instruction. Students will additionally be provided support on finishing major assignments for their Survey class.",
+        "Level": {
+          "name": "Year 1"
+        },
+        "Tags": [],
+        "Prerequisite": [],
+        "Recommendations": "9th grade Survey teacher recommendation",
+        "Units": [],
+        "Homework-description": [
+          "Almost all work for Survey Skills should be completed in class."
+        ],
+        "Grading-categories": [
+          { "name": "Classwork & Participation", "weight": 100 }
+        ],
+        "Grading-description": [
+          "There will be a one letter-grade penalty for work submitted late.",
+          "Should you struggle with an assignment, you ask for a revision opportunity.  It's up to your teacher whether or not you get that opportunity."
+        ],
+        "Grade-distribution": [],
+        "Contacts": ["arantxa.arriada@mvla.net"],
+        "Books": [],
+        "Links": [] 
+      },
+      {
+        "Name": "Survey",
+        "id": 301,
+        "Description": "All mainstream ninth-grade students are enrolled in this English course. Students read a variety of works with an emphasis on multi- genre, multicultural literary understanding. Students develop writing skills in a variety of modes. Class size is usually 20-1.",
+        "Level": {
+          "name": "Year 1"
+        },
+        "Tags": ["UC/CSU (B)"],
+        "Prerequisite": [],
+        "Recommendations": "",
+        "Units": [
+          { 
+            "unit": "Short narratives unit",
+            "assignment": "Literary paragraph"
+          },
+          {
+            "unit": "The Book of Unknown Americans",
+            "assignment": "Literary essay"
+          },
+          {
+            "unit": "Poetry",
+            "assignment": "Writing & performing original poetry"
+          },
+          {
+            "unit": "Book Circles",
+            "assignment": "Speech"
+          },
+          {
+            "unit": "Persuasion/Critical Media Literacy",
+            "assignment": "Reaction Paper"
+          },
+          {
+            "unit": "Romeo and Juliet",
+            "assignment": "Scene performance"
+          }
+        ],
+        "Homework-description": [],
+        "Grading-categories": [
+          {
+            "name": "Major Assignments",
+            "weight": 55
+          },
+          {
+            "name": "Minor Assignments",
+            "weight": 45
+          }
+        ],
+        "Grading-description": [
+          "There will be a letter-grade penalty for major work submitted late.",
+          "You may be able to rewrite a major assignment once per semester.",
+          "Not all assignments are eligible for rewriting."
+        ],
+        "Grade-distribution": [],
+        "Contacts": [
+          "arantxa.arriada@mvla.net",
+          "lisa.battle@mvla.net",
+          "margaret.bennett@mvla.net",
+          "lisa.bonanno@mvla.net",
+          "keren.dawson-bowman@mvla.net",
+          "jennifer.eneriz@mvla.net",
+          "dalia.gamez@mvla.net",
+          "susana.herrera@mvla.net",
+          "michael.kanda@mvla.net",
+          "jasmine.mark@mvla.net",
+          "april.oliver@mvla.net",
+          "babak.shahrivar@mvla.net",
+          "michael.smith@mvla.net",
+          "zachary.waldorph@mvla.net"
+        ],
+        "Books": [],
+        "Links": []
+      },
+      {
+        "Name": "World Lit",
+        "id": 302,
+        "Description": "Students will study works of literature representing countries and cultures around the world. Students will read poetry, novels, short stories, informational texts, dramas and essays. Students will demonstrate their understanding through multiple formats, including literary analysis essays, speeches, performances, creative compositions, Socratic seminars, and class discussions.",
+        "Level": {
+          "name": "Year 2"
+        },
+        "Tags": ["UC/CSU (B)"],
+        "Prerequisite": [301],
+        "Recommendations": "",
+        "Units":[
+          { 
+            "unit": "Short stories",
+            "assignment": "placeholder"
+          },
+          {
+            "unit": "The Kite Runner (novel)",
+            "assignment": "placeholder"
+          },
+          {
+            "unit": "Identity Speeches",
+            "assignment": "placeholder"
+          },
+          {
+            "unit": "Poetry",
+            "assignment": "placeholder"
+          },
+          {
+            "unit": "Purple Hibiscus (novel)",
+            "assignment": "placeholder"
+          },
+          {
+            "unit": "Research/infographic",
+            "assignment": "placeholder"
+          },
+          {
+            "unit": "Sonia Flew (play)",
+            "assignment": "placeholder"
+          }
+        ],
+        "Homework-description": [],
+        "Grading-categories": [
+          {
+            "name": "Major Assignments",
+            "weight": 55
+          },
+          {
+            "name": "Minor Assignments",
+            "weight": 45
+          }
+        ],
+        "Grading-description": [
+          "There will be a letter-grade penalty for major work submitted late.",
+          "You may be able to rewrite a major assignment once per semester.",
+          "Not all assignments are eligible for rewriting."
+        ],
+        "Grade-distribution": [],
+        "Contacts": [
+          "cathy.dao@mvla.net",
+          "caitlin.hannon@mvla.net",
+          "jonathan.kwan@mvla.net",
+          "Perla.Luna@mvla.net",
+          "bruce.mccormick@mvla.net",
+          "jennifer.eneriz@mvla.net"
+        ],
+        "Books": [],
+        "Links": []
+      },
+      {
+        "Name": "World Lit (H)",
+        "id": 303,
+        "Description": "This course is designed to engage students in reading and understanding historically and culturally relevant texts from different regions of the world. Students also study world poetry from different countries and cultures. Students will learn strategies for disciplined reading, researching, writing, speaking, thinking, and listening.",
+        "Level": {
+          "name": "Year 2"
+        },
+        "Tags": ["UC/CSU (B)", "H"],
+        "Prerequisite": [301],
+        "Recommendations": "A- or above in Survey of Composition & Literature.",
+        "Units": [
+          {
+            "unit": "Identity and Perspectives: short narratives",
+            "assignment": "placeholder"
+          },
+          {
+            "unit": "Interpreter of Maladies (novel)",
+            "assignment": "placeholder"
+          },
+          {
+            "unit": "Purple Hibiscus (novel)",
+            "assignment": "placeholder"
+          },
+          {
+            "unit": "Issue research and speech",
+            "assignment": "placeholder"
+          },
+          {
+            "unit": "Literary Circles",
+            "assignment": "placeholder"
+          },
+          {
+            "unit": "Poetry",
+            "assignment": "placeholder"
+          }
+        ],
+        "Grading-categories": [
+          {
+            "name": "Major Assignments",
+            "weight": 55
+          },
+          {
+            "name": "Reading Assessments",
+            "weight": 30
+          },
+          {
+            "name": "Classwork/Participation",
+            "weight": 15
+          }
+        ],
+        "Homework-description": [
+          "Students can expect an average of 2-4 hours of homework per week."
+        ],
+        "Grading-description": [
+          "There will be a letter-grade penalty for major work submitted late.",
+          "You may be able to rewrite a major assignment once per semester.",
+          "Not all assignments are eligible for rewriting."
+        ],
+        "Grade-distribution": [],
+        "Contacts": [
+          "Margaret.Bennett@mvla.net", 
+          "Cathy.Dao@mvla.net"
+        ],
+        "Books": [],
+        "Links": []
+      },
+      {
+        "Name": "American Lit",
+        "id": 304,
+        "Description": "Students in this course study major works of American literature, focusing on how the American experience is addressed by writers throughout history. Students will examine common themes and will demonstrate their understanding through literary analysis and expository essays, speeches, performances, creative compositions, and class discussions.",
+        "Level": {
+          "name": "Year 3"
+        },
+        "Tags": ["UC/CSU (B)"],
+        "Prerequisite": [302, 303],
+        "Recommendations": "",
+        "Units": [
+          {
+            "unit": "Poetry",
+            "focus": "Various poems"
+          },
+          {
+            "unit": "Literary analysis & synthesis",
+            "focus": "The Things They Carried"
+          },
+          {
+            "unit": "Literature circles & academic discussion",
+            "focus": "Choice from several novels"
+          },
+          {
+            "unit": "Narrative essay",
+            "focus": "50 Essays and other narrative essays"
+          },
+          {
+            "unit": "Media literacy & research",
+            "focus": "Various media and nonfiction"
+          }
+        ],
+        "Homework-description": [],
+        "Grading-categories": [
+          {
+            "name": "Major Assignments",
+            "weight": 55
+          },
+          {
+            "name": "Reading Assessments",
+            "weight": 30
+          },
+          {
+            "name": "Classwork/Participation",
+            "weight": 15
+          }
+        ],
+        "Grading-description": [
+          "There will be a letter-grade penalty for major work submitted late.",
+          "You may be able to rewrite a major assignment once per semester.",
+          "Not all assignments are eligible for rewriting."
+        ],
+        "Grade-distribution": [],
+        "Contacts": [
+          "bianca.aguirre@mvla.net",
+          "sasha.kassel@mvla.net",
+          "babak.shahrivar@mvla.net",
+          "michael.smith@mvla.net"
+        ],
+        "Books": [],
+        "Links": []
+      },
+      {
+        "Name": "AP Lang",
+        "id": 305,
+        "Description": "AP Language and Composition is equivalent to a freshman-level college literature and composition course. Students will build awareness of text structure and rhetorical devices through experiencing diverse voices and ideas in American Literature. Toward the end, students will produce a “Tapestry Project,” which is a portfolio of personal writing, in response to prompts based on our novels’ themes. Students’ drafts are workshopped throughout the year, and are graded as a culminating project at the end of the year.",
+        "Level": {
+          "name": "Year 3"
+        },
+        "Tags": ["UC/CSU (B)", "AP"],
+        "Recommendations": "Grade B or above in World Literature H or grade of A- or above in World Literature",
+        "Prerequisite": [302, 303],
+        "Units": [
+          { 
+            "unit": "Intro to Rhetorical Analysis",
+            "focus": "MLK's “Letter from Birmingham Jail",
+            "assignment": "n/a"
+          },
+          {
+            "unit": "Poetry",
+            "focus": "Selection of Poems",
+            "assignment": "Poetry Anthology + Analysis"
+          },
+          {
+            "unit": "American Dream and thematic essay writing",
+            "focus": "The Great Gatsby",
+            "assignment": "Analysis essay"
+          },
+          {
+            "unit": "Narratives",
+            "focus": "The 50 Essays Reader and various short stories",
+            "assignment": "Personal Narrative"
+          },
+          {
+            "unit": "Research",
+            "focus": "Synthesis and persuasive speech writing",
+            "assignment": "Persuasive Speech"
+          },
+          {
+            "unit": "Rhetorical Analysis",
+            "focus": "The Things They Carried",
+            "assignment": "lol good q"
+          },
+          {
+            "unit": "Character analysis and Performance",
+            "focus": "The Crucible",
+            "assignment": "lol good q"
+          },
+          {
+            "unit": "Tapestry",
+            "focus": "All of your own writing!",
+            "assignment": "Collection of your own works"
+          }
+        ],
+        "Homework-description": [],
+        "Grading-categories": [
+          {
+            "name": "Major Assignments",
+            "weight": 70
+          },
+          {
+            "name": "Minor Assignments",
+            "weight": 30
+          }
+        ],
+        "Grading-description": [
+          "There will be a letter-grade penalty for major work submitted late.",
+          "You may be able to rewrite a major assignment once per semester.",
+          "Not all assignments are eligible for rewriting."
+        ],
+        "Grade-distribution": [],
+        "Contacts": [
+          "Carrie.AbelShaffer@mvla.net", 
+          "sasha.kassel@mvla.net", 
+          "perla.luna@mvla.net",
+          "Michael.Moul@mvla.net"
+        ],
+        "Books": [],
+        "Links": []
+      },
+      {
+        "Name": "Film Analysis",
+        "id": 306,
+        "Description": "This college preparatory course uses a wide variety of feature films and a film textbook to teach students film analysis as well as  filmmaking.  Students continue to develop reading, writing, and analytical skills in preparation for college-level work.  As their senior project, students will write short analytical essays on films chosen by the student which lead to a visual essay film on the student’s director of choice.  During the second semester, students will create a 5-7 minute short film for the Film Festival.  If you are a student-athlete who plans to participate in NCAA sports in college, please note that this course is not accepted by Division 1.",
+        "Level": {
+          "name": "Year 4"
+        },
+        "Tags": ["UC/CSU (B)"],
+        "Recommendations": "",
+        "Prerequisite": [304, 305],
+        "Units": [
+          { "unit": "Cinematography and Editing", "focus": "Moonrise Kingdom, Casablanca, Standby" },
+          { "unit": "Sound and Musical Function", "focus": "The Graduate, Do the Right Thing" },
+          { "unit": "Lighting and Color", "focus": "American Beauty" },
+          { "unit": "Senior Project Part 1", "focus": "Director focus - visual essay" },
+          { "unit": "Coming-of-Age Films", "focus": "The Florida Project, Roma, Ladybird" },
+          { "unit": "International Films", "focus": "Chungking Express, The Color of Paradise, Amelie, Paraiste" },
+          { "unit": "Senior Project Part 2 (Ongoing)", "focus": "Creating your own original short film!" }
+        ],
+        "Homework-description": [],
+        "Grading-categories": [
+          {
+            "name": "Major Assignments",
+            "weight": 55
+          },
+          {
+            "name": "Film Tests",
+            "weight": 30
+          }, 
+          {
+            "name": "Homework/Classwork/Participation",
+            "weight": 15
+          }
+        ],
+        "Grading-description": [
+          "There will be a letter-grade penalty for major work submitted late.",
+          "You may be able to rewrite a major assignment once per semester.",
+          "Not all assignments are eligible for rewriting."
+        ],
+        "Grade-distribution": [],
+        "Contacts": [
+          "susana.herrera@mvla.net", 
+          "robert.barker@mvla.net"
+        ],
+        "Books": ["The Art of Watching Films by Biggs and Petrie"],
+        "Links": []
+      },
+      {
+        "Name": "English Literature Survey",
+        "id": 307,
+        "Description": "This course focuses on interpreting and analyzing written texts and other media. Most written assignments focus on analyzing and synthesizing complex ideas, often connecting texts to contemporary society. Students develop effective inquiry and research skills, culminating in a senior project where they research a topic of their choice and develop a formal research paper and presentation. Students will also create multiple reflective assignments, developing their voice and personal insights.",
+        "Level": {
+          "name": "Year 4"
+        },
+        "Tags": ["UC/CSU (B)"],
+        "Prerequisite": [304, 305],
+        "Recommendations": "",
+        "Units": [
+          { "unit": "This I Believe" },
+          { "unit": "Invisible Man" },
+          { "unit": "Critical Media Literacy Investigation and Presentation" },
+          { "unit": "The Namesake" },
+          { "unit": "Senior Project" },
+          { "unit": "Life Script" }
+        ],
+        "Grading-categories": [
+          {
+            "name": "Major Assignments (SM1*)",
+            "weight": 60
+          },
+          {
+            "name": "Reading/HW/Participation (SM1*)",
+            "weight": 40
+          }, 
+          {
+            "name": "Major Assignments (SM2*)",
+            "weight": 55
+          },
+          {
+            "name": "Reading/HW/Participation (SM2*)",
+            "weight": 45
+          }
+        ],
+        "Homework-description": [],
+        "Grading-description": [
+          "There will be a letter-grade penalty for major work submitted late.",
+          "You may be able to rewrite a major assignment once per semester.",
+          "Not all assignments are eligible for rewriting."
+        ],
+        "Grade-distribution": [],
+        "Contacts": [
+          "caitlin.hannon@mvla.net", 
+          "bruce.mccormick@mvla.net", 
+          "joanne.miyahara@mvla.net",
+          "michael.kanda@mvla.net"
+        ],
+        "Books": [],
+        "Links": [] 
+      },
+      {
+        "Name": "AP Lit",
+        "id": 308,
+        "Description": "This course emphasizes reading and analysis of literature and writing in a variety of modes. Students will complete a senior project, which includes a 10-12 page research paper. This is a college-level course, which serves as an equivalent to a freshman year of college English.",
+        "Level": {
+          "name": "Year 4"
+        },
+        "Tags": ["UC/CSU (B)", "AP"],
+        "Prerequisite": [304, 305],
+        "Recommendations": "B or above in AP Lang or grade of A- or above in American Lit.",
+        "Units": [
+          {
+            "unit": "Fiction - Novel",
+            "focus": "The Handmaid's Tale by Margaret Atwood"
+          },
+          {
+            "unit": "Fiction - Novel",
+            "focus": "Beloved by Tony Morrison"
+          },
+          {
+            "unit": "Fiction - Short Stories",
+            "focus": "Short stories by Gabriel Garcia Marquez, Raymond Chandler, Anton Chekhov, George Saunders, Kate Chopin, Lorrie Moore, and others."
+          },
+          {
+            "unit": "Poetry",
+            "focus": "Selection of poetry from 19th, 20th, 21st c. authors"
+          },
+          {
+            "unit": "Literature Cirlces",
+            "focus": "Choices vary by teacher & may include: Pride and Prejudice, The Brief Wondrous Life of Oscar Wao, TBD"
+          },
+          {
+            "unit": "Shakespeare",
+            "focus": "Hamlet"
+          },
+          {
+            "unit": "Senior Project: Author Study (Ongoing: Dec-March)",
+            "focus": "You will select 2-3 major works from a chosen author to conduct research and analysis. "
+          }
+        ],
+        "Homework-description": [],
+        "Grading-categories": [
+          {
+            "name": "Major Assignments",
+            "weight": 60
+          },
+          {
+            "name": "Unit Work",
+            "weight": 40
+          }
+        ],
+        "Grading-description": [
+          "There will be a letter-grade penalty for major work submitted late.",
+          "You may be able to rewrite a major assignment once per semester.",
+          "Not all assignments are eligible for rewriting."
+        ],
+        "Grade-distribution": [],
+        "Contacts": [
+          "jasmine.mark@mvla.net", 
+          "robert.barker@mvla.net"
+        ],
+        "Books": [],
+        "Links": [] 
+      },
+      {
+        "Name": "Global Connections A",
+        "id": 309,
+        "Description": "Students will analyze the complexities of their world, learning the role individuals, identity, and the legal system play in reinforcing or equalizing power and status within communities. Emphasis will be placed on non-fiction reading, research, discussion, and presentations. Documentaries will be a main mode of learning. Students will be enrolled in two periods. One is devoted to regular class size group discussion and readings. The other invovles larger group instruction, including guest speakers, performances, etc. **Students earn 20 credits in this course (English - 10, Civis - 5, Individual and Society - 5).",
+        "Level": {
+          "name": "Year 4"
+        },
+        "Tags": ["UC/CSU (A)", "UC/CSU (B)"],
+        "Prerequisite": [304, 305],
+        "Recommendations": "",
+        "Units": [
+          { "unit": "Moral and Ethics" },
+          { "unit": "The Amendments" },
+          { "unit": "Court Cases & Terminology"},
+          { "unit": "Conformity" },
+          { "unit": "The Rise of Facism" },
+          { "unit": "Genocide" },
+          { "unit": "Senior Project Films" },
+          { "unit": "And more!" }
+        ],
+        "Grading-categories": [
+          {
+            "name": "Major Assignments",
+            "weight": 55
+          },
+          {
+            "name": "Minor Assignments",
+            "weight": 45
+          }
+        ],
+        "Homework-description": [],
+        "Grading-description": [
+          "There will be a letter-grade penalty for major work submitted late.",
+          "You may be able to rewrite a major assignment once per semester.",
+          "Extra credit is occasionally offered."
+        ],
+        "Grade-distribution": [],
+        "Contacts": ["susana.Herrera@mvla.net", "gabriel.stewart@mvla.net"],
+        "Books": ["Excerpts from The Lucifer Effect by Phillip Zimbardo"],
+        "Links": [] 
+      }
+    ],
+    "extras": {}
+  },
+  "math": {
+    "classes": [
+      {
+        "Name": "Algebra 1",
+        "id": 401,
+        "Description": "Algebra I prepares students for a subsequent course in either geometry or second-year algebra. Lecturing, class discussions, small group work, and student’s individual work in class will be the main modes of instruction to promote the development of analytical thinking in abstract domains and problem solving approaches.",
+        "Level": {
+          "name": "Level 1"
+        },
+        "Tags": ["UC/CSU"],
+        "Prerequisite": [],
+        "Units":[
+          { "unit": "Expressions and equations" },
+          { "unit": "Operations with negative Numbers" },
+          { "unit": "Distributng, axioms, other Properties" },
+          { "unit": "Operations with polynomials and radicals" },
+          { "unit": "Quadratic equations" },
+          { "unit": "Linear Functions" },
+          { "unit": "Scattered data and probability" },
+          { "unit": "Properties of exponents" },
+          { "unit": "Rational algebraic expressions" },
+          { "unit": "Inequalities" }
+        ],
+        "Grading-categories": [
+          {
+            "name": "Tests",
+            "weight": 50
+          },
+          {
+            "name": "Quizzes",
+            "weight": 20
+          }, 
+          {
+            "name": "Classwork/Homework",
+            "weight": 20
+          },
+          {
+            "name": "Final",
+            "weight": 10
+          }
+        ],
+        "Homework-description": [
+        ],
+        "Grading-description": [
+          "Missed quizzes from excused absence will be replaced by the first attempt of the unit test.",
+          "One quiz score may be replaced with a score based on the performance on the first attempt of the unit test.",
+          "Tests can be revised for up to 50% of points missed.",
+          "No extra credit is available."
+        ],
+        "Grade-distribution": [],
+        "Contacts": [
+          "Dan.Carter@mvla.net",
+          "Laraine.Ignacio@mvla.net",
+          "Maria.Olson@mvla.net",
+          "Erica.Starks@mvla.net",
+          "Betty.Yamasaki@mvla.net"
+        ],
+        "Books": ["Algebra 1 ©2015 Houghton Mifflin Harcourt"],
+        "Links": []
+      },
+      {
+        "Name": "Algebra 2",
+        "id": 402,
+        "Description": "Algebra 2 is taken after a student has successfully taken Algebra 1.  This course covers representations and use of various kinds of mathematical functions, concepts to modeling and problem solving.",
+        "Level": {
+          "name": "Level 3"
+        },
+        "Tags": ["UC/CSU"],
+        "Prerequisite": [407, 408],
+        "Units":[
+          { "unit": "System of Equations" },
+          { "unit": "Quadratic Relations and Functions" },
+          { "unit": "Polynomials and Polynomial Functions" },
+          { "unit": "Rational Expressions and Functions" },
+          { "unit": "Exponents and Logarithms" },
+          { "unit": "Modeling Linear and Exponential Data" },
+          { "unit": "Powers and Roots" },
+          { "unit": "Complex Numbers" },
+          { "unit": "Sequences and Series" }
+        ],
+        "Grading-categories": [
+          {
+            "name": "Tests",
+            "weight": 50
+          },
+          {
+            "name": "Quizzes",
+            "weight": 15
+          }, 
+          {
+            "name": "Proficiency Checks",
+            "weight": 25
+          },
+          {
+            "name": "Homework/Classwork/Projects",
+            "weight": 10
+          }
+        ],
+        "Homework-description": [
+        ],
+        "Grading-description": [
+          "Missed quizzes from excused absence will be replaced by the first attempt of the unit test.",
+          "One quiz score may be replaced with a score based on the performance on the first attempt of the unit test.",
+          "Students will be given the opportunity to retake each test for a full grade replacement. Students must first complete test corrections.",
+          "Proficiency checks can be retaken a limited number of times.",
+          "No extra credit is available."
+        ],
+        "Grade-distribution": [],
+        "Contacts": [
+          "Maria.Olson@mvla.net",
+          "Toni.Smith@mvla.net",
+          "Andrea.Gantvarg@mvla.net",
+          "Linh.Tran@mvla.net",
+          "Jacob.Valadez@mvla.net"
+        ],
+        "Books": ["Algebra 2 ©2007, McDougal Littell"],
+        "Links": []
+      },
+      {
+        "Name": "Algebra 2 (H)",
+        "id": 403,
+        "Description": "desc",
+        "Level": {
+          "name": "Level 3"
+        },
+        "Tags": ["UC/CSU"],
+        "Prerequisite": [407, 408],
+        "Units":[
+          { "unit": "Field axioms and number sets" },
+          { "unit": "Functions and relations" },
+          { "unit": "Linear Functions" },
+          { "unit": "System of linear equations and inequalities" },
+          { "unit": "Quadratics and complex numbers" },
+          { "unit": "Exponential and logarithmic functions" },
+          { "unit": "Rational functions" },
+          { "unit": "Irrational funcitons" },
+          { "unit": "Basic conic sections" },
+          { "units": "Higher degree functions and complex numbers" },
+          { "units": "Sequences and series" }
+        ],
+        "Grading-categories": [
+          {
+            "name": "Tests and Projects",
+            "weight": 50
+          },
+          {
+            "name": "Quizzes",
+            "weight": 20
+          }, 
+          {
+            "name": "Homework/Classwork",
+            "weight": 10
+          },
+          {
+            "name": "Final",
+            "weight": 20
+          }
+        ],
+        "Homework-description": [
+        ],
+        "Grading-description": [
+          "Students will be able to receive credit for quiz and/or test corrections.",
+          "No extra credit is available."
+        ],
+        "Grade-distribution": [],
+        "Contacts": [
+          "jacob.sproule@mvla.net",
+          "jillian.bellamy@mvla.net",
+          "Jacob.Valadez@mvla.net"
+        ],
+        "Books": ["Algebra and Trigonometry; Paul A. Foerster"],
+        "Links": []
+      },
+      {
+        "Name": "Calculus",
+        "id": 404,
+        "Description": "This course covers the fundamental concepts of calculus with applications. Students enrolled in this class are not expected to take the Calculus AP exam, but will be well prepared for a college level class in calculus.",
+        "Level": {
+          "name": "Level 5"
+        },
+        "Tags": ["UC/CSU"],
+        "Prerequisite": [],
+        "Recommendations": "C- or better in Trigonometry or Trigonometry Honors.",
+        "Units": [
+          { "unit": "Limits" },
+          { "unit": "Differentiation" },
+          { "unit": "Integration" }
+        ],
+        "Grading-categories": [
+          {
+            "name": "Tests",
+            "weight": 55
+          },
+          {
+            "name": "Quizzes",
+            "weight": 15
+          }, 
+          {
+            "name": "Homework",
+            "weight": 10
+          },
+          {
+            "name": "Participation/Groupwork",
+            "weight": 10
+          },
+          {
+            "name": "Final Exam/Project",
+            "weight": 10
+          }
+        ],
+        "Homework-description": [
+        ],
+        "Grading-description": [
+          "Late credit will be given for late homeowrk assignments turned in before the unit test.",
+          "No extra credit is available."
+        ],
+        "Grade-distribution": [],
+        "Contacts": [
+          "matthew.chaffee@mvla.net"
+        ],
+        "Books": ["Bittenger, Calculus and its Applications, 2008"],
+        "Links": []
+      },
+      {
+        "Name": "AP Calculus AB",
+        "id": 405,
+        "Description": "This course covers differential and integral calculus of a single variable. Lecturing, class discussions, small group work, and student’s individual work in class will be the main modes of instruction.",
+        "Level": {
+          "name": "Level 5"
+        },
+        "Tags": ["UC/CSU", "AP"],
+        "Prerequisite": [],
+        "Recommendations": "B- or above in Trigonometry Honors or A or above in Trigonometry.",
+        "Units": [
+          { "unit": "Limits and Contunuity" },
+          { "unit": "Differentiation" },
+          { "unit": "Applications of Differentiation" },
+          { "unit": "Integration" },
+          { "unit": "Differential Equatins" },
+          { "unit": "Applications of Integration" }
+        ],
+        "Grading-categories": [
+          {
+            "name": "Tests",
+            "weight": 65
+          },
+          {
+            "name": "Quizzes",
+            "weight": 20
+          }, 
+          {
+            "name": "Participation/Projects",
+            "weight": 10
+          },
+          {
+            "name": "Homework",
+            "weight": 5
+          }
+        ],
+        "Homework-description": [
+        ],
+        "Grading-description": [
+          "Remediation varies by teacher.",
+          "No extra credit is available."
+        ],
+        "Grade-distribution": [],
+        "Contacts": [
+          "matthew.chaffee@mvla.net",
+          "hector.arias@mvla.net"
+        ],
+        "Books": ["Stewart, Single Variable Calculus Early Transcendentals 6E, 2010"],
+        "Links": []
+      },
+      {
+        "Name": "AP Calculus BC",
+        "id": 406,
+        "Description": "This course covers differential and integral calculus of a single variable. Lecturing, class discussions, group work, and student’s individual work will be the main modes of instruction. Calculus BC is considerably more extensive and more challenging than Calculus AB.",
+        "Level": {
+          "name": "Level 5"
+        },
+        "Tags": ["UC/CSU", "AP"],
+        "Prerequisite": [],
+        "Recommendations": "B- or above in Trigonometry Honors or A or above in Trigonometry.",
+        "Units": [
+          { "unit": "Limits and Contunuity" },
+          { "unit": "Differentiation" },
+          { "unit": "Applications of Differentiation" },
+          { "unit": "Integration" },
+          { "unit": "Differential Equatins" },
+          { "unit": "Applications of Integration" },
+          { "unit": "Parametric Equations, Polar Coordinates, Vector-Valued Functions" },
+          { "unit": "Infinite Sequences and Series" }
+        ],
+        "Grading-categories": [
+          {
+            "name": "Tests and Projects (SM1*)",
+            "weight": 65
+          },
+          {
+            "name": "Quizzes (SM1)",
+            "weight": 20
+          }, 
+          {
+            "name": "Daily Assignments (SM1)",
+            "weight": 10
+          },
+          {
+            "name": "Tests and Projects (SM2*)",
+            "weight": 65
+          },
+          {
+            "name": "Quizzes (SM2)",
+            "weight": 20
+          }, 
+          {
+            "name": "Daily Assignments (SM2)",
+            "weight": 10
+          },
+          {
+            "name": "AP Test Practice",
+            "weight": 20
+          }
+        ],
+        "Homework-description": [
+        ],
+        "Grading-description": [
+          "Students will be able to receive credit for quiz/test corrections.",
+          "There will be an opportunity to do additional remediation on the lowest test score each semester. This could take the form of a retake, a replacement by another assessment, or another in class assignment.",
+          "No extra credit is available."
+        ],
+        "Grade-distribution": [],
+        "Contacts": [
+          "jacob.Sproule@mvla.net",
+          "victor.Nguyen@mvla.net"
+        ],
+        "Books": ["Stewart, Single Variable Calculus Early Transcendentals 6E, 2010", "TI-84 calculator"],
+        "Links": []
+      },
+      {
+        "Name": "Geometry",
+        "id": 407,
+        "Description": "Geometry is a fundamental math course. Students will develop logical reasoning and learn how to form deductive mathematical proofs.",
+        "Level": {
+          "name": "Level 2"
+        },
+        "Tags": ["UC/CSU"],
+        "Prerequisite": [401],
+        "Recommendations": "C- or above in Algebra I.",
+        "Units": [
+        ],
+        "Grading-categories": [
+          {
+            "name": "Tests",
+            "weight": 60
+          },
+          {
+            "name": "Quizzes",
+            "weight": 25
+          }, 
+          {
+            "name": "Homework/Classwork",
+            "weight": 15
+          }
+        ],
+        "Homework-description": [
+        ],
+        "Grading-description": [
+          "Missed quizzes from excused absence can either be retaken or replaced by the corresponding unit test score.",
+          "A quiz score can be replaced by a higher corresponding unit test score.",
+          "Tests can be corrected for 50% of the points missed back. Recovered points do not remediate quiz scores."
+        ],
+        "Grade-distribution": [],
+        "Contacts": [
+          "Toni.Hallam@mvla.net",
+          "Albert.Lagazo@mvla.net",
+          "Victor.Nguyen@mvla.net",
+          "Brent.Smith@mvla.net",
+          "Jacob.Valadez@mvla.net"
+        ],
+        "Books": ["Serra, Discovering Geometry, 5E, 2015"],
+        "Links": []
+      },
+      {
+        "Name": "Geometry (H)",
+        "id": 408,
+        "Description": "This course is devoted mainly to plane geometry. In addition to covering the regular geometry curriculum in greater depth, students will also study transformations, introductory trigonometry, and non-Euclidian geometry. Strong emphasis is placed on proofs and the application of algebra to geometry including coordinate geometry.",
+        "Level": {
+          "name": "Level 2"
+        },
+        "Tags": ["UC/CSU", "H"],
+        "Prerequisite": [401],
+        "Recommendations": "A- or above in Algebra I.",
+        "Units": [
+        ],
+        "Grading-categories": [
+        ],
+        "Homework-description": [
+        ],
+        "Grading-description": [
+          "There are no corrections for tests and quizzes. Homework problems can be correctied.",
+          "Tests can be corrected for 50% of the points missed back. Recovered points do not remediate quiz scores."
+        ],
+        "Grade-distribution": [],
+        "Contacts": [
+          "teresa.dunlap@mvla.net"
+        ],
+        "Books": ["McDougal et al, Geometry for Enjoyment and Challenge", "Key  Curriculum Press, Discovering Geometry"],
+        "Links": []
+      },
+      {
+        "Name": "Statistics",
+        "id": 409,
+        "Description": "",
+        "Level": {
+          "name": "Level 2"
+        },
+        "Tags": ["UC/CSU"],
+        "Prerequisite": [],
+        "Recommendations": "pass Trigonometry with at least a B-, or B- or higher in Algebra II/Algebra II Honors.",
+        "Units": [
+        ],
+        "Grading-categories": [
+        ],
+        "Homework-description": [
+        ],
+        "Grading-description": [
+          "There are no corrections for tests and quizzes. Homework problems can be correctied.",
+          "Tests can be corrected for 50% of the points missed back. Recovered points do not remediate quiz scores."
+        ],
+        "Grade-distribution": [],
+        "Contacts": [
+          "teresa.dunlap@mvla.net"
+        ],
+        "Books": ["McDougal et al, Geometry for Enjoyment and Challenge", "Key  Curriculum Press, Discovering Geometry"],
+        "Links": []
+      },
+      {
+        "Name": "Statistics (AP)",
+        "id": 410,
+        "Description": "",
+        "Level": {
+          "name": "Level 2"
+        },
+        "Tags": ["UC/CSU"],
+        "Prerequisite": [],
+        "Recommendations": "pass Trigonometry with at least a B-, or B- or higher in Algebra II/Algebra II Honors.",
+        "Units": [
+        ],
+        "Grading-categories": [
+        ],
+        "Homework-description": [
+        ],
+        "Grading-description": [
+          "There are no corrections for tests and quizzes. Homework problems can be correctied.",
+          "Tests can be corrected for 50% of the points missed back. Recovered points do not remediate quiz scores."
+        ],
+        "Grade-distribution": [],
+        "Contacts": [
+          "teresa.dunlap@mvla.net"
+        ],
+        "Books": ["McDougal et al, Geometry for Enjoyment and Challenge", "Key  Curriculum Press, Discovering Geometry"],
+        "Links": []
+      },
+      {
+        "Name": "Trigonometry",
+        "id": 411,
+        "Description": "",
+        "Level": {
+          "name": "Level 4"
+        },
+        "Tags": ["UC/CSU"],
+        "Prerequisite": [402, 403],
+        "Recommendations": "",
+        "Units": [
+        ],
+        "Grading-categories": [
+        ],
+        "Homework-description": [
+        ],
+        "Grading-description": [
+        ],
+        "Grade-distribution": [],
+        "Contacts": [],
+        "Books": [],
+        "Links": []
+      },
+      {
+        "Name": "Trigonometry (H)",
+        "id": 412,
+        "Description": "",
+        "Level": {
+          "name": "Level 4"
+        },
+        "Tags": ["UC/CSU", "H"],
+        "Prerequisite": [402, 403],
+        "Recommendations": "",
+        "Units": [
+        ],
+        "Grading-categories": [
+        ],
+        "Homework-description": [
+        ],
+        "Grading-description": [
+        ],
+        "Grade-distribution": [],
+        "Contacts": [],
+        "Books": [],
+        "Links": []
+      },
+      {
+        "Name": "Algebra 1.2",
+        "id": 413,
+        "Description": "",
+        "Level": {
+          "name": "Level 1"
+        },
+        "Tags": ["UC/CSU"],
+        "Prerequisite": [],
+        "Recommendations": "",
+        "Units": [
+        ],
+        "Grading-categories": [
+        ],
+        "Homework-description": [
+        ],
+        "Grading-description": [
+        ],
+        "Grade-distribution": [],
+        "Contacts": [],
+        "Books": [],
+        "Links": []
+      },
+      {
+        "Name": "Adv. Data Science",
+        "id": 414,
+        "Description": "",
+        "Level": {
+          "name": "Level 4"
+        },
+        "Tags": ["UC/CSU"],
+        "Prerequisite": [],
+        "Recommendations": "",
+        "Units": [
+        ],
+        "Grading-categories": [
+        ],
+        "Homework-description": [
+        ],
+        "Grading-description": [
+        ],
+        "Grade-distribution": [],
+        "Contacts": [],
+        "Books": [],
+        "Links": []
+      }
+    ],
+    "extras": {}
+  },
+  "performing-arts": {
+    "classes": [],
+    "extras": {}
+  },
+  "science": {
+    "classes": [
+      {
+        "Name": "Biology",
+        "id": 600,
+        "Description": "This course involves the study of life and the inter-relationships that exist among all living organisms and their environment. The teaching of biological concepts involves the completion of laboratory experiments using college level equipment, lecture/discussions, videos, projects, and reading and writing assignments. Students will develop laboratory skills as well as science literacy.",
+        "Level": {
+          "name": "Year 1"
+        },
+        "Tags": ["UC/CSU (D)"],
+        "Prerequisite": [],
+        "Recommendations": "",
+        "Units":[
+          { "unit": "Scientific Basic Skills" },
+          { "unit": "Ecology" },
+          { "unit": "Biomolecules and Homeostasis" },
+          { "unit": "Photosynthesis and Cellular Respiration" },
+          { "unit": "DNA and Enzymes" },
+          { "unit": "Biotechnology" },
+          { "unit": "Cell Cycle & Genetics" },
+          { "unit": "Evolution" },
+          { "unit": "Climate Change" }
+        ],
+        "Grading-categories": [
+          { "name": "Labs & Projects", "weight": 40 },
+          { "name": "Quizzes & Tests", "weight": 40 },
+          { "name": "Classwork & Homework", "weight": 10 },
+          { "name": "Final", "weight": 10 }
+        ],
+        "Homework-description": [
+          "Homework is 1-2 nights per week of 20-30 minutes of studying."
+        ],
+        "Grading-description": [
+          "One test retake opportunity will be available for each unit test.",
+          "Lab reports turned in on time can be revised and resubmitted within one week after the return of the lab report.",
+          "No extra credit will be available."
+        ],
+        "Grade-distribution": [],
+        "Contacts": [
+          "linda.hambrick@mvla.net",
+          "elizabeth.pyle@mvla.net",
+          "christina.schramm@mvla.net",
+          "archana.venugopal@mvla.net"
+        ],
+        "Books": ["Biology by Miller/Levine"],
+        "Links": []
+      },
+      {
+        "Name": "Biology H",
+        "id": 601,
+        "Description": "This course is designed to help students better understand the elationships between organisms and their environment. It will be conducted at an advanced rate compared to general biology and students are expected to work accordingly. An inquiry-based method of learning is used as well as reading, note taking (lectures and book), lab experiments, and group/class discussions.",
+        "Level": {
+          "name": "Year 1"
+        },
+        "Tags": ["UC/CSU (D)", "H"],
+        "Prerequisite": [],
+        "Recommendations": "",
+        "Units":[
+          { "unit": "Scientific Basic Skills" },
+          { "unit": "Ecology" },
+          { "unit": "Biomolecules and Homeostasis" },
+          { "unit": "Photosynthesis and Cellular Respiration" },
+          { "unit": "DNA and Enzymes" },
+          { "unit": "Biotechnology" },
+          { "unit": "Bioethics" },
+          { "unit": "Cell Cycle & Genetics" },
+          { "unit": "Evolution" },
+          { "unit": "Climate Change" }
+        ],
+        "Grading-categories": [
+          {
+            "name": "Classwork",
+            "weight": 60
+          },
+          {
+            "name": "Assessments and Final",
+            "weight": 40
+          }
+        ],
+        "Homework-description": [
+          "Homework  is 3-4 nights per week of 30-40 minutes of reading/writing.",
+          "Comfort applying Algebra skills is recommended."
+        ],
+        "Grading-description": [
+          "There are no test retake opportunities.",
+          "A 20% penalty will be given to labs turned in one day late.",
+          "Students should not expect extra credit opportunities."
+        ],
+        "Grade-distribution": [],
+        "Contacts": [
+          "lisa.bolton@mvla.net",
+          "jacob.russo@mvla.net",
+          "greg.stoehr@mvla.net",
+          "archana.venugopal@mvla.net"
+        ],
+        "Books": ["Biology by Cecie Starr (Brooks/Cole Pub.)"],
+        "Links": []
+      },
+      {
+        "Name": "Chemistry",
+        "id": 603,
+        "Description": "desc",
+        "Level": {
+          "name": "Year 2"
+        },
+        "Tags": ["UC/CSU (D)"],
+        "Prerequisite": [601, 602],
+        "Recommendations": "",
+        "Units":[],
+        "Grading-categories": [],
+        "Homework-description": [],
+        "Grading-description": [],
+        "Grade-distribution": [],
+        "Contacts": [],
+        "Books": [],
+        "Links": []
+      },
+      {
+        "Name": "Chemistry H",
+        "id": 604,
+        "Description": "desc",
+        "Level": {
+          "name": "Year 2"
+        },
+        "Tags": ["UC/CSU (D)", "H"],
+        "Prerequisite": [601, 602],
+        "Recommendations": "",
+        "Units":[],
+        "Grading-categories": [
+          {
+            "name": "Homework/Classwork",
+            "weight": 15
+          },
+          {
+            "name": "Quizzes",
+            "weight": 25
+          },
+          {
+            "name": "Exams",
+            "weight": 25
+          },
+          {
+            "name": "Labs/Projects",
+            "weight": 25
+          },
+          {
+            "name": "Final",
+            "weight": 10
+          }
+        ],
+        "Homework-description": [
+          "Typical homework is 30-60 minutes a day of textbook reading, worksheets, or lab report writing."
+        ],
+        "Grading-description": [
+          "Late labs are accepted with a 20% penalty until the unit test. Lab reports may be written for up to 70%.",
+          "All quizzes will be graded pass/fail, with an 80% minimum score to pass. If students do not pass the quiz the first time, they will get one more chance to take the quiz for full credit until the unit.",
+          "There will be no exam retake opportunities.",
+          "A 1% extra credit opportunity will be offered each semester."
+        ],
+        "Grade-distribution": [],
+        "Contacts": [
+          "darren.dressen@mvla.net",
+          "trina.mattson@mvla.net",
+          "james.stiltner@mvla.net"
+        ],
+        "Books": ["Chemistry 6th Edition by Masterson and Hurley"],
+        "Links": []
+      },
+      {
+        "Name": "AP Biology",
+        "id": 605,
+        "Description": "This course is designed to be equivalent to an introductory biology course taken in the first year of college. The four big ideas studied in this course are: (1) Evolution, (2) Cellular Processes - Energy and Communication, (3) Genetics and Information Transfer, and (4) Interactions. This course aims to provide students a better understanding and appreciation for how life works.",
+        "Level": {
+          "name": "Year 3"
+        },
+        "Tags": ["UC/CSU (D)", "AP"],
+        "Prerequisite": [603, 604],
+        "Recommendations": "B or above in Biology Honors, Chemistry Honors, and Algebra II",
+        "Units": [
+          { 
+            "unit": "The Chemistry of Life",
+            "focus": "Experimental design, Elements of life, Carbobn Chemistry",
+            "time": "~3.5 weeks"
+          },
+          {
+            "unit": "Chemical Evolution and the Cell",
+            "focus": "Cell communication & function, Chemical evolution, Homeostasis",
+            "time": "~4 weeks"
+          },
+          {
+            "unit": "Cellular Energy",
+            "focus": "Redox Reactions, Cellular Respiration, Enzymes",
+            "time": "~2.5 weeks"
+          },
+          {
+            "unit": "and more... im lazy",
+            "focus": "",
+            "time": ""
+          }
+        ],
+        "Grading-categories": [
+          {
+            "name": "Tests",
+            "weight": 40
+          },
+          {
+            "name": "Labs and Activites",
+            "weight": 30
+          },
+          {
+            "name": "Homework/Classwork",
+            "weight": 20
+          },
+          {
+            "name": "Final",
+            "weight": 10
+          }
+        ],
+        "Homework-description": [
+          "Students should expect 45 minutes to 1 hour of homework each night."
+        ],
+        "Grading-description": [
+          "Assignments in 'Labs & Activies' can be turned in late for 80% if within 2 days, and 60% if longer.",
+          "Students may earn 40% of points missed on tests back by doing test corrections."
+        ],
+        "Grade-distribution": [],
+        "Contacts": ["tory.johnson@mvla.net"],
+        "Books": ["Campbell Biology in Focus, 4e", "AP Biology Edition, 2025", "Mastering Biology (web-based)"],
+        "Links": []
+      },
+      {
+        "Name": "AP Chemistry",
+        "id": 606,
+        "Description": "desc",
+        "Level": {
+          "name": "Year 3"
+        },
+        "Tags": ["UC/CSU (D)", "AP"],
+        "Prerequisite": [603, 604],
+        "Recommendations": "Concurrent enrollment in Trigonometry; A- or above in Biology Honors and Chemistry Honors",
+        "Units": [
+          { "unit": "Kinematics" },
+          { "unit": "Acids and Bases" },
+          { "unit": "Thermodynamics & Electrochemistry" },
+          { "unit": "Thermochemistry" },
+          { "unit": "Chemical Reactions & Stoichiometry" },
+          { "unit": "Properties of Substances and Mixtures " },
+          { "unit": "Compound Structures and Properties" },
+          { "unit": "Atomic Structure and Properties" }
+        ],
+        "Grading-categories": [
+          {
+            "name": "Participation",
+            "weight": 5
+          },
+          {
+            "name": "Homework",
+            "weight": 10
+          },
+          {
+            "name": "Quizzes",
+            "weight": 20
+          },
+          {
+            "name": "Tests",
+            "weight": 25
+          },
+          {
+            "name": "Labs",
+            "weight": 25
+          },
+          {
+            "name": "Final",
+            "weight": 15
+          }
+        ],
+        "Homework-description": [
+          "Homework is ~30-60 minutes an evening"
+        ],
+        "Grading-description": [
+          "There are no test or quiz retake opportunities. Tests will be curved.",
+          "Late labs will be accepeted with a 20% penalty within a week of the due date. Homework will be accepted with a 50% penalty.",
+          "Students may earn up to 1% extra credit per semester."
+        ],
+        "Grade-distribution": [],
+        "Contacts": ["james.mok@mvla.net"],
+        "Books": ["Chemistry: The Central Science"],
+        "Links": []
+      },
+      {
+        "Name": "AP Physics I",
+        "id": 607,
+        "Description": "This AP level course will introduce students to algebra-based physics. Students will build and apply mathematical models to make predictions of naturally occurring phenomena. This course has an extensive laboratory component. Students will learn to design experiments, collect and analyze data to confirm a hypothesis.",
+        "Level": {
+          "name": "Year 3"
+        },
+        "Tags": ["UC/CSU (D)", "AP"],
+        "Prerequisite": [603, 604],
+        "Recommendations": "Completion of Algebra II and Chemistry with a grade of B or higher.",
+        "Units": [
+          { "unit": "Kinematics" },
+          { "unit": "Newton's laws of motion" },
+          { "unit": "Work, energy, power" },
+          { "unit": "Linear momentum, torque, rotational dynamics" },
+          { "unit": "Energy & momentum of rotating systems" },
+          { "unit": "Oscillations and fluids" }
+        ],
+        "Grading-categories": [
+          {
+            "name": "Tests & Quizzes",
+            "weight": 45
+          },
+          {
+            "name": "Labs",
+            "weight": 30
+          },
+          {
+            "name": "Classwork & Homework",
+            "weight": 15
+          },
+          {
+            "name": "Final",
+            "weight": 10
+          }
+        ],
+        "Homework-description": [
+          "Homework is ~60-75 minutes an evening"
+        ],
+        "Grading-description": [
+          "Late work is not accepted",
+          "Students may earn up to 2% extra credit per semester."
+        ],
+        "Grade-distribution": [],
+        "Contacts": ["adam.randall@mvla.net", "joe.manildi@mvla.net"],
+        "Books": ["Openstax College Physics 2e"],
+        "Links": [] 
+      },
+      {
+        "Name": "AP Physics C",
+        "id": 608,
+        "Description": "desc",
+        "Level": {
+          "name": "Year 4"
+        },
+        "Tags": ["UC/CSU (D)", "AP"],
+        "Prerequisite": [607],
+        "Recommendations": "B or better in physics, and B or better in an introductory differential and integral calculus course.",
+        "Units": [
+          { "unit": "Kinematics" },
+          { "unit": "Newton's laws of motion" },
+          { "unit": "Work & energy" },
+          { "unit": "Uniform circular motion" },
+          { "unit": "Rotational kinematics & torque" },
+          { "unit": "Universal gravitation and oscillations" }
+        ],
+        "Grading-categories": [
+          {
+            "name": "Tests & Quizzes",
+            "weight": 55
+          },
+          {
+            "name": "Labs",
+            "weight": 25
+          },
+          {
+            "name": "Classwork & Homework",
+            "weight": 10
+          },
+          {
+            "name": "Final",
+            "weight": 10
+          }
+        ],
+        "Homework-description": [
+          "Homework is ~60-75 minutes an evening"
+        ],
+        "Grading-description": [
+          "Late work is not accepted",
+          "Students may earn up to 2% extra credit per semester."
+        ],
+        "Grade-distribution": [],
+        "Contacts": ["adam.randall@mvla.net"],
+        "Books": ["Physics for Scientists and Engineers, Serway/Jewett"],
+        "Links": []  
+      },
+      {
+        "Name": "Physics",
+        "id": 609,
+        "Description": "This high school level course introduces students to concepts in physics using algebra and right triangle geometry. Topics include kinematics, Newton's laws of motion, work & energy, impulse & momentum, plate tectonics, electrostatics, electric circuits, magnetism, geometric optics and wave phenomena. Instructional approaches include lectures, demonstrations, laboratories, class discussions, free response questions, homework sets, quizzes and tests.",
+        "Level": {
+          "name": "Year 3"
+        },
+        "Tags": ["UC/CSU (D)"],
+        "Prerequisite": [603, 604],
+        "Recommendations": "Concurrent enrollment in Trigonometry. Completion of Algebra II and Chemistry with passing grades.",
+        "Units": [
+          [
+            { "unit": "Equilibrium" },
+            { "unit": "Constant Velocity Motion" },
+            { "unit": "Kinematics and projectiles in free fall" },
+            { "unit": "Dynamics" },
+            { "unit": "Momentum" },
+            { "unit": "Energy" },
+            { "unit": "Electricity and Magnetism" }
+          ]
+        ],
+        "Grading-categories": [
+          { "name": "Major Papers & Projects", "weight": 60 },
+          { "name": "Unit Work", "weight": 40 }
+        ],  
+        "Grading-description": [
+          "Grades are based on major papers & projects and unit work (including classwork/homework/reading assessments).",
+          "Late work receives a one letter-grade penalty. More than one late major assignment in a semester will lower the semester grade one full letter grade.",
+          "Students may rewrite a major assignment only once per semester, with teacher approval.",
+          "Extra credit is not offered in this course."
+        ],
+        "Grade-distribution": [],
+        "Contacts": ["lisa.bonanno@mvla.net", "zachary.waldorph@mvla.net"], 
+        "Books": [],
+        "Links": ["Pearson Physics, James S. Walker"]
+      },
+      {
+        "Name": "AP Environmental Science",
+        "id": 610,
+        "Description": "AP Environmental Science is designed to be the equivalent of an introductory college course in environmental science. The goal is to provide students with scientific principles, concepts and methodologies required to understand the interrelationships of the natural world, to identify and analyze environmental problems both natural and human-made, to evaluate relative risks associated with these problems, and to examine alternative solutions. The course includes laboratory and field investigations that complement classroom learning through firsthand observation, allowing students to test concepts, explore specific problems in depth, and gain awareness of confounding variables in the real world.",
+        "Level": {
+          "name": "Year 3"
+        },
+        "Tags": ["UC/CSU (D)", "AP"],
+        "Prerequisite": [603, 604],
+        "Recommendations": "Grades of A- or above in Biology and Chemistry",
+        "Units": [
+          [
+            { "unit": "Plants & Photosynthesis" },
+            { "unit": "Ecosystems & Biodiversity" },
+            { "unit": "Populations in Ecosystems" },
+            { "unit": "Human Populations" },
+            { "unit": "The Solid Earth" },
+            { "unit": "Atmosphere and Climate" },
+            { "unit": "Land and Water Use for Crops & Meat" },
+            { "unit": "Solutions for Land and Water Use" },
+            { "unit": "Energy & Resources" },
+            { "unit": "Consumption" },
+            { "unit": "Air, Land, and Aquatic Pollution" },
+            { "unit": "Global Change" }
+          ]
+        ],
+        "Grading-categories": [
+          { "name": "Mild (introductory/daily assignments)", "weight": 30 },
+          { "name": "Medium (practice assignments)", "weight": 10 },
+          { "name": "Spicy (advanced assignments)", "weight": 10 },
+          { "name": "Skill Checks, Quizzes & Tests", "weight": 40 },
+          { "name": "Final Exam or Project", "weight": 10 }
+        ],
+        "Grading-description": [
+          "Grades are based on daily work, practice and advanced assignments, quizzes, tests, and a final exam.",
+          "Quizzes require 80% or higher, with retakes available as needed.",
+          "Late/missing work must be submitted by the end of each unit.",
+          "Revision opportunities for tests or quizzes provided at teacher's discretion."
+        ],
+        "Grade-distribution": [],
+        "Contacts": ["linda.hambrick@mvla.net"],
+        "Books": ["Pearson Environmental Science"],
+        "Links": [""]
+      },
+      {
+        "Name": "Forensics",
+        "id": 611,
+        "Description": "Forensic science (criminalistics) is an introduction to the analysis of crime scenes by collecting and analyzing physical evidence. This course integrates core scientific disciplines while giving students both theory and hands-on experience with the skills and knowledge required of a forensic crime scene investigator. This multidisciplinary course covers topics in biology, chemistry, physics, technology, earth science, math, social studies and language arts. Students analyze evidence including fingerprints, DNA, trajectories, hair, fiber, toxicology, blood spatter patterns, ballistics, chromatography, skeletal remains and tool marks. Students use process skills including comparative analysis, critical thinking, deductive reasoning, interviewing, observation, organization, problem solving, research, communication, evidence collection and technical reading.",
+        "Level": {
+          "name": "Year 3"
+        },
+        "Tags": ["UC/CSU (D)"],
+        "Prerequisite": [],
+        "Recommendations": "Biology with a C or better, Chemistry or Physics with a C or better, Algebra II with a C or better",
+        "Units": [
+          [
+            { "unit": "Crime Scene Investigation" },
+            { "unit": "Fingerprint Analysis" },
+            { "unit": "DNA Evidence" },
+            { "unit": "Blood Analysis and Patterns" },
+            { "unit": "Toxicology" },
+            { "unit": "Hair and Fiber Evidence" },
+            { "unit": "Ballistics and Trajectories" },
+            { "unit": "Chromatography" },
+            { "unit": "Skeletal Remains" },
+            { "unit": "Tool Mark Analysis" }
+          ]
+        ],
+        "Grading-categories": [
+          { "name": "Major Papers & Projects", "weight": 60 },
+          { "name": "Unit Work", "weight": 40 }
+        ],
+        "Grading-description": [
+          "Grades are based on major papers & projects and unit work (including classwork/homework/reading assessments).",
+          "Late work receives a one letter-grade penalty. More than one late major assignment in a semester will lower the semester grade one full letter grade.",
+          "Students may rewrite a major assignment only once per semester, with teacher approval.",
+          "Extra credit is not offered in this course."
+        ],
+        "Grade-distribution": [],
+        "Contacts": ["lisa.bolton@mvla.net"],
+        "Books": [],
+        "Links": ["A Hands-On Introduction to Forensic Science", "Cracking the Case, 2nd Edition"]
+      },
+      {
+        "Name": "Human Biology",
+        "id": "612",
+        "Description": "Human Biology will explore the traditional life science covered depth study of the human body and its processes. Topics covered in the course include: the nature of science, biochemistry and energetics, and mendelian and molecular genetics. Each of these topics will be body systems (i.e. digestive, circulatory, etc.). An inquiry-based reading, note taking (lectures and book), lab experiments, online discussions.",
+        "Level": {
+          "name": "Year 2"
+        },
+        "Tags": ["UC/CSU (D)"],
+        "Prerequisite": [600, 601],
+        "Units": [
+          [
+            { "unit": "Nature of Science" },
+            { "unit": "Biochemistry and Energetics" },
+            { "unit": "Mendelian and Molecular Genetics" },
+            { "unit": "Skeletal System" },
+            { "unit": "Muscular System" },
+            { "unit": "Circulatory System" },
+            { "unit": "Respiratory System" },
+            { "unit": "Excretory System" },
+            { "unit": "Integumentary System" },
+            { "unit": "Endocrine System" },
+            { "unit": "Reproductive System" },
+            { "unit": "Digestive System" },
+            { "unit": "Lymphatic System" },
+            { "unit": "Nervous System" }
+          ]
+        ],
+        "Grading-categories": [
+          { "name": "Quizzes, Tests and Final (Content Knowledge)", "weight": 60 },
+          { "name": "Classwork and Labs (Writing and Science Skills)", "weight": 40 }
+        ],
+        "Grading-description": [
+          "Students will demonstrate ability to correctly use science equipment, record data, and analyze medical scenarios.",
+          "Assignments include notes, labs with hands-on dissections, medical tests, model building, and microscope use.",
+          "Late work will be accepted if completed by the end of the unit.",
+          "Students can make up quizzes/tests during ACT time for a higher grade."
+        ],
+        "Grade-distribution": [],
+        "Contacts": ["christina.schramm@mvla.net", "michael.rasmussen@mvla.net"],
+        "Books": ["Foundation Edition of Biology by Miller/Levine"],
+        "Links": [""]
+      },
+      {
+        "Name": "Biotechnology",
+        "id": "613",
+        "Description": "A laboratory course emphasizing biology, chemistry and physics concepts in DNA science. Covers DNA/RNA technology, biochemistry, microbiology, molecular biology, bioethics, protein analysis, and laboratory safety. Students develop critical thinking and lab skills used in the biotechnology industry while exploring career opportunities in the field.",
+        "Level": {
+          "name": "Year 3"
+        },
+        "Tags": ["UC/CSU (D)"],
+        "Prerequisite": [603, 604],
+        "Recommendations": "Biology with a C or better, Chemistry or Physics with a C or better, Algebra II with a C or better",
+        "Units": [
+          [
+            { "unit": "History and Tools of Biotechnology" },
+            { "unit": "Microbes and Standard Lab Operating Procedure" },
+            { "unit": "Solutions Preparation, Transcription & Translation (TXTL)" },
+            { "unit": "CRISPR Technology and Applications" },
+            { "unit": "Recombinant DNA and Genetic Engineering" },
+            { "unit": "Model Organisms Research" },
+            { "unit": "Precision Medicine and DNA Analysis" },
+            { "unit": "Proteomics" },
+            { "unit": "Bioethics" }
+          ]
+        ],
+        "Grading-categories": [
+          { "name": "Tests and Quizzes", "weight": 25 },
+          { "name": "Labs", "weight": 35 },
+          { "name": "Assignments", "weight": 30 },
+          { "name": "Final", "weight": 10 }
+        ],
+        "Grading-description": [
+          "Lab work, classwork, homework, tests, quizzes, and projects/presentations contribute to overall grade.",
+          "Lab notebook entries are stamped for completion and graded for accuracy through collections.",
+          "Late work not included in lab notebook accepted for 50% penalty; work from previous units not accepted.",
+          "Students may revise multiple choice and written exam questions for 1/3 of original credit."
+        ],
+        "Grade-distribution": [],
+        "Contacts": ["james.stiltner@mvla.net"],
+        "Books": ["Biotechnology Science for the New Millennium by Ellyn Daugherty"],
+        "Links": []
+      },
+      {
+        "Name": "Agroecology",
+        "id": "614",
+        "Description": "A hands-on course studying sustainable agriculture practices that treat farms and gardens as ecosystems. Students cultivate raised garden beds from seed to harvest while learning irrigation, plant anatomy, composting, soil science, and various propagation techniques through practical application in the classroom garden.",
+        "Level": {
+          "name": "Year 3"
+        },
+        "Tags": ["UC/CSU (D)"],
+        "Prerequisite": [],
+        "Units": [
+          [
+            { "unit": "Animal Husbandry" },
+            { "unit": "Biodiversity in Organic Agriculture" },
+            { "unit": "Composting Theory and Techniques" },
+            { "unit": "Conventional Agriculture Issues" },
+            { "unit": "Drip Irrigation" },
+            { "unit": "Ecology of Soil and Garden" },
+            { "unit": "Frost Protection" },
+            { "unit": "GMOs in Food Supply" },
+            { "unit": "Growing Annuals and Perennials" },
+            { "unit": "Integrated Pest Management" },
+            { "unit": "Plant Anatomy and Physiology" },
+            { "unit": "Plant Classification and Identification" },
+            { "unit": "Plant Reproduction" },
+            { "unit": "Planting Calendars" },
+            { "unit": "Garden Bed Preparation" }
+          ]
+        ],
+        "Grading-categories": [
+          { "name": "Garden Ecosystem", "weight": 30 },
+          { "name": "Classwork", "weight": 30 },
+          { "name": "Class Participation", "weight": 40 }
+        ],
+        "Grading-description": [
+          "Garden Ecosystem includes maintenance of individual plot, weed control, irrigation, pest management, and proper harvesting techniques.",
+          "Classwork includes science notebook write-ups, assessments, and preparation of seed trays and transplants.",
+          "Participation is measured by timeliness, bringing required materials, mature behavior, and daily garden work.",
+          "Late work loses 10% credit per school day past due date; after 5 days, maximum 50% credit possible."
+        ],
+        "Grade-distribution": [],
+        "Contacts": ["jacob.russo@mvla.net", "benjamin.walker@mvla.net", "daniel.rodriguez@mvla.net"],
+        "Books": [],
+        "Links": ["s"]
+      },
+      {
+        "Name": "Advanced Science Investigations (ASI)",
+        "id": "615",
+        "Description": "A capstone course where students develop and research their own scientific questions. Students learn to access primary research sources, conduct literature reviews, develop research proposals, execute independent investigations, and present findings through formal presentations.",
+        "Level": {
+          "name": "Year 4"
+        },
+        "Tags": ["UC/CSU (G)"],
+        "Prerequisite": [],
+        "Recommendations": "This course requires an interview with an ASI teacher before admission. Biology A or Bio Honors B or better; Chemistry A or Chem Honors B or better. Either completion or concurrent enrollment in Physics. If interested in Biology projects it is highly recommended to have or be enrolled in Biotech and/or AP Biology.",
+        "Units": [
+          [
+            { "unit": "Developing Scientific Questions" },
+            { "unit": "Accessing Primary Research Sources" },
+            { "unit": "Literature Review Methodology" },
+            { "unit": "Research Proposal Development" },
+            { "unit": "Independent Research Execution" },
+            { "unit": "Data Collection and Analysis" },
+            { "unit": "Scientific Writing" },
+            { "unit": "Research Presentation Skills" }
+          ]
+        ],
+        "Grading-categories": [
+          { "name": "Research Process", "weight": 40 },
+          { "name": "Research Documentation", "weight": 30 },
+          { "name": "Final Presentation", "weight": 30 }
+        ],
+        "Grading-description": [
+          "Students are evaluated on their ability to develop meaningful scientific questions and execute appropriate research methodologies.",
+          "Documentation of research progress, literature reviews, and data collection are key components of assessment.",
+          "Final presentations demonstrate students' ability to communicate scientific findings effectively.",
+          "This course emphasizes independent work and scientific curiosity."
+        ],
+        "Grade-distribution": [],
+        "Contacts": ["dressen@mvla.net", "johnson@mvla.net"],
+        "Books": [],
+        "Links": []
+      }
+    ],
+    "extras": {} 
+  },
+  "social-studies": {
+    "classes": [
+        {
+          "Name": "Civics",
+          "id": 701,
+          "Description": "Civics is a one-semester class dedicated to investigating the key political issues facing the United States, from the local to the global. We will look at various data in order to better understand how the system of power affects us, with specific focus on our civil and human rights.  We also look at how we, in turn, affect and can either successfully adapt to the system (assimilation) or potentially transform the system (reform or revolution). The course is designed to actively address the goals of all 7 Expected Schoolwide Learning Results (ESLRs).",
+          "Level": {
+            "name": "Year 4"
+          },
+          "Tags": ["UC/CSU (A)", "One semester"],
+          "Prerequisite": [710, 711],
+          "Units": [
+            {
+              "unit": "Intro to Civics and Democracy"
+            },
+            {
+              "unit": "The Legislative Branch"
+            },
+            {
+              "unit": "The Executive Branch"
+            },
+            {
+              "unit": "The Judicial Branch"
+            }
+          ],
+          "Grading-categories": [
+            {
+              "name": "Homework/Classwork",
+              "weight": 30
+            },
+            {
+              "name": "Tests/Quizzes",
+              "weight": 45
+            },
+            {
+              "name": "Projects/Papers",
+              "weight": 25
+            }
+          ],
+          "Grading-description": [
+            "All classwork/homework must be submitted by the end of the unit to be considered for full credit. This will not apply to major projects or assessments which need to be submitted on the due date to be graded.",
+            "Revisions for projects/assessments will be communicated by the teacher, and vary by assignment.",
+            "No separate extra credit assignments are available in this course. Students are expected to complete all assigned work and work to achieve advanced mastery."
+          ],
+          "Grade-distribution": [],
+          "Contacts": [
+            "anna.pugh@mvla.net", 
+            "conor.white@mvla.net", 
+            "ryan.kearney@mvla.net",
+            "andrea.defrancesca@mvla.net"
+          ],
+          "Books": [
+            "Government Alive! Power, Politics, and You"
+          ],
+          "Links": []
+        },
+        {
+          "Name": "Economics",
+          "id": 702,
+          "Description": "Economics is a one semester course for high school seniors.  It will integrate material and skills that students have learned in other courses.  These include basic algebra, research, writing, computers, presentations, and history.  At the end of this course, students will be able to describe the evolution of the US economy over the past 300 years and integrate skills learned to be able to analyze industry activity in the operation of the US economy.",
+          "Level": {
+            "name": "Year 4"
+          },
+          "Tags": ["UC/CSU (G)", "One semester"],
+          "Prerequisite": [710, 711],
+          "Units": [
+            {
+              "unit": "Intro to Economics"
+            },
+            {
+              "unit": "Microeconomics"
+            },
+            {
+              "unit": "Government & Economy"
+            },
+            {
+              "unit": "Trade and Globalization"
+            },
+            {
+              "unit": "Personal Finance"
+            }
+          ],
+          "Projects": [
+            {
+              "name": "Stock Market Investment Project"
+            },
+            {
+              "name": "Spending Tracker Project"
+            },
+            {
+              "name": "Personal Budget Project"
+            },
+            {
+              "name": "Business Plan Project"
+            }
+          ],
+          "Grading-categories": [
+            {
+              "name": "Reading, Application (Homework/Classwork)",
+              "weight": 30
+            },
+            {
+              "name": "Content Knowledge (End of Unit Summative Assessments)",
+              "weight": 45
+            },
+            {
+              "name": "Engagement and Projects (Collaboration/Projects)",
+              "weight": 25
+            }
+          ],
+          "Grading-description": [
+            "All classwork/homework must be submitted by the end of the unit to be considered for full credit. This will not apply to major projects or assessments which need to be submitted on the due date to be graded.",
+            "Revisions for projects/assessments will be communicated by the teacher, and vary by assignment.",
+            "No separate extra credit assignments are available in this course. Students are expected to complete all assigned work and work to achieve advanced mastery."
+          ],
+          "Grade-distribution": [],
+          "Contacts": [
+            "anna.pugh@mvla.net", 
+            "conor.white@mvla.net", 
+            "andrea.defrancesca@mvla.net",
+            "roger.kim@mvla.net"
+          ],
+          "Books": [
+            "Econ Alive! The Power to Choose"
+          ],
+          "Links": []
+        },
+        {
+          "Name": "Economics/Civics SDAIE",
+          "id": 703,
+          "Description": "This course will focus on Civics and Economics with an overview of the nation’s beginnings. Topics include: What it means to be a citizen, foundations of government, US Constitution, Rights and Responsibilities, State and local government, Economic System, goods and services, and finances. Specifically students will be able to focus on building Social Studies Skills including: studying, reading, listening, writing, researching, discussing, interpreting, collaborating with others, problem solving, and presenting, as well as using maps, charts and graphs.",
+          "Level": {
+            "name": "Year 4"
+          },
+          "Tags": ["UC/CSU (A)", "SDAIE"],
+          "Prerequisite": [710, 711],
+          "Units": [
+            {
+              "unit": "Origins of money in the economy"
+            },
+            {
+              "unit": "How money is used in the past and today"
+            },
+            {
+              "unit": "Different forms of economies"
+            },
+            {
+              "unit": "How to create a business"
+            },
+            {
+              "unit": "Origins of Democracy"
+            },
+            {
+              "unit": "Origins of U.S. government"
+            },
+            {
+              "unit": "The Constitution"
+            }
+          ],
+          "Grading-categories": [
+            {
+              "name": "Preparation, Works Habits, and Deadlines",
+              "weight": 10
+            },
+            {
+              "name": "In-class participation",
+              "weight": 10
+            },
+            {
+              "name": "Critical Thinking Assignments",
+              "weight": 50
+            },
+            {
+              "name": "Projects & Tests",
+              "weight": 20
+            },
+            {
+              "name": "Final",
+              "weight": 10
+            }
+          ],
+          "Grading-description": [
+            "It is the student’s responsibility to check Canvas and to speak with their teacher before they return (when appropriate) to arrange any make-up work. Students should make up missed tests within 1 week of the absence.  Other assignments can be turned in until the “final” date at the end of each quarter (about 1 week before quarter ends, to be posted by the teacher), but will lose points in the “Work Habits & Deadlines” category of the gradebook and these cannot be made up. (In other words, students cannot turn in late work after the end of the quarter).",
+            "Students may seek feedback from their teacher before submitting assignments. Students can revise Newsela quizzes, assignments, and tests if they receive a C or lower. The due date is until the “final” date at the end of each quarter (about 1 week before quarter ends). This date is posted in Canvas. Work habits, participation, and the final cannot be revised.",
+            "There is no extra credit for this course. Students should reach out to their teacher and schedule time during office hours or tutorials to get help as needed."
+          ],
+          "Grade-distribution": [],
+          "Contacts": [
+            "candida.diaz@mvla.net", 
+            "katie.kim@mvla.net"
+          ],
+          "Books": [
+            "Civics in Practice"
+          ],
+          "Links": [
+            "newsela.com",
+            "activelylearn.com"
+          ]
+        },
+        {
+          "Name": "Ethnic Studies",
+          "id": 704,
+          "Description": "Ethnic Studies is the interdisciplinary study of race and ethnicity, with an emphasis on the experiences and contributions of people of color in the United States. Students will learn about diverse cultures, historical rooto causes and impact of racism, and ways to challenge racism and discrimination in order to positively transform their communities.",
+          "Level": {
+            "name": "Year 1"
+          },
+          "Tags": ["UC/CSU"],
+          "Prerequisite": [],
+          "Units": [
+            {
+              "unit": "What is Ethnic Studies"
+            },
+            {
+              "unit": "Identity and Narratives"
+            },
+            {
+              "unit": "Historical Roots of Systems of Power"
+            },
+            {
+              "unit": "Immigration and Migration"
+            },
+            {
+              "unit": "Education and Housing"
+            },
+            {
+              "unit": "Justice System"
+            },
+            {
+              "unit": "Social Movements"
+            }
+          ],
+          "Grading-categories": [
+            {
+              "name": "Content Knowledge, Interpretation, and Application",
+              "weight": 25
+            },
+            {
+              "name": "Evidence Based Writing",
+              "weight": 25
+            },
+            {
+              "name": "Academic Conversation",
+              "weight": 25
+            },
+            {
+              "name": "Engagment and Skills Practice",
+              "weight": 25
+            }
+          ],
+          "Grading-description": [
+            "Late assignments may be accepted for reduced credit. Assignments that are submitted after the end of a semester are not accepted for credit.",
+            "Students may revise most academic writing, content knowledge, and academic conversations assessments in an attempt to achieve proficiency. Revision time frame/deadlines will be communicated by the teacher, and vary by assignment."
+          ],
+          "Grade-distribution": [],
+          "Contacts": [
+            "Sarah.carlson@mvla.net", 
+            "marta.heiken@mvla.net", 
+            "mike.messner@mvla.net",
+            "candida.diaz@mvla.net",
+            "margaret.jones@mvla.net",
+            "chris.phipps@mvla.net",
+            "krista.greksouk@mvla.net",
+            "alissa.saylor@mvla.net",
+            "mitchell.shahbazian@mvla.net"
+          ],
+          "Books": [],
+          "Links": []
+        },
+        {
+          "Name": "AP European History",
+          "id": 705,
+          "Description": "The purpose of European History Advanced Placement is to develop historical reasoning and historical disciplinary practices as students examine major developments and historical themes in western society.",
+          "Level": {
+            "name": "Year 2"
+          },
+          "Tags": ["UC/CSU", "AP"],
+          "Prerequisite": [704],
+          "Units": [
+            {
+              "unit": "Renaissance and Exploration"
+            },
+            {
+              "unit": "Age of Reformation"
+            },
+            {
+              "unit": "Absolutism and Consitutionalism"
+            },
+            {
+              "unit": "Scientific, Philosophical and Political Developments"
+            },
+            {
+              "unit": "Conflict, Crisis, and Reaction in the Late 18th Century"
+            },
+            {
+              "unit": "Industrialization and Its Effects"
+            },
+            {
+              "unit": "19th-Century Perspectives and Political Developments"
+            },
+            {
+              "unit": "20th-Century Global Conflicts"
+            },
+            {
+              "unit": "Cold War and Contemporary Europe"
+            }
+          ],
+          "Grading-categories": [
+            {
+              "name": "Short Answer Response",
+              "weight": 20
+            },
+            {
+              "name": "Long Essay Question and Document Baseed Question Essay",
+              "weight": 30
+            },
+            {
+              "name": "Multiple Choice Questions",
+              "weight": 20
+            },
+            {
+              "name": "Historical Knowledge",
+              "weight": 15
+            },
+            {
+              "name": "History Speaking and Reasoning Skills",
+              "weight": 15
+            }
+          ],
+          "Grading-description": [
+            "Late work will be accepted for partial credit. Late work deadlines will be determined by the teacher.",
+            "There are many opportunities to master and receive feedback before summative exams. Test corrections per teacher discretion.",
+            "There is no extra credit in this course."
+          ],
+          "Grade-distribution": [],
+          "Contacts": [
+            "todd.wangsness@mvla.net", 
+            "christa.wemmer@mvla.net"
+          ],
+          "Books": [
+            "Jackson Spielvogel: Western Civilization since 1300"
+          ],
+          "Links": []
+        },
+        {
+          "Name": "AP Human Geography",
+          "id": 706,
+          "Description": "Students will use and think about maps and spatial data, understand and interpret the implications of associations among phenomena in places, recognize and interpret at different scales the relationships among patterns and processes, define regions and evaluate the regionalization process, and characterize and analyze changing interconnections among places.",
+          "Level": {
+            "name": "Year 2"
+          },
+          "Tags": ["UC/CSU", "AP"],
+          "Prerequisite": [704],
+          "Units": [
+            {
+              "unit": "Thinking Geographically"
+            },
+            {
+              "unit": "Cultural Patterns and Processes"
+            },
+            {
+              "unit": "Political Patterns and Processes"
+            },
+            {
+              "unit": "Agriculture and Rural Land Use Patterns and Processes"
+            },
+            {
+              "unit": "Population and Migration Patterns and Processes"
+            },
+            {
+              "unit": "Industrial and Economic Development Patterns and Processes"
+            },
+            {
+              "unit": "Cities and Urban Land-Use Patterns and Processes"
+            }
+          ],
+          "Grading-categories": [
+            {
+              "name": "Content Knowledge (Multiple Choice Exams)",
+              "weight": 30
+            },
+            {
+              "name": "Critical Thinking (FRQ Exams)",
+              "weight": 30
+            },
+            {
+              "name": "Reading & Application (Key Issues Reading Organizers and Online Quizzes)",
+              "weight": 30
+            },
+            {
+              "name": "Engagement (Classwork)",
+              "weight": 10
+            }
+          ],
+          "Grading-description": [
+            "If a student misses a test (Multiple Choice or FRQ), they have one week from the test date to make up the exam, after which the test cannot be made up barring extraordinary circumstances. Students are responsible for contacting and scheduling makeup with the teacher. All classwork is due within TWO weeks of the due date. All Reading Quizzes will stay open for one week from their assigned date before they are closed on AP Classroom.",
+            "Students have an opportunity for a second chance at mastery for unit exams by completing assessment corrections. Correctly revised mistakes will earn 50% credit back.  Corrections must be turned in by the due date announced by the teacher. All tests have corrections besides the Fall and Spring Semester final exams.",
+            "There are no extra credit options. Students should take advantage of test corrections as a way to demonstrate mastery."
+          ],
+          "Grade-distribution": [],
+          "Contacts": [
+            "anna.pugh@mvla.net", 
+            "roger.kim@mvla.net",
+            "kelly.coble@mvla.net"
+          ],
+          "Books": [
+            "Human Geography: A Spatial Perspective AP Edition"
+          ],
+          "Links": []
+        },
+        {
+          "Name": "AP Microeconomics",
+          "id": 707,
+          "Description": "Microeconomics AP satisfies the California State Standards requirement for a course in Economics as a requisite for high school graduation. In addition, the course prepares students to take and pass the College Board Advanced Placement examination in MicroEconomics and receive college credit for their work.",
+          "Level": {
+            "name": "Year 4"
+          },
+          "Tags": ["UC/CSU", "AP"],
+          "Prerequisite": [710, 711],
+          "Units": [
+            {
+              "unit": "General Overview of Market Economies"
+            },
+            {
+              "unit": "Supply and Demand"
+            },
+            {
+              "unit": "Consumer Behavior and Utility Maximization"
+            },
+            {
+              "unit": "Costs of Production"
+            },
+            {
+              "unit": "Alternative Market Models"
+            },
+            {
+              "unit": "Factor Markets"
+            },
+            {
+              "unit": "Externalities, Market Failures and Public Goods"
+            }
+          ],
+          "Grading-categories": [
+            {
+              "name": "Multiple Choice Tests",
+              "weight": 40
+            },
+            {
+              "name": "Free Response Questions",
+              "weight": 25
+            },
+            {
+              "name": "Prep/Practice",
+              "weight": 15
+            },
+            {
+              "name": "Collaboration",
+              "weight": 10
+            },
+            {
+              "name": "Final Project",
+              "weight": 10
+            }
+          ],
+          "Grading-description": [
+            "Late work will be accepted until the end of the unit for no penalty.",
+            "Revisions can be made for MCQ and FRQ unit tests. All revisions must be submitted by the date of the next unit test. FRQ's can be revised if a grade of C or below is earned. MCQ's can be revised with a grade of B or below. Revisions must be completed in the classroom. Revisions will be voided if testing material is removed from the classroom. Note guide must be completed for revisions.",
+            "There are no extra credit options."
+          ],
+          "Grade-distribution": [],
+          "Contacts": [
+            "andrea.defrancesca@mvla.net", 
+            "chelsea.doiguchi@mvla.net"
+          ],
+          "Books": [
+            "Economics by McConnell Brue"
+          ],
+          "Links": []
+        },
+        {
+          "Name": "Psychology",
+          "id": 708,
+          "Description": "Psychology is a one semester course that seeks to explain why people behave the way they do.",
+          "Level": {
+            "name": "Year 2"
+          },
+          "Tags": ["UC/CSU", "One semester"],
+          "Prerequisite": [],
+          "Units": [
+            {
+              "unit": "Research issues and research methodology"
+            },
+            {
+              "unit": "Biological bases for behavior"
+            },
+            {
+              "unit": "Learning, memory, and cognitive development"
+            },
+            {
+              "unit": "Intelligence and testing"
+            },
+            {
+              "unit": "Intelligence and testing"
+            },
+            {
+              "unit": "Social Psychology"
+            },
+            {
+              "unit": "Personality and development"
+            }
+          ],
+          "Grading-categories": [
+            {
+              "name": "Tests/Quizzes",
+              "weight": 25
+            },
+            {
+              "name": "Projects/Papers",
+              "weight": 15
+            },
+            {
+              "name": "Classwork/Homework",
+              "weight": 60
+            }
+          ],
+          "Grading-description": [
+            "Work is late at the end of the unit. After that, a nominal penalty will be assessed, which amounts to 10 percent. The end of the quarter/semester deadline will be the last day in which work for quarter/semester is accepted.",
+            "Revisions may be done on any project or paper, without penalty.",
+            "Extra credit is not offered."
+          ],
+          "Grade-distribution": [],
+          "Contacts": [
+            "Sarah.Carlson@mvla.net"
+          ],
+          "Books": [
+            "Psychology - An Introduction, Morris and Maisto, 11th edition"
+          ],
+          "Links": []
+        },
+        {
+          "Name": "AP Psychology",
+          "id": 709,
+          "Description": "The purpose of the AP course in Psychology is to introduce the systematic and scientific study of the behavior and mental processes of human beings and other animals. Included is a consideration of the psychological facts, principles, and phenomena associated with each of the major subfields within psychology. Students also learn about the ethics and methods psychologists use in their science and practice. This course aims to provide a learning experience equivalent to that obtained in most college introductory psychology courses.",
+          "Level": {
+            "name": "Year 3"
+          },
+          "Tags": ["UC/CSU (G)", "AP"],
+          "Prerequisite": [],
+          "Recommendations": "A- or better in previous social studies classes.",
+          "Units": [
+            {
+              "unit": "Science Practices"
+            },
+            {
+              "unit": "Biological Bases of Behavior"
+            },
+            {
+              "unit": "Cognition"
+            },
+            {
+              "unit": "Development and Learning"
+            },
+            {
+              "unit": "Social Psychology and Personality"
+            },
+            {
+              "unit": "Mental and Physical Health"
+            }
+          ],
+          "Grading-categories": [
+            {
+              "name": "Multiple Choice Tests",
+              "weight": 50
+            },
+            {
+              "name": "Critical Thinking (FRQs)",
+              "weight": 25
+            },
+            {
+              "name": "Projects",
+              "weight": 10
+            },
+            {
+              "name": "Homework, Classwork, Reading Quizzes",
+              "weight": 15
+            }
+          ],
+          "Homework-description": [],
+          "Grading-description": [
+            "Students have one week from the test date to make up an exam, after which the test cannot be made up.",
+            "Late classwork will not be accepted after the end of the unit.",
+            "Students can revise unit exams for 50% credit back by completing assessment corrections. All tests have corrections besides final exams.",
+            "There are no extra credit options."
+          ],
+          "Grade-distribution": [],
+          "Contacts": [
+            "chelsea.doiguchi@mvla.net", 
+            "katherine.orozco@mvla.net",
+            "kelly.coble@mvla.net"
+          ],
+          "Books": [
+            "Psychology for the AP Course Third Edition, David Myers"
+          ],
+          "Links": []
+        },
+        {
+          "Name": "United States History",
+          "id": 710,
+          "Description": "Students will learn the history of the United States, with a focus on the Twentieth Century, and the development of US ideals of rights, opportunity, liberty, equality, democracy, and diversity.",
+          "Level": {
+            "name": "Year 3"
+          },
+          "Tags": ["UC/CSU (A)"],
+          "Prerequisite": [705, 706, 712],
+          "Units": [
+            {
+              "unit": "Reconstruction and expansion"
+            },
+            {
+              "unit": "Industrialization, urbanization, immigration, and Progressive reform"
+            },
+            {
+              "unit": "The rise of the United States as a world power"
+            },
+            {
+              "unit": "The complexities of the 1920s"
+            },
+            {
+              "unit": "The Great Depression and the New Deal"
+            },
+            {
+              "unit": "The US in the post-World War II World"
+            },
+            {
+              "unit": "Movements for equality"
+            },
+            {
+              "unit": "Contemporary US society"
+            }
+          ],
+          "Grading-categories": [
+            {
+              "name": "Preparation/Practice",
+              "weight": 25
+            },
+            {
+              "name": "Collaboration",
+              "weight": 25
+            },
+            {
+              "name": "Critical Thinking/Writing",
+              "weight": 25
+            },
+            {
+              "name": "Reading/Historical Knowledge",
+              "weight": 25
+            }
+          ],
+          "Grading-description": [
+            "All work must be submitted by the end of the unit to be considered for credit. Major assessments/projects will be marked down if not submitted by the assigned due date.",
+            "Test revisions for assessments will be offered for most units. Revision time frame/deadlines will be communicated by the teacher, and vary by assignment.",
+            "No separate extra credit assignments are available in this course. Students are expected to complete all assigned work and work to achieve mastery."
+          ],
+          "Grade-distribution": [],
+          "Contacts": [
+            "stefaan.lodge@mvla.net", 
+            "katherine.orozco@mvla.net",
+            "todd.wangsness@mvla.net",
+            "Christa.wemmer@mvla.net"
+          ],
+          "Books": [
+            "History Alive!"
+          ],
+          "Links": []
+        },
+        {
+          "Name": "US SDAIE",
+          "id": 711,
+          "Description": "Students will learn the history of the United States, with a focus on the Twentieth Century, and the development of US ideals of rights, opportunity, liberty, equality, democracy, and diversity.",
+          "Level": {
+            "name": "Year 3"
+          },
+          "Tags": ["UC/CSU"],
+          "Prerequisite": [705, 706, 712],
+          "Units": [
+            {
+              "unit": "Reconstruction and expansion"
+            },
+            {
+              "unit": "Industrialization, urbanization, immigration, and Progressive reform"
+            },
+            {
+              "unit": "The rise of the United States as a world power"
+            },
+            {
+              "unit": "The complexities of the 1920s"
+            },
+            {
+              "unit": "The Great Depression and the New Deal"
+            },
+            {
+              "unit": "US participation in World War II"
+            },
+            {
+              "unit": "The 1950s"
+            },
+            {
+              "unit": "The 1960s, 1970s, and Vietnam"
+            }
+          ],
+          "Grading-categories": [
+            {
+              "name": "Historical Knoledge, Interpretation, and Application",
+              "weight": 25
+            },
+            {
+              "name": "Evidence Based Writing",
+              "weight": 25
+            },
+            {
+              "name": "Academic Conversations",
+              "weight": 25
+            },
+            {
+              "name": "Engagement and Skills Practice",
+              "weight": 25
+            }
+          ],
+          "Grading-description": [
+            "All work must be submitted by the end of the unit to be considered for credit. Major assessments/projects will be marked down if not submitted by the assigned due date.",
+            "Test revisions for assessments will be offered for most units. Revision time frame/deadlines will be communicated by the teacher, and vary by assignment.",
+            "No separate extra credit assignments are available in this course. Students are expected to complete all assigned work and work to achieve mastery."
+          ],
+          "Grade-distribution": [],
+          "Contacts": [
+            "katherine.orozco@mvla.net"
+          ],
+          "Books": [],
+          "Links": []
+        },
+        {
+          "Name": "World History",
+          "id": 712,
+          "Description": "The content of this course will focus on the ideas of the Enlightenment and the causes and impacts of various democratic revolutions, the rise of industrialization and imperial powers, the responses and resistance to imperial conquest, and the rise of the new world order following the 20th century world wars. Finally, the course covers how the modern period was defined by global conflict and cooperation, economic growth and collapse, and humanity's constant pursuit of establishing human rights.",
+          "Level": {
+            "name": "Year 2"
+          },
+          "Tags": ["UC/CSU"],
+          "Prerequisite": [704],
+          "Units": [],
+          "Grading-categories": [
+            {
+              "name": "Historical Knowledge, Interpretation, and Application",
+              "weight": 25
+            },
+            {
+              "name": "Evidence Based Writing",
+              "weight": 25
+            },
+            {
+              "name": "Academic Conversations",
+              "weight": 25
+            },
+            {
+              "name": "Engagement and Skills Practice",
+              "weight": 25
+            }
+          ],
+          "Grading-description": [
+            "Unexcused absences will result in no credit for the assignment per the District policy. Full day excused absences need to be addressed with the teacher upon the return of the student; please note that instructors are not obligated to offer more than the number of days missed for the make-up period. Please contact the teacher to request extensions ahead of an assignment’s due date. Late assignments may be accepted in Writing, Historical Knowledge and Academic Conversations categories. Engagement category assignments that are submitted after the end of a unit are not generally accepted for credit.",
+            "Because making and correcting mistakes is part of any learning process, students are encouraged to take advantage of revision opportunities. Students may revise most academic writing and historical thinking assessments in an attempt to achieve proficiency. Revision time frame/deadlines will be communicated by the teacher, and vary by assignment.",
+            "We do not offer extra credit."
+          ],
+          "Grade-distribution": [],
+          "Contacts": [
+            "chris.phipps@mvla.net", 
+            "marta.heiken@mvla.net"
+          ],
+          "Books": [
+            "World History The Modern World"
+          ],
+          "Links": []
+        }
+      ],
+      "extras": {}
+  },
+  "ted": {
+    "classes": [
+      {
+        "Name": "ADEN",
+        "id": 1001,
+        "Description": "ADEN builds on skills learned in AP Computer Science. During semester one, students will explore advanced data structures such as Queues, Trees, Maps, Hashes and Graphs, applying them to solve complex problemsm, evaluating performance tradeoffs for different implementations. Students will collborate with others to develop experience with formal documentation, testing, and revision control. In semester two, students will use C and Assembly language to program a robot to autonomously navigate through several challenges. They will interface with real hardware in embedded systems, including I/O, analog sensors, motors, timers, interrupts and Bluetooth networks.",
+        "Level": {
+          "name": "Level 3"
+        },
+        "Tags": ["UC/CSU (G)"],
+        "Prerequisite": [1002],
+        "Recommendations": "AP Computer Science or Teacher Approval.",
+        "Units": [
+          { "unit": "Advanced Data Structures: Stacks and Queues, Trees and Tries, Sets and Map, Hashing and Graphs" },
+          { "unit": "Develop collaborative programming skills, including the use of Software Change Management and regression testing. " },
+          { "unit": "Interface with real hardware in embedded systems, including I/O, analog sensors, motors, timers,  interrupts and Bluetooth networks." }
+        ],
+        "Grading-categories": [],
+        "Grading-description": [
+          "Quizzes cannot be retaken or revised.",
+          "Late homework that is late by one to three days may be submitted for 80% credit. Homework that is more than  three days late may be submitted for 60% credit. Missing work will be given a 0%."
+        ],
+        "Grade-distribution": [],
+        "Contacts": ["scott.murray@mvla.net"],
+        "Books": ["Introduction to Programming Using Java, 9.0 JavaFX Edition"],
+        "Links": []
+      },
+      {
+        "Name": "AP Computer Science A",
+        "id": 1002,
+        "Description": " AP Computer Science teaches similar topics as those in an introductory college course. It is not a substitute for the usual college-preparatory mathematics courses. Students will skills such as: writing, running, debugging computer programs, developing and using algorithms and data structures, coding fluently in an object-oriented paradigm, and more. This course is taught in the programming language Java.",
+        "Level": {
+          "name": "Level 2"
+        },
+        "Tags": ["UC/CSU (G)", "AP"],
+        "Prerequisite": [1013],
+        "Recommendations": "Algebra II with concurrent enrollment in Trigonometry",
+        "Units": [
+          [
+            { "unit": "Variables, operators, and expressions. Example project: Simple chatbot." },
+            { "unit": "Control (loops/branches). Example project: Game of hangman that continues until someone wins." },
+            { "unit": "Subroutines. Example project: Mosaic that uses functions to avoid repeating code." },
+            { "unit": "Object-oriented programming. Example project: Model different aspects of dice-based game using objects and inheritance." },
+            { "unit": "Semester 1 Project: Text-based game using object-oriented principles." },
+            { "unit": "Graphical User Interfaces. Example project: Simple submarine game, controllable by keyboard." },
+            { "unit": "Algorithms (searching/sorting) and their complexities. Example project: Code different sorting algorithms, compare using Big-O notation." },
+            { "unit": "Recursion and linked data structures. Example project: Implement various operations of a linked list." },
+            { "unit": "Semester 2 Project: Graphical game using good design principles." },
+            { "unit": "Interface with real hardware in embedded systems, including I/O, analog sensors, motors, timers, interrupts, and Bluetooth networks." }
+          ]
+        ],
+        "Grading-categories": [
+          { "name": "Homework/Classwork", "weight": 15 },
+          { "name": "Quizzes/Tests/Summative Programming Assignments", "weight": 65 },
+          { "name": "Final", "weight": 20 }
+        ],
+        "Grading-description": [
+          "Late homework that is late by one day may be submitted for 75% credit. Homework that is more than one day late may be submitted for 50% credit, up until the unit test for the current chapter. Missing work will be given a 0%.",
+          "Quizzes cannot be retaken or revised.",
+          "Students with a score below 75% will be allowed one retake for that chapter test after seeing the teacher and performing remediation. The retake must be completed before the next chapter assessment. The maximum score allowed for retakes will be 75%."
+        ],
+        "Grade-distribution": [],
+        "Contacts": ["scott.murray@mvla.net", "brent.smith@mvla.net"],
+        "Books": ["Introduction to Programming Using Java, Seventh Edition by David Eck"],
+        "Links": ["http://math.hws.edu/javanotes/"]
+      },
+      {
+        "Name": "Culinary Arts",
+        "id": 1003,
+        "Description": "Culinary prepares students for food production, preparation and service employment. Basic service skills like sanitation, safety, cooking, baking, catering, and nutrition are also taught. Instruction includes both demonstration and textbook work. Students will have the opportunity to cook both individually and in groups. The full Serve-Safe curriculum and certification is a major emphasis of this course. During semester two, students are counseled to participate in “on the job training.” On the job training may be completed at fast food restaurants, coffee shop operations, on-site food service, or in independent living retirement centers. This may be followed by actual employment at these sights.",
+        "Level": {
+          "name": "Level 1"
+        },
+        "Tags": [],
+        "Prerequisite": [],
+        "Recommendations": "Culinary I or instructor approval.",
+        "Units": [
+          [
+            { "unit": "Dough" },
+            { "unit": "Eggs, Foams and Emulsions" },
+            { "unit": "Pasta" },
+            { "unit": "Rice" },
+            { "unit": "Frying" },
+            { "unit": "Soups & Stews" },
+            { "unit": "Meat" }
+          ]
+        ],
+        "Grading-categories": [
+          { "name": "Lab work and participation", "weight": 50 },
+          { "name": "Quizzes", "weight": 40 },
+          { "name": "Final project", "weight": 10 }
+        ],
+        "Grading-description": [
+          "Very little homework is assigned in this class. ",
+          "There are no opportunities for revision, though grades are often based on a student’s reflection about skills acquired and methods for improving a particular recipe."
+        ],
+        "Grade-distribution": [],
+        "Contacts": ["Patty.Fambrini@mvla.net ","Kalinda.Price@mvla.net","Michael.Moul@mvla.net"],
+        "Books": ["Food Lover’s Companion by Sharon Tyler Herbst"],
+        "Links": []
+      },
+      {
+        "Name": "Culinary Arts II",
+        "id": 1004,
+        "Description": "Students in Culinary II will put what they learned in Culinary I into practice by catering various on-campus events for real paying customers. The course provides a theoretical and practical introduction to safety and sanitation, fundamental cooking techniques, baking, purchasing foods, cultural cuisine, and restaurant-specific skills. The curriculum includes HACCP and ServSafe methodologies, knife skills, emulsions, poaching, steaming, culinary math, and literacy. Students will also engage in current cuisine trends such as sustainable and locally grown foods, recycling, and composting. This production-based course cycles through various aspects of a professional chef’s work, including kitchen porter duty, baking, catering, and planning and executing meals for staff. The course covers all CTE Industry Standards for the Hospitality, Tourism, and Recreation Sector.",
+        "Level": {
+            "name": "Level 2"
+        },
+        "Tags": [],
+        "Prerequisite": [1003],
+        "Units": [
+            [
+                { "unit": "Safety and Sanitation" },
+                { "unit": "Basic Cooking Techniques" },
+                { "unit": "Knife Skills" },
+                { "unit": "Baking and Pastry" },
+                { "unit": "Cultural Cuisine" },
+                { "unit": "Culinary Math and Science" },
+                { "unit": "Restaurant Operations" }
+            ]
+        ],
+        "Grading-categories": [
+            { "name": "Catering Projects", "weight": 60 },
+            { "name": "Class Participation", "weight": 40 }
+        ],
+        "Grading-description": [
+            "Very little homework is assigned in this class.",
+            "Many outside-of-class opportunities are available, including catering events through the Culinary Club.",
+            "Students are encouraged to cook at home to reinforce skills learned in class."
+        ],
+        "Grade-distribution": [
+        ],
+        "Contacts": ["Michael.Moul@mvla.net"],
+        "Books": [
+            "Food Lover’s Companion by Sharon Tyler Herbst",
+            "Various texts published by America’s Test Kitchen"
+        ],
+        "Links": []
+    },
+    {
+      "Name": "Design and Fabrication",
+      "id": 1005,
+      "Description": "This course introduces students to computer-aided design (CAD), computer-aided machining (CAM), and modern woodworking and metalworking practices. Students will use 2D and 3D modeling software, such as Adobe Illustrator and Fusion 360, and complete projects utilizing 3D printers, laser cutters, and various shop tools. The course emphasizes teamwork, problem-solving, and practical application of design principles.",
+      "Level": {
+          "name": "Level 1"
+      },
+      "Tags": [],
+      "Prerequisite": [],
+      "Units": [
+          [
+              { "unit": "Product Design and Development" },
+              { "unit": "Research and Ideation Techniques" },
+              { "unit": "Prototyping and Evaluation" },
+              { "unit": "Business and Entrepreneurship" },
+              { "unit": "Presentation and Documentation" }
+          ]
+      ],
+      "Grading-categories": [
+          { "name": "Productivity and In-Class Learning", "weight": 20 },
+          { "name": "Assignments", "weight": 20 },
+          { "name": "Reporting and Recording Progress", "weight": 15 },
+          { "name": "Safety Quizzes and Procedures", "weight": 10 },
+          { "name": "Projects", "weight": 35 }
+      ],
+      "Grading-description": [
+          "Assignments and projects are primarily completed during class, with optional work outside of class.",
+          "Late assignments are accepted for half credit.",
+          "Projects must be revised until the due date, but no revisions are allowed after submission."
+      ],
+      "Grade-distribution": [],
+      "Contacts": ["adam.anderson@mvla.net"],
+      "Books": [],
+      "Links": []
+    },
+    {
+      "Name": "Design and Prototyping",
+      "id": 1006,
+      "Description": "This course introduces students to computer-aided design (CAD) and computer-aided machining (CAM). Students will use 2D and 3D modeling software, such as Adobe Illustrator and Fusion 360, and complete projects utilizing 3D printers, laser cutters, and CNC router systems. The course emphasizes teamwork, problem-solving, and practical application of design principles.",
+      "Level": {
+          "name": "Level 1"
+      },
+      "Tags": [],
+      "Prerequisite": [],
+      "Units": [
+          [
+              { "unit": "3D CAD and Printing" },
+              { "unit": "2D CAD and Laser Cutting" },
+              { "unit": "Design Thinking Projects" },
+              { "unit": "Documentation & Communication" },
+              { "unit": "Career Exploration" }
+          ]
+      ],
+      "Grading-categories": [
+          { "name": "Productivity and In-Class Work", "weight": 25 },
+          { "name": "Skill Building Assignments", "weight": 10 },
+          { "name": "Documentation", "weight": 15 },
+          { "name": "Projects", "weight": 50 }
+      ],
+      "Grading-description": [
+          "Assignments and projects are primarily completed during class, with optional work outside of class.",
+          "Late assignments are accepted for half credit.",
+          "Projects must be revised until the due date, but no revisions are allowed after submission."
+      ],
+      "Grade-distribution": [],
+      "Contacts": ["adam.anderson@mvla.net", "sarah.alvarado@mvla.net"],
+      "Books": [],
+      "Links": []
+    },
+    {
+      "Name": "Journalism I",
+      "id": 1007,
+      "Description": "Journalism One introduces students to the core media literacy skills required to become critical consumers and active creators of media. Students will analyze news sources, conduct journalistic research, and produce text and non-text media, including articles, podcasts, and video packages. The course covers press law, data reporting, and ethical journalism principles.",
+      "Level": {
+          "name": "Level 1"
+      },
+      "Tags": [],
+      "Prerequisite": [],
+      "Units": [
+          [
+              { "unit": "Reading the News" },
+              { "unit": "Writing Journalistically" },
+              { "unit": "Video Production" },
+              { "unit": "Reporting the News" },
+              { "unit": "Advanced Reporting Techniques" },
+              { "unit": "Legal and Ethical Issues/Career Applications" },
+              { "unit": "Radical Writing" }
+          ]
+      ],
+      "Grading-categories": [
+          { "name": "Major Assignments", "weight": 75 },
+          { "name": "Reading the 'Paper'", "weight": 15 },
+          { "name": "Weekly/Classwork Assignments", "weight": 10 }
+      ],
+      "Grading-description": [
+          "Assignments must be submitted on time; late work is marked down 10%.",
+          "Revisions are allowed for major assignments after meeting with the instructor.",
+          "No extra credit is available."
+      ],
+      "Grade-distribution": [
+      ],
+      "Contacts": ["jodi.hwang@mvla.net"],
+      "Books": [""],
+      "Links": [""]
+    },
+    {
+      "Name": "Talon / Journalism II",
+      "id": 1008,
+      "Description": "Journalism II students engage in journalistic methods, principles, and ethics while contributing to the production of The Talon. They analyze media, conduct interviews, write articles, take photographs, edit, and manage newspaper operations. The course emphasizes the role of the press in a democratic society and fosters responsibility to peers and the broader community.",
+      "Level": {
+          "name": "Level 2"
+      },
+      "Tags": [],
+      "Prerequisite": [1007],
+      "Units": [
+          [
+              { "unit": "Reporting and Photographing Breaking Stories" },
+              { "unit": "Writing to Deadline" },
+              { "unit": "Managing Source Relationships" },
+              { "unit": "Editing and Peer Review" },
+              { "unit": "Managing Deadlines" },
+              { "unit": "Writing Editorials" },
+              { "unit": "Print Layout and Design" },
+              { "unit": "Video Editing for Online Publication" }
+          ]
+      ],
+      "Grading-categories": [
+          { "name": "Portfolio Reflections", "weight": 100 }
+      ],
+      "Grading-description": [
+          "Grades are based on teacher assessment of students’ portfolio reflections at the end of each grading period.",
+          "Late work is heavily penalized, and missing deadlines may result in dismissal from the class.",
+          "There are no opportunities for revision.",
+          "No extra credit is available."
+      ],
+      "Grade-distribution": [
+      ],
+      "Contacts": ["michael.moul@mvla.net"],
+      "Books": [""],
+      "Links": [""]
+    },
+    {
+      "Name": "Yearbook",
+      "id": 1009,
+      "Description": "Students design, create, build, and publish the annual Los Altos High School Yearbook. They develop proficiency in graphic design, layout, photography, journalism, and marketing while working collaboratively to meet publishing deadlines.",
+      "Level": {
+          "name": "Level 2"
+      },
+      "Tags": ["UC/CSU (F)"],
+      "Prerequisite": [1007],
+      "Units": [
+          [
+              { "unit": "Yearbook Foundations" },
+              { "unit": "Photography and Image Editing" },
+              { "unit": "Content Gathering and Storytelling" },
+              { "unit": "Design and Layout" },
+              { "unit": "Production, Marketing, and Distribution" },
+              { "unit": "Yearbook Showcase and Reflection" }
+          ]
+      ],
+      "Grading-categories": [
+          { "name": "Production/Deadlines", "weight": 60 },
+          { "name": "Employability", "weight": 20 },
+          { "name": "Homework/Classwork/Quizzes", "weight": 20 }
+      ],
+      "Grading-description": [
+          "Grades are based on project completion, meeting deadlines, and demonstrating skills in photography, writing, and design.",
+          "Late work results in significant penalties, with spreads receiving half credit if late and no credit if not completed within two additional class periods.",
+          "No extra credit is available."
+      ],
+      "Grade-distribution": [],
+      "Contacts": ["jodi.hwang@mvla.net"],
+      "Books": [""],
+      "Links": [""]
+    },
+    {
+      "Name": "Engineering I",
+      "id": 1010,
+      "Description": "Students will dig deep into the engineering design process, applying math, science, and engineering standards to hands-on projects. They will use Fusion 360 for 3D modeling and rapid prototyping equipment like 3D printers and laser cutters. Students will maintain a digital design portfolio and a personal notebook.",
+      "Level": {
+        "name": "Level 1"
+      },
+      "Tags": ["UC/CSU (G)"],
+      "Prerequisite": [],
+      "Units": [
+        [
+          { "unit": "Design Fundamentals" },
+          { "unit": "Solid Modeling" },
+          { "unit": "Structure and Forces" },
+          { "unit": "Assemblies" },
+          { "unit": "Design Project" }
+        ]
+      ],
+      "Grading-categories": [
+        { "name": "Classwork", "weight": 30 },
+        { "name": "Projects", "weight": 45 },
+        { "name": "Portfolio", "weight": 10 },
+        { "name": "Professionalism", "weight": 15 }
+      ],
+      "Grading-description": [
+        "Late assignments do not receive full credit unless due to an excused absence.",
+        "Extra credit is not available."
+      ],
+      "Grade-distribution": [],
+      "Contacts": ["joseph.manildi@mvla.net"],
+      "Books": [],
+      "Links": [""]
+  },
+  {
+      "Name": "Engineering II",
+      "id": 1011,
+      "Description": "Students build on their computer modeling skills with Fusion360 to design mechanical systems. They explore applied physics concepts like mechanical advantage and torque, and use motors and robotics electronics to power motion. Students also apply statistical analysis to improve designs and maintain a digital portfolio.",
+      "Level": {
+          "name": "Level 2"
+      },
+      "Tags": ["UC/CSU (D)"],
+      "Prerequisite": [1010],
+      "Recommendations": "B- or above in Geometry. This course relies heavily on skills developed in Engineering I",
+      "Units": [
+          [
+              { "unit": "Motion Systems" },
+              { "unit": "Powering Motion" },
+              { "unit": "Testing Using Data" },
+              { "unit": "Control Systems" }
+          ]
+      ],
+      "Grading-categories": [
+          { "name": "Classwork", "weight": 30 },
+          { "name": "Projects", "weight": 45 },
+          { "name": "Portfolio", "weight": 10 },
+          { "name": "Professionalism", "weight": 15 }
+      ],
+      "Grading-description": [
+          "Late assignments do not receive full credit unless due to an excused absence.",
+          "Extra credit is not available."
+      ],
+      "Grade-distribution": [],
+      "Contacts": ["stephen.hine@mvla.net"],
+      "Books": [],
+      "Links": [""]
+  },
+  {
+    "Name": "Innovative Design Capstone",
+    "id": 1012,
+    "Description": "Students work collaboratively to conceive, design, and develop a product that solves a problem for a specified end user. They document their progress using a design process and maintain a digital portfolio. The course emphasizes interpersonal skills and culminates in a final presentation and design review.",
+    "Level": {
+      "name": "Level 3"
+    },
+    "Tags": ["UC/CSU (G)"],
+    "Prerequisite": [],
+    "Recommendations": "",
+    "Units": [
+      [
+        { "unit": "Problem Identification" },
+        { "unit": "Research and Brainstorming" },
+        { "unit": "Decision Matrix" },
+        { "unit": "Prototype Construction" },
+        { "unit": "Testing and Evaluation" },
+        { "unit": "Final Presentation" }
+      ]
+    ],
+    "Grading-categories": [
+      { "name": "Group Project Development", "weight": 40 },
+      { "name": "Individual Progress", "weight": 20 },
+      { "name": "Assigned Readings", "weight": 20 },
+      { "name": "Design Review Presentations", "weight": 20 }
+    ],
+    "Grading-description": [
+      "Grades are based on group project development, individual progress documentation, assigned readings, and design review presentations.",
+      "Revisions are expected as part of the design process.",
+      "Extra credit is not available."
+    ],
+    "Grade-distribution": [],
+    "Contacts": ["teresa.dunlap@mvla.net"],
+    "Books": [],
+    "Links": [""]
+  },
+  {
+      "Name": "Intro to Computer Programming",
+      "id": 1013,
+      "Description": "Students gain skills in computer programming using SNAP and Java. They learn critical thinking, logic, and problem-solving skills, and explore concepts like variables, functions, arrays, and object-oriented programming. The course prepares students for AP Computer Science.",
+      "Level": {
+          "name": "Level 1"
+      },
+      "Tags": ["UC/CSU (G)"],
+      "Prerequisite": [],
+      "Units": [
+          [
+              { "unit": "Variables and Functions" },
+              { "unit": "1D and 2D Arrays" },
+              { "unit": "Object-Oriented Programming" },
+              { "unit": "Algorithms" }
+          ]
+      ],
+      "Grading-categories": [
+          { "name": "Tests", "weight": 30 },
+          { "name": "Quizzes", "weight": 20 },
+          { "name": "Homework/Classwork/Projects", "weight": 40 },
+          { "name": "Final", "weight": 10 }
+      ],
+      "Grading-description": [
+          "Late assignments receive half credit if turned in within one week.",
+          "Extra credit is available on certain assignments."
+      ],
+      "Grade-distribution": [],
+      "Contacts": ["jeanne.yu@mvla.net"],
+      "Books": ["Blown to Bits by Abelson, Leeden, Lewis, Seltzer"],
+      "Links": [""]
+    },
+    {
+      "Name": "Robotics I",
+      "id": 1014,
+      "Description": "Students engage in engineering disciplines like 3D modeling, manufacturing, machining, programming, and automation. They work in groups to design and build a small robot, learning core robotics concepts. The course supports the FIRST Robotics Team 114 Eaglestrike.",
+      "Level": {
+          "name": "Level 1"
+      },
+      "Tags": ["UC/CSU (G)"],
+      "Prerequisite": [],
+      "Units": [
+          [
+              { "unit": "Gearbox Prototyping" },
+              { "unit": "Machine Shop Safety" },
+              { "unit": "Minibot Design" },
+              { "unit": "Robot Electronics" },
+              { "unit": "Control Systems" },
+              { "unit": "Mechanism Design" }
+          ]
+      ],
+      "Grading-categories": [
+          { "name": "Classwork", "weight": 30 },
+          { "name": "Projects", "weight": 45 },
+          { "name": "Portfolio", "weight": 10 },
+          { "name": "Professionalism", "weight": 15 }
+      ],
+      "Grading-description": [
+          "Late assignments do not receive full credit unless due to an excused absence.",
+          "Extra credit is not available."
+      ],
+      "Grade-distribution": [],
+      "Contacts": ["stephen.hine@mvla.net"],
+      "Books": [],
+      "Links": [""]
+    },
+    {
+      "Name": "Robotics II",
+      "id": 1015,
+      "Description": "This second-year course focuses on advanced robotics skills, including computer-aided design, manufacturing, programming, and assembly. Students design, build, and code a robot to compete in FIRST Robotics competitions. The course is part of the official FIRST Robotics Team 114 Eaglestrike.",
+      "Level": {
+        "name": "Level 2"
+      },
+      "Tags": ["UC/CSU (G)"],
+      "Prerequisite": [1014],
+      "Units": [
+          [
+              { "unit": "Off-Season Robot Design" },
+              { "unit": "Prototyping Mechanisms" },
+              { "unit": "Competition Robot Design" }
+          ]
+      ],
+      "Grading-categories": [
+          { "name": "Projects", "weight": 45 },
+          { "name": "Team Role", "weight": 30 },
+          { "name": "Portfolio", "weight": 10 },
+          { "name": "Professionalism", "weight": 15 }
+      ],
+      "Grading-description": [
+          "Late assignments do not receive full credit unless due to an excused absence.",
+          "Extra credit is not available."
+      ],
+      "Grade-distribution": [],
+      "Contacts": ["stephen.hine@mvla.net"],
+      "Books": [],
+      "Links": [""]
+    }
+  ],
+    "extras": {}
+  },
+  "visual-arts": {
+    "classes": [
+      {
+        "Name": "Drawing I",
+        "id": 901,
+        "Description": "Drawing I introduces students to the fundamentals of drawing. There will be lectures, demonstrations, studio work, student group work, and individual oral and written critiques/presentations. Some project ideas include still-life studies, portraits, landscapes, and human figures in both realistic and abstract manner.",
+        "Level": {
+          "name": "Year 1"
+        },
+        "Tags": ["UC/CSU (F)"],
+        "Prerequisite": [],
+        "Units": [
+          { "unit": "Elements of Art & Principles of Design" },
+          { "unit": "Contour Line, Negative Space, Gesture Drawing" },
+          { "unit": "Still Life Drawing" },
+          { "unit": "Landscape Drawing: Aerial Perspective" },
+          { "unit": "Expressive/Themed Drawing" },
+          { "unit": "Color Theory" },
+          { "unit": "Linear Perspective Drawing" },
+          { "unit": "Graphite, Charcoal, Ink Pen, Color pencil, Oil Pastel " }
+        ],
+        "Grading-categories": [],
+        "Grading-description": [
+          "Grading is non-weighted. Projects, critiques, sketchbook checks are worth same amount of points.",
+          "Art based extra credit opportunities will be available as announced",
+          "Revisions allowed under special circumstances"
+        ],
+        "Grade-distribution": [],
+        "Contacts": ["christine.an@mvla.net", "yoonsun.chai@mvla.net"],
+        "Books": [],
+        "Links": []
+      },
+      {
+        "Name": "Drawing II",
+        "id": 902,
+        "Description": "",
+        "Level": {
+          "name": "Year 2"
+        },
+        "Tags": ["UC/CSU (F)"],
+        "Prerequisite": [901],
+        "Units": [
+          { "unit": "Still-life" },
+          { "unit": "Surrealism" },
+          { "unit": "Abstraction" },
+          { "unit": "Wet Media/Mixed Media" },
+          { "unit": "Figures" },
+          { "unit": "Expressionism" }
+        ],
+        "Grading-categories": [],
+        "Grading-description": [
+          "Grading is non-weighted. Projects, critiques, sketchbook checks are worth same amount of points.",
+          "Art based extra credit opportunities will be available as announced",
+          "Revisions allowed under special circumstances"
+        ],
+        "Grade-distribution": [],
+        "Contacts": ["christine.an@mvla.net"],
+        "Books": [],
+        "Links": []
+      },
+      {
+        "Name": "Drawing III",
+        "id": 903,
+        "Description": "",
+        "Level": {
+          "name": "Year 3"
+        },
+        "Tags": ["UC/CSU (F)"],
+        "Prerequisite": [902],
+        "Units": [],
+        "Grading-categories": [],
+        "Grading-description": [
+          "Grading is non-weighted. Projects, critiques, sketchbook checks are worth same amount of points.",
+          "Art based extra credit opportunities will be available as announced",
+          "Revisions allowed under special circumstances"
+        ],
+        "Grade-distribution": [],
+        "Contacts": ["christine.an@mvla.net"],
+        "Books": [],
+        "Links": []
+      },
+      {
+        "Name": "AP Studio Art",
+        "id": 904,
+        "Description": "",
+        "Level": {
+          "name": "Year 4"
+        },
+        "Tags": ["UC/CSU (F)", "AP"],
+        "Prerequisite": [903],
+        "Units": [],
+        "Grading-categories": [],
+        "Grading-description": [
+          "Grading is non-weighted. Projects, critiques, sketchbook checks are worth same amount of points.",
+          "Art based extra credit opportunities will be available as announced",
+          "Revisions allowed under special circumstances"
+        ],
+        "Grade-distribution": [],
+        "Contacts": ["christine.an@mvla.net"],
+        "Books": [],
+        "Links": []
+      },
+      {
+        "Name": "Photo I",
+        "id": 905,
+        "Description": "",
+        "Level": {
+          "name": "Year 1"
+        },
+        "Tags": ["UC/CSU (F)"],
+        "Prerequisite": [],
+        "Units": [],
+        "Grading-categories": [],
+        "Grading-description": [
+          "Grading is non-weighted. Projects, critiques, sketchbook checks are worth same amount of points.",
+          "Art based extra credit opportunities will be available as announced",
+          "Revisions allowed under special circumstances"
+        ],
+        "Grade-distribution": [],
+        "Contacts": ["kalia.demarquez@mvla.net", "jessica.hayes@mvla.net"],
+        "Books": [],
+        "Links": []
+      },
+      {
+        "Name": "Photo II",
+        "id": 906,
+        "Description": "",
+        "Level": {
+          "name": "Year 2"
+        },
+        "Tags": ["UC/CSU (F)"],
+        "Prerequisite": [905],
+        "Units": [],
+        "Grading-categories": [],
+        "Grading-description": [
+          "Grading is non-weighted. Projects, critiques, sketchbook checks are worth same amount of points.",
+          "Art based extra credit opportunities will be available as announced",
+          "Revisions allowed under special circumstances"
+        ],
+        "Grade-distribution": [],
+        "Contacts": ["jessica.hayes@mvla.net"],
+        "Books": [],
+        "Links": []
+      }
+    ],
+    "extras": {
+      "Media": [],
+      "Description": "pathway description",
+      "ApprovedBy": "name of teacher who approved if approved",
+      "Status": [
+        { "name": "ie. approved, pending, unverified" }
+      ],
+      "EnableImplicitJump": {
+        "name": "True"
+      }
+    }
+  },
+  "language": {
+    "classes": [
+      {
+        "Name": "French I",
+        "id": 901,
+        "Description": "Students will develop their French written, spoken, reading and comprehension skills. This development will occur through listening, reading, writing, and participation in classroom discussions and activities. We will also study the cultures in which the language evolved and is being used today.",
+        "Level": {
+          "name": "Level 1"
+        },
+        "Tags": ["UC/CSU (E)"],
+        "Prerequisite": [],
+        "Recommendations": "",
+        "Units": [
+          { "unit": "Greeting others in French and talking about yourself" },
+          { "unit": "Telling time, talking about days months and seasons" },
+          { "unit": "Talking about the weather and how to dress for it" },
+          { "unit": "Expressing simple actions in the present tense" },
+          { "unit": "Talking about your town and the places and things to do in said town" },
+          { "unit": "Talking about family members" },
+          { "unit": "Talking about food and mealtimes" },
+          { "unit": "Talking about your routine and activities you're involved in" }
+        ],
+        "Grading-categories": [
+          {
+            "name": "Speaking",
+            "weight": 20
+          },
+          {
+            "name": "Writing",
+            "weight": 20
+          },
+          {
+            "name": "Reading & Listening",
+            "weight": 20
+          },
+          {
+            "name": "Culture",
+            "weight": 15
+          },
+          {
+            "name": "Learning Checks",
+            "weight": 15
+          },
+          {
+            "name": "Final",
+            "weight": 10
+          }
+        ],
+        "Homework-description": [
+          "Students should expect 2-3 hours of homework a week.",
+          "All homework will be handwritten unless otherwise stated."
+        ],
+        "Grading-description": [
+          "Late homework will NOT be accepted. Each student can have one retake per quarter for scores of 65% or below.",
+          "One retake is possible for tests/quizzes with a score lower than 70%.",
+          "No extra credit will be awarded."
+        ],
+        "Grade-distribution": [],
+        "Contacts": ["shannon.porfilio@mvla.net"],
+        "Books": ["Reporters Francophones Level 1 Textbook & Workbook"],
+        "Links": []
+      },
+      {
+        "Name": "French II",
+        "id": 902,
+        "Description": "French 2 will allow students to build upon the foundations of French 1. Students will increase fluency in speaking by answering questions, discussing simple subjects, and engaging in conversations in pairs. Over the year, students will be introduced to more vocabulary, grammatical constructs and verb tenses. This will allow students to progress towards writing longer paragraphs.",
+        "Level": {
+          "name": "Level 2"
+        },
+        "Tags": ["UC/CSU (E)"],
+        "Prerequisite": [901],
+        "Recommendations": "C- or better in French I.",
+        "Units": [
+          { "unit": "My Week: Daily routine vocabulary & free time interests" },
+          { "unit": "On the Road: road trip vocabulary" },
+          { "unit": "Once Upon a Time: storytelling vocabulary" },
+          { "unit": "Feeling Well: feelings, health, well-being" },
+          { "unit": "At Home: housing vocabulary" },
+          { "unit": "A Better World: recyling, the environment, technology" }
+        ],
+        "Grading-categories": [
+          {
+            "name": "Speaking",
+            "weight": 25
+          },
+          {
+            "name": "Writing",
+            "weight": 25
+          },
+          {
+              "name": "Reading & Listening",
+              "weight": 25
+          }, 
+          {
+              "name": "Learning Checks",
+              "weight": 15
+          },
+          {
+              "name": "Final",
+              "weight": 10
+          }
+        ],
+        "Homework-description": [
+          "Students should expect 15-30 minutes of homework assigned daily.",
+          "All homework will be handwritten unless otherwise stated."
+        ],
+        "Grading-description": [
+          "Late homework will NOT be accepted without prior approval by the teacher for extenuating circumstances. To get full credit, your homework is expected to demonstrate both effort and quality",
+          "Each student will have an opportunity to revise assessment scores of 65% or below. Students wishing to revise scores must make an appointment with the teacher within (3) days of receiving the returned assessment and the revision must take place within 1 week of receiving feedback on the original assessment. Only written and speaking assessments may be revised.",
+          "No extra credit will be awarded."
+        ],
+        "Grade-distribution": [
+        ],
+        "Contacts": ["stephanie.fullen-safian@mvla.net"],
+        "Books": ["Reporters Francophones Level 2 Textbook & Workbook"],
+        "Links": []
+      },
+      {
+          "Name": "French III",
+          "id": 903,
+          "Description": "This course is a continuation of French 2. Students will engage in a more concentrated study of grammar, vocabulary, geography, and the history and culture of Francophone regions. The course follows the World-Readiness Standards for Learning Languages and aims to enhance students' communicative skills in past, present, and future contexts. Students will read, write, speak, and listen to French through various mediums and cultural explorations.",
+          "Level": {
+            "name": "Level 3"
+          },
+          "Tags": ["UC/CSU (E)"],
+          "Prerequisite": [902],
+          "Recommendations": "C- or better in French II.",
+  
+          "Units": [
+            {
+              "unit": "Étape 1",
+              "bullets": [
+                "Prehistoric France",
+                "Present tense of irregular verbs",
+                "French 1 & 2 Vocab Review"
+              ]
+            },
+            {
+              "unit": "Étape 2",
+              "bullets": [
+                "The Middle Ages",
+                "The present tense of the three verb groups",
+                "The command form",
+                "Adverbs & the use of ‘on’",
+                "French 1 & 2 Vocab Review"
+              ]
+            },
+            {
+              "unit": "Étape 3",
+              "bullets": [
+                "Charlemagne, The Vikings & the Normands",
+                "The imparfait, passé composé & plus-que-parfait",
+                "French 1 & 2 Vocab Review"
+              ]
+            },
+            {
+              "unit": "Étape 4",
+              "bullets": [
+                "The Crusades",
+                "Direct & Indirect Object Pronouns",
+                "French 1 & 2 Vocab Review",
+                "French Art of the Middle Ages"
+              ]
+            },
+            {
+              "unit": "Étape 5",
+              "bullets": [
+                "The Great Inventions of the 15th Century",
+                "The Futur et Conditionnel",
+                "The literary works of Rabelais",
+                "French Art of the Renaissance"
+              ]
+            },
+            {
+              "unit": "Étape 6",
+              "bullets": [
+                "The Age of Classicism in France & Europe",
+                "The Subjonctif",
+                "The literary works of Molière",
+                "French Art of the 17th Century"
+              ]
+            },
+            {
+              "unit": "Étape 7",
+              "bullets": [
+                "18th Century France",
+                "Pronominal Verbs",
+                "Literary works of Voltaire",
+                "French Art of the 18th century",
+                "French 1 & 2 Vocab Review",
+                "Reading the novel: L’Histoire d’une Revanche"
+              ]
+            },
+            {
+              "unit": "Étape 8",
+              "bullets": [
+                "Descending into the French Revolution",
+                "Adjectives, Negation & The present participle",
+                "Pre French Revolution Literary Works",
+                "Art at the end of the French ‘Ancien Régime’",
+                "French 1 & 2 Vocab Review",
+                "Reading the novel: L’Histoire d’une Revanche"
+              ]
+            },
+            {
+              "unit": "Étape 9",
+              "bullets": [
+                "The French Revolution",
+                "French Revolution Literature",
+                "Pronouns",
+                "Art of the French Revolution",
+                "French 1 & 2 Vocab Review",
+                "Reading the novel: L’Histoire d’une Revanche"
+              ]
+            },
+            {
+              "unit": "Étape 10",
+              "bullets": [
+                "Napoléon & the beginning of the XIX Century",
+                "Verbs of communication",
+                "Literary works of Victor Hugo & Chateaubriand",
+                "Art during the reign of Napoléon",
+                "French 1 & 2 Vocab Review",
+                "Reading the novel: L’Histoire d’une Revanche"
+              ]
+            },
+            {
+              "unit": "Étape 11",
+              "bullets": [
+                "19th Century France",
+                "The passive voice",
+                "Literary works of Victor Hugo",
+                "French art of the 19th century",
+                "French 1 & 2 Vocab Review",
+                "Reading the novel: L’Histoire d’une Revanche"
+              ]
+            },
+            {
+              "unit": "Étape 12",
+              "bullets": [
+                "The age of progress in France: the 20th Century & World War 1, The Interwar Years & World War II",
+                "Literary works of Prévert & Camus",
+                "French art in the 20th Century",
+                "French 1 & 2 Vocab Review",
+                "Reading the novel: L’Histoire d’une Revanche"
+              ]
+            }
+          ],
+          "Homework-description": [
+            "Students should expect 15-30 minutes of homework assigned daily.",
+            "All homework will be handwritten unless otherwise stated."
+          ],
+          "Grading-categories": [
+            { "name": "Speaking", "weight": 25 },
+            { "name": "Writing", "weight": 25 },
+            { "name": "Reading & Listening", "weight": 25 },
+            { "name": "Learning Checks", "weight": 15 },
+            { "name": "Final", "weight": 10 }
+          ],
+          "Grading-description": [
+            "Each student will have an opportunity to revise assessment scores of 65%.",
+            "No extra credit will be awarded."
+          ],
+          "Grade-distribution": [],
+          "Contacts": ["stephanie.fullen-safian@mvla.net"],
+          "Books": ["Trésors du Temps", "Histoire d’une Revanche"],
+          "Links": []
+        },    
+        {
+          "Name": "French III (H)",
+          "id": 904,
+          "Description": "This course is an accelerated and more challenging continuation of French 2. Students are expected to use only French in class. The students’ listening and speaking skills are further developed with an emphasis on original and spontaneous self-expression. Students are introduced to French Literature and engage in oral and written discussion based on their readings.",
+          "Level": {
+            "name": "Level 3"
+          },
+          "Tags": ["UC/CSU (E)", "H"],
+          "Prerequisite": [902],
+          "Recommendations": "B+ or better in French II",
+  
+          "Units": [
+      {
+        "unit": "Étape 1",
+        "bullets": [
+          "Prehistoric France",
+          "Present tense of irregular verbs",
+          "French 1 & 2 Vocab Review"
+        ]
+      },
+      {
+        "unit": "Étape 2",
+        "bullets": [
+          "The Middle Ages",
+          "The present tense of the three verb groups",
+          "The command form",
+          "Adverbs & the use of 'on'",
+          "French 1 & 2 Vocab Review"
+        ]
+      },
+      {
+        "unit": "Étape 3",
+        "bullets": [
+          "Charlemagne, The Vikings & the Normands",
+          "The imparfait, passé composé & plus-que-parfait",
+          "French 1 & 2 Vocab Review"
+        ]
+      },
+      {
+        "unit": "Étape 4",
+        "bullets": [
+          "The Crusades",
+          "Direct & Indirect Object Pronouns",
+          "French 1 & 2 Vocab Review",
+          "French Art of the Middle Ages"
+        ]
+      },
+      {
+        "unit": "Étape 5",
+        "bullets": [
+          "The Great Inventions of the 15th Century",
+          "The Futur & Conditionnel",
+          "The literary works of Rabelais",
+          "French Art of the Renaissance"
+        ]
+      },
+      {
+        "unit": "Étape 6",
+        "bullets": [
+          "The Age of Classicism in France & Europe",
+          "The Subjonctif",
+          "The literary works of Molière",
+          "French Art of the 17th Century"
+        ]
+      },
+      {
+        "unit": "Étape 7",
+        "bullets": [
+          "18th Century France",
+          "Pronominal Verbs",
+          "Literary works of Voltaire",
+          "French Art of the 18th century",
+          "French 1 & 2 Vocab Review",
+          "Reading the novel: L’Histoire d’une Revanche"
+        ]
+      },
+      {
+        "unit": "Étape 8",
+        "bullets": [
+          "Descending into the French Revolution",
+          "Adjectives, Negation & The present participle",
+          "Pre French Revolution Literary Works",
+          "Art at the end of the French ‘Ancien Régime’",
+          "French 1 & 2 Vocab Review",
+          "Reading the novel: L’Histoire d’une Revanche"
+        ]
+      },
+      {
+        "unit": "Étape 9",
+        "bullets": [
+          "The French Revolution",
+          "French Revolution Literature",
+          "Pronouns",
+          "Art of the French Revolution",
+          "French 1 & 2 Vocab Review",
+          "Reading the novel: L’Histoire d’une Revanche"
+        ]
+      },
+      {
+        "unit": "Étape 10",
+        "bullets": [
+          "Napoléon & the beginning of the XIX Century",
+          "Verbs of communication",
+          "Literary works of Victor Hugo & Chateaubriand",
+          "Art during the reign of Napoléon",
+          "French 1 & 2 Vocab Review",
+          "Reading the novel: L’Histoire d’une Revanche",
+          "French 4AP Task Introduction & Practice"
+        ]
+      },
+      {
+        "unit": "Étape 11",
+        "bullets": [
+          "19th Century France",
+          "The passive voice",
+          "Literary works of Victor Hugo",
+          "French art of the 19th century",
+          "French 1 & 2 Vocab Review",
+          "Reading the novel: L’Histoire d’une Revanche",
+          "French 4AP Task Introduction & Practice"
+        ]
+      },
+      {
+        "unit": "Étape 12",
+        "bullets": [
+          "The age of progress in France: the 20th Century & World War 1, The Interwar Years & World War II",
+          "Literary works of Prévert & Camus",
+          "French art in the 20th Century",
+          "French 1 & 2 Vocab Review",
+          "Reading the novel: L’Histoire d’une Revanche",
+          "French 4AP Task Introduction & Practice"
+        ]
+      }
+    ],
+          "Homework-description": [
+            "Students should expect 30 minutes of homework assigned daily.",
+            "All homework will be handwritten unless otherwise stated."
+          ],
+          "Grading-categories": [
+            { "name": "Speaking", "weight": 25 },
+            { "name": "Writing", "weight": 25 },
+            { "name": "Reading & Listening", "weight": 25 },
+            { "name": "Learning Checks", "weight": 15 },
+            { "name": "Final", "weight": 10 }
+          ],
+          "Grading-description": [
+            "Each student will have an opportunity to revise assessment scores of 65%.",
+            "No extra credit will be awarded."
+          ],
+          "Grade-distribution": [],
+          "Contacts": ["stephanie.fullen-safian@mvla.net"],
+          "Books": ["Trésors du Temps", "Histoire d’une Revanche"],
+          "Links": []
+        },    
+        {
+          "Name": "French IV (AP)",
+          "id": 905,
+          "Description": "desc",
+          "Level": {
+            "name": "Level 4"
+          },
+          "Tags": ["UC/CSU (E)", "AP"],
+          "Prerequisite": [903, 904],
+          "Recommendations": "B or better in French III or equivalent.",
+        
+          "Units": [
+      {
+        "unit": "Thème 1: Families and Communities",
+        "bullets": [
+          "Childhood & Adolescence",
+          "Friendship & Love",
+          "Social Relationships",
+          "Citizenship & Family"
+        ]
+      },
+      {
+        "unit": "Thème 2: Personal and Public Identities",
+        "bullets": [
+          "Alienation & Assimilation",
+          "Linguistic Identity",
+          "Nationalism & Patriotism",
+          "Multiculturalism",
+          "Beliefs & Values"
+        ]
+      },
+      {
+        "unit": "Thème 3: Aesthetics",
+        "bullets": [
+          "Beauty",
+          "Cultural Heritage",
+          "Literary Arts",
+          "Visual Arts",
+          "Architecture",
+          "Music and Performance"
+        ]
+      },
+      {
+        "unit": "Thème 4: Science and Technology",
+        "bullets": [
+          "Technology & Society",
+          "Discovery & Innovations",
+          "Moral Choices",
+          "Research",
+          "The Future of Technology"
+        ]
+      },
+      {
+        "unit": "Thème 5: Contemporary Life",
+        "bullets": [
+          "Education & Professional Life",
+          "Pastimes & Sports",
+          "Travel",
+          "Advertising & Marketing",
+          "Housing",
+          "Parties & Rites of Passage"
+        ]
+      },
+      {
+        "unit": "Thème 6: Global Challenges",
+        "bullets": [
+          "The Economy",
+          "The Environment",
+          "Food & Health",
+          "Tolerance",
+          "Human Rights",
+          "Peace & War"
+        ]
+      }
+    ],
+          "Homework-description": [
+            "Students should expect 30 minutes of homework assigned daily.",
+            "All homework will be handwritten unless otherwise stated."
+          ],
+          "Grading-categories": [
+            { "name": "Speaking", "weight": 25 },
+            { "name": "Writing", "weight": 25 },
+            { "name": "Reading & Listening", "weight": 25 },
+            { "name": "Learning Checks", "weight": 15 },
+            { "name": "Final Exam", "weight": 10 }
+          ],
+          "Grading-description": [
+            "Late homework will NOT be accepted without prior approval by the teacher for extenuating circumstances.",
+            "Each student will have an opportunity to revise assessment scores of 65% or below within a week of receiving feedback.",
+            "No extra credit will be awarded."
+          ],
+          "Grade-distribution": [],
+          "Contacts": ["stephanie.fullen-safian@mvla.net"],
+          "Books": ["VHLCentral", "Une Fois Pour Toutes", "AP French Richard Ladd"],
+          "Links": [
+            {
+              "name": "FAQ",
+              "link": "https://docs.google.com/document/d/1mpAsQmVTLq2lSwuAWhHBTfq2zuMt9MdXE5CwKiyOa4o/edit?tab=t.0"
+            }
+          ]
+        },
+        {
+          "Name": "Latin I",
+          "id": 906,
+          "Description": "Latin 1 is an introduction to the language focusing on verb tense and the Case system. Students will investigate various aspects of the Ancient Mediterranean (Mythology, Culture, History, Art, etc.) via monthly group projects and a weekly podcast assignment. They will improve their English vocabulary and grammar by learning Latin vocabulary and grammar.",
+          "Level": {
+            "name": "Level 1"
+          },
+          "Tags": ["UC/CSU (E)"],
+          "Prerequisite": [],
+          "Recommendations": "",
+      
+          "Units": [
+      {
+        "unit": "Semester 1",
+        "bullets": [
+          "English Grammar: Parts of Speech & English sentence structure",  
+          "Chapter 1: Present tense of the 1st & 2nd conjugations",  
+          "Chapter 2: Case System; 1st declension",  
+          "Chapter 3: 2nd declension; Adjectives",  
+          "Chapter 4: 2nd declension (neuter); present tense of sum; Substantive Adj’s",  
+          "Chapter 5: Imperfect & Future tenses, 1st & 2nd conjugations",  
+          "Chapter 6: sum & possum",
+          "History: Founding of Rome through 338 bce"
+        ]
+      },
+      {
+        "unit": "Semester 2",
+        "bullets": [
+          "Chapter 7: 3rd declension",  
+          "Chapter 8: 3rd Conjugation",  
+          "Chapter 9: Demonstratives",  
+          "Chapter 10: 3rd-io & 4th conjugations",  
+          "Chapter 11: Personal Pronouns",  
+          "Chapter 12: the Perfect System",  
+          "Chapter 13: Reflexive Pronouns; Intensifying Pronoun",  
+          "Chapter 14: i-stem nouns; Ablatives of Means, Manner, & Accompaniment",  
+          "Chapter 15: Numerals; Genitive of the Whole; Ablative of Time When or Within Which",  
+          "History: Founding of Rome through 338 bce",  
+          "History: 338 bce-197 bce"
+        ]
+      }
+    ],
+          "Homework-description": [
+            "Students should expect about 20-30 minutes of homework per school day. Work is required to be shown via color-coding or labeling for full credit.",
+            "There is a weekly history assignment in which students will listen to a podcast and complete a corresponding worksheet, taking 10-30 minutes to complete."
+          ],
+          "Grading-categories": [
+            { "name": "Binders", "weight": 5 },
+            { "name": "History and Culture", "weight": 10 },
+            { "name": "Homework", "weight": 15 },
+            { "name": "Classwork", "weight": 15 },
+            { "name": "Quizzes", "weight": 25 },
+            { "name": "Exams", "weight": 30 }
+          ],
+          "Grading-description": [
+            "Late homework will not be accepted.",
+            "Each student will have an opportunity to revise Translating assessment scores of 65% or below.",
+            "Students may retake Forms quizzes that are lower than 75%.",
+            "Students may receive up to 20 (homework) points of extra credit per quarter. This is done by translating work not done as a class. 2 points for every 5 sentences (with work shown)."
+          ],
+          "Grade-distribution": [],
+          "Contacts": ["krista.greksouk@mvla.net"],
+          "Books": ["Wheelock's Latin"],
+          "Links": []
+        },
+        {
+          "Name": "Latin III",
+          "id": 908,
+          "Description": "Latin 3 completes grammar instruction. Students start to read authentic Roman literature.",
+          "Level": {
+            "name": "Level 3"
+          },
+          "Tags": ["UC/CSU (E)"],
+          "Prerequisite": [907],
+          "Recommendations": "C- or better in Latin II.",
+
+          "Units": [
+            {
+              "unit": "Semester 1",
+              "bullets": [
+                "Chapter 33: 3rd declension adjectives",  
+                "Chapter 34: Deponent Verbs",  
+                "Chapter 35: Datives with Special Verbs, Adjectives, & Compounds",  
+                "Chapter 36: Jussive Noun Clauses; fio",  
+                "Chapter 37: Eo; Place & Time constructions",  
+                "Chapter 38: Relative Clause of Characteristic; Dative of Reference; Supines",  
+                "Chapter 39: Gerund & Gerundives",  
+                "Chapter 40: Fear Clauses; Num & Nonne",  
+                "History: 18 bce-81 ce"
+              ]
+            },
+            {
+              "unit": "Semester 2",
+              "bullets": [
+                "Caesar: De Bello Gallico",  
+                "Catullus: selected poems",  
+                "Ovid: Metamorphoses",  
+                "History: 81 ce-138 ce"
+              ]
+            }
+          ],
+          "Homework-description": [
+            "Students should expect about 20-30 minutes of homework per school day. Work is required to be shown via color-coding or labeling for full credit.",
+            "There is a weekly history assignment in which students will listen to a podcast and complete a corresponding worksheet, taking 15-30 minutes to complete."
+          ],
+          "Grading-categories": [
+            { "name": "History and Culture", "weight": 10 },
+            { "name": "Homework", "weight": 15 },
+            { "name": "Classwork", "weight": 15 },
+            { "name": "Quizzes", "weight": 30 },
+            { "name": "Exams", "weight": 30 }
+          ],
+          "Grading-description": [
+            "Late homework will NOT be accepted without prior approval by the teacher for extenuating circumstances.",
+            "Each student will have an opportunity to revise Translating assessment scores of 65% or below within a week of receiving feedback.",
+            "Students may retake Forms quizzes that are lower than 75%",
+            "Students may receive up to 20 (homework) points of extra credit per quarter (due the last day of the quarter). This is done by translating work not done as a class. 2 points for every 5 sentences (with work shown).",
+            "Students have 7 school days to make up a missed quiz/exam due to excused absences.",
+            "Violations of academic integrity will result in no credit and no retake opportunities. Unauthorized use of Google Translate or AI tools is considered cheating."
+          ],
+          "Grade-distribution": [],
+          "Contacts": ["krista.greksouk@mvla.net"],
+          "Books": ["Wheelock's Latin", "Latin for Americans, Level 3"],
+          "Links": [""]
+        },
+        {
+          "Name": "Latin II",
+          "id": 907,
+          "Description": "Latin 2 continues instruction with a focus on dependent clauses, the Passive Voice, and Subjunctive Mood. Students will complete daily translation homework assignments. They will investigate the history of Romans looking at topics such as: daily life, politics, and war, via monthly group projects and a weekly podcast assignment. They will continue to expand their English vocabulary and will become experts on English grammar through learning Latin grammar.",
+          "Level": {
+            "name": "Level 2"
+          },
+          "Tags": ["UC/CSU (E)"],
+          "Prerequisite": [906],
+          "Recommendations": " C- or better in Latin I.",
+        
+          "Units": [
+            {
+              "unit": "Semester 1",
+              "bullets": [
+                "Chapter 16: 3rd declension adjectives",  
+                "Chapter 17: the Relative Pronoun",  
+                "Chapter 18: Passive Voice, Present System: 1st & 2nd conjugations; Ablative of Agent",  
+                "Chapter 19: Perfect Passive System; Interrogative Pronoun & Adjective",  
+                "Chapter 20: 4th declension; Ablative of Place From Which & Separation",  
+                "Chapter 21: Passive Voice, Present System: 3rd & 4th conjugations",  
+                "Chapter 22: 5th declension; summary of Ablative uses",  
+                "Chapter 23: Participles",  
+                "History: 197 bce-60 bce"
+              ]
+            },
+            {
+              "unit": "Semester 2",
+              "bullets": [
+                "Chapter 24: Ablative Absolute; Passive Periphrastic",  
+                "Chapter 25: Indirect Statements",  
+                "Chapter 26: Comparative & Superlative Adjectives; Ablative of Comparison",  
+                "Chapter 27: Irregular Comparatives & Superlatives",  
+                "Chapter 28: Subjunctive Mood; Present Subjunctive; Jussive and Purpose Clauses",  
+                "Chapter 29: Imperfect Subjunctive; Result Clauses",  
+                "Chapter 30: Perfect & Pluperfect Subjunctive; Indirect Questions",  
+                "Chapter 31: cum clauses; fero",  
+                "Chapter 32: Adverbs; volo, nolo; Proviso Clauses",  
+                "History: 60 bce-18 bce"
+              ]
+            }
+          ],
+          "Homework-description": [
+            "Students should expect about 20-30 minutes of homework per school day. Work is required to be shown via color-coding or labeling for full credit.",
+            "There is a weekly history assignment in which students will listen to a podcast and complete a corresponding worksheet, taking 15-30 minutes to complete."
+          ],
+          "Grading-categories": [
+            { "name": "History and Culture", "weight": 10 },
+            { "name": "Homework", "weight": 15 },
+            { "name": "Classwork", "weight": 15 },
+            { "name": "Quizzes", "weight": 30 },
+            { "name": "Exams", "weight": 30 }
+          ],
+          "Grading-description": [
+            "Late homework will not be accepted.",
+            "Each student will have an opportunity to revise Translating assessment scores of 65% or below.",
+            "Students may retake Forms quizzes that are lower than 75%.",
+            "Students may receive up to 20 (homework) points of extra credit per quarter. This is done by translating work not done as a class. 2 points for every 5 sentences (with work shown)."
+          ],
+          "Grade-distribution": [],
+          "Contacts": ["krista.greksouk@mvla.net"],
+          "Books": ["Wheelock's Latin"],
+          "Links": []
+        },
+        {
+          "Name": "Latin IV (AP)",
+          "id": 909,
+          "Description": "AP Latin is an in-depth study of selections from Caesar’s De Bello Gallico and Vergil’s Aeneid.",
+          "Level": {
+            "name": "Level 4"
+          },
+          "Tags": ["UC/CSU (E)"],
+          "Prerequisite": [908],
+          "Units": [
+            {
+              "unit": "Semester 1",
+              "bullets": [
+                "Translate Casear"
+              ]
+            },
+            {
+              "unit": "Semester 2",
+              "bullets": [
+                "Translate Vergil"
+              ]
+            }
+    ],
+          "Grading-categories": [
+            { "name": "Homework", "weight": 20 },
+            { "name": "Classwork", "weight": 15 },
+            { "name": "Quizzes", "weight": 35 },
+            { "name": "Exams", "weight": 30 }
+          ],
+          "Grading-description": [
+            "Late homework will NOT be accepted without prior approval by the teacher for extenuating circumstances.",
+            "Students have 7 school days to make up a missed quiz/exam due to excused absences.",
+            "Violations of academic integrity will result in no credit and no retake opportunities. Unauthorized use of Google Translate or AI tools is considered cheating."
+          ],
+          "Grade-distribution": [],
+          "Contacts": ["krista.greksouk@mvla.net"],
+          "Books": ["A Caesar Workbook", "A Vergil Workbook", "Caesar: Selections from his Comentarii de Bello Gallico", "Vergil’s Aeneid"],
+          "Links": [""]
+        },
+        {
+          "Name": "Mandarin I",
+          "id": 910,
+          "Description": "desc",
+          "Level": {
+            "name": "Level 1"
+          },
+          "Tags": ["UC/CSU (E)"],
+          "Prerequisite": [],
+          "Recommendations": "",
+          "Units": [],
+          "Homework-description": [
+            "About 1-2 hours of work may be assigned weekly."
+          ],
+          "Grading-categories": [
+            { "name": "Homework", "weight": 20 },
+            { "name": "Engagement & Interactions", "weight": 40 },
+            { "name": "Assessments", "weight": 30 },
+            { "name": "Final", "weight": 10 }
+          ],
+          "Grading-description": [
+            "Late work will not be accepted.",
+            "Each student will have their lowest assessment score dropped at the end of each semester."
+          ],
+          "Grade-distribution": [],
+          "Contacts": ["connie.chen@mvla.net"],
+          "Books": ["Integrated Chinese Level 1 Part 1"],
+          "Links": []
+        },
+        {
+          "Name": "Mandarin II",
+          "id": 911,
+          "Description": "desc",
+          "Level": {
+            "name": "Level 2"
+          },
+          "Tags": ["UC/CSU (E)"],
+          "Prerequisite": [910],
+          "Recommendations": "C- or better in Mandarin I or equivalent.",
+          "Units": [],
+          "Homework-description": [
+            "About 1-2 hours of work may be assigned weekly."
+          ],
+          "Grading-categories": [
+            { "name": "Homework", "weight": 20 },
+            { "name": "Engagement & Interactions", "weight": 40 },
+            { "name": "Assessments", "weight": 30 },
+            { "name": "Final", "weight": 10 }
+          ],
+          "Grading-description": [
+            "Late work will not be accepted.",
+            "Each student will have their lowest assessment score dropped at the end of each semester."
+          ],
+          "Grade-distribution": [],
+          "Contacts": ["bernice.wei@mvla.net"],
+          "Books": ["Integrated Chinese Level 1 Part 1 & 2"],
+          "Links": []
+        },
+        {
+          "Name": "Mandarin III",
+          "id": 912,
+          "Description": "desc",
+          "Level": {
+            "name": "Level 3"
+          },
+          "Tags": ["UC/CSU (E)"],
+          "Prerequisite": [911],
+          "Recommendations": "C- or better in Mandarin II or recommendation from teachers.",
+          "Units": [],
+          "Homework-description": [
+            "About 2-3 hours of work may be assigned weekly."
+          ],
+          "Grading-categories": [
+            { "name": "Homework", "weight": 20 },
+            { "name": "Engagement & Interactions", "weight": 40 },
+            { "name": "Assessments", "weight": 30 },
+            { "name": "Final", "weight": 10 }
+          ],
+          "Grading-description": [
+            "Late work will not be accepted.",
+            "Each student will have their lowest assessment score dropped at the end of each semester."
+          ],
+          "Grade-distribution": [],
+          "Contacts": ["connie.chen@mvla.net"],
+          "Books": ["Integrated Chinese Level 1 Part 2"],
+          "Links": []
+        },
+        {
+          "Name": "Mandarin IV H",
+          "id": 913,
+          "Description": "desc",
+          "Level": {
+            "name": "Level 4"
+          },
+          "Tags": ["UC/CSU (E)", "H"],
+          "Prerequisite": [912],
+          "Recommendations": "B+ or better in Mandarin III or recommendation by teachers.",
+          "Units": [],
+          "Homework-description": [
+            "About 3-4 hours of work may be assigned weekly",
+            "All homework must be completed prior to 8am on the day of the following class."
+          ],
+          "Grading-categories": [
+            { "name": "Homework", "weight": 20 },
+            { "name": "Engagement & Interactions", "weight": 30 },
+            { "name": "Assessments", "weight": 40 },
+            { "name": "Final", "weight": 10 }
+          ],
+          "Grading-description": [
+            "Late work will be accepted if turned in within 1 week of the due date and will recieve a 50% penalty.",
+            "Extra credit opportunities will be given on certain major assignments such as projects or cultural events.",
+            "Each student will have their lowest assessment score dropped at the end of each semester."
+          ],
+          "Grade-distribution": [],
+          "Contacts": ["bernice.wei@mvla.net"],
+          "Books": ["Integrated Chinese Level 2 Part 1"],
+          "Links": [] 
+        },
+        {
+          "Name": "AP Mandarin",
+          "id": 914,
+          "Description": "desc",
+          "Level": {
+            "name": "Level 5"
+          },
+          "Tags": ["UC/CSU (E)", "AP"],
+          "Prerequisite": [913],
+          "Recommendations": "B+ or above in Mandarin IV, IV Honors or recommendation by teachers. ",
+          "Units": [
+          ],
+          "Homework-description": [
+            "About 4-5 hours of work may be assigned weekly",
+            "All homework must be completed prior to 8:30am on the day of the following class."
+          ],
+          "Grading-categories": [
+            { "name": "Homework", "weight": 20 },
+            { "name": "Engagement & Interactions", "weight": 30 },
+            { "name": "Assessments", "weight": 40 },
+            { "name": "Final", "weight": 10 }
+          ],
+          "Grading-description": [
+            "Late work will be accepted if turned in within 1 week of the due date and will recieve a 50% penalty."
+          ],
+          "Grade-distribution": [],
+          "Contacts": ["connie.chen@mvla.net"],
+          "Books": [],
+          "Links": [] 
+        },
+        {
+          "Name": "Spanish I",
+          "id": 915,
+          "Description": "desc",
+          "Level": {
+            "name": "Level 1"
+          },
+          "Tags": ["UC/CSU (E)"],
+          "Prerequisite": [],
+          "Recommendations": "",
+          "Units": [
+          ],
+          "Homework-description": [],
+          "Grading-categories": [
+            { "name": "Homework", "weight": 20 },
+            { "name": "Engagement & Interactions", "weight": 30 },
+            { "name": "Assessments", "weight": 40 },
+            { "name": "Final", "weight": 10 }
+          ],
+          "Grading-description": [],
+          "Grade-distribution": [],
+          "Contacts": ["mohamed.chakmakchi@mvla.net", "robyn.hughes@mvla.net"],
+          "Books": [],
+          "Links": [] 
+        }
+    ],
+    "extras": {}
+  }
+}
