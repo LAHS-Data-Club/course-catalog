@@ -3,7 +3,11 @@ import cors from "cors";
 import Cache from "./util/cache";
 import { asyncHandler } from "./util/utils";
 import { fetchCalendarData } from "./fetchers/google-calendar";
-import { fetchAllCourses, fetchDepartment } from "./fetchers/classes";
+import {
+  fetchAllCourses,
+  fetchAllDepartments,
+  fetchDepartment,
+} from "./fetchers/classes";
 import { Department, departments } from "./util/types";
 const app = express();
 const cache = new Cache();
@@ -28,6 +32,14 @@ app.get(
   asyncHandler(async (req, res) => {
     const classes = await fetchAllCourses();
     res.json(classes);
+  })
+);
+
+app.get(
+  "/api/departments",
+  asyncHandler(async (req, res) => {
+    const departments = await fetchAllDepartments();
+    res.json(departments);
   })
 );
 

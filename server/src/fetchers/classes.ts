@@ -18,3 +18,11 @@ export async function fetchDepartment(
     .findOne({ id: dept });
   return department;
 }
+
+export async function fetchAllDepartments(): Promise<DepartmentData[]> {
+  const departments = await (await getDb())
+    .collection<DepartmentData>("departments")
+    .find()
+    .toArray();
+  return departments;
+}
