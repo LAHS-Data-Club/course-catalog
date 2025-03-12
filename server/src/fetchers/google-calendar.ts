@@ -1,8 +1,8 @@
-import dotenv from "dotenv";
-dotenv.config();
 import { DateTime } from "luxon";
+import { config } from "dotenv";
+config();
 
-async function fetchCalendarData(formattedDate: string) {
+export async function fetchCalendarData(formattedDate: string) {
   const date = DateTime.fromFormat(formattedDate, "M-dd-yyyy");
   const calendarUrl =
     "c_e281ee0055e616856c4f83178cad4a88da4cd3e11bc8b5354efb1ea14f45617e@group.calendar.google.com";
@@ -49,5 +49,3 @@ async function fetchCalendarData(formattedDate: string) {
   }
   return schedule;
 }
-
-export { fetchCalendarData };
