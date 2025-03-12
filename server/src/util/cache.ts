@@ -1,12 +1,14 @@
 import NodeCache from "node-cache";
 
 class Cache {
+  cache: NodeCache;
+
   constructor(ttlSeconds = 60 * 60 * 24) {
     // set a max size ? // dont let them go past a certain point
     // if they go further than avaiable on calendar, make button run away
     // if it goes too far back, left, too far future, right
-    this.cache = new NodeCache({ 
-      stdTTL: ttlSeconds 
+    this.cache = new NodeCache({
+      stdTTL: ttlSeconds,
     });
   }
 
@@ -16,7 +18,7 @@ class Cache {
       return value;
     }
 
-    console.log('fetching new data....');
+    console.log("fetching new data....");
     return fn().then((data) => {
       this.cache.mset(data);
       return this.cache.get(key);
