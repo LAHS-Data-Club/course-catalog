@@ -12,11 +12,9 @@ function CoursesLayout() {
   const [classPopup, setClassPopup] = useState<Course | null>(null);
 
   useEffect(() => {
-    console.log("in effect");
-    fetch("http://localhost:3000/api/departments")
+    fetch(`${import.meta.env.VITE_API_URL}/api/departments`)
       .then((res) => res.json())
       .then((data) => {
-        console.log("data", data);
         setClassData(data);
       });
   }, []);
@@ -63,6 +61,13 @@ function CoursesLayout() {
                   showDropdown ? "scale-y-100" : "scale-y-0"
                 } origin-top duration-300 flex flex-col absolute bg-neutral-800 w-2/3`}
               >
+                <NavLink
+                  onClick={() => setShowDropdown(false)}
+                  className="hover:bg-blue-400 py-3 px-5 transition"
+                  to={"/courses"}
+                >
+                  All Courses
+                </NavLink>
                 {Object.entries(departments).map(([_key, value]) => (
                   <NavLink
                     onClick={() => setShowDropdown(false)}

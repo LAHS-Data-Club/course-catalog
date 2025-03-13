@@ -42,7 +42,7 @@ function Courses() {
       {selectedID && (
         <div className="flex flex-wrap mb-5">
           {Object.entries(highlightColors).map(([key, value]) => (
-            <div className="flex items-center gap-1 mr-10">
+            <div className="flex items-center gap-1 mr-10" key={key}>
               <div className={`w-4 h-4 rounded ${value}`}></div>
               <div className="capitalize font-semibold">
                 {key.replace("-", " ")}
@@ -53,12 +53,13 @@ function Courses() {
       )}
       <div className="flex gap-6">
         {uniqueLevels.map((level) => (
-          <section className="min-w-60 flex-1 flex flex-col gap-5">
+          <section className="min-w-60 flex-1 flex flex-col gap-5" key={level}>
             <div className="w-full bg-neutral-800 text-center p-3 rounded uppercase font-bold">
               {level}
             </div>
             {classesFromLevel(level).map((c) => (
               <Class
+                key={c.id}
                 c={c}
                 onClick={() => setSelectedID(c.id)}
                 onDoubleClick={() => setClassPopup(c)}

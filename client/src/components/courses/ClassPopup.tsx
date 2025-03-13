@@ -39,7 +39,10 @@ function ClassPopup({ c, closePopup }: ClassPopupProps) {
           <h4 className="font-semibold uppercase">{c.name}</h4>
           <div id="tags" className="flex gap-2">
             {c.tags.map((tag) => (
-              <div className="text-xs bg-neutral-600 w-fit py-1 px-3 rounded-md">
+              <div
+                className="text-xs bg-neutral-600 w-fit py-1 px-3 rounded-md"
+                key={tag}
+              >
                 {tag}
               </div>
             ))}
@@ -53,7 +56,7 @@ function ClassPopup({ c, closePopup }: ClassPopupProps) {
         )}
         <p className="text-sm mb-2">{c.description}</p>
 
-        <p className="text-sm">rest of the info goes here lol</p>
+        {/* other info here */}
       </div>
     </div>
   );
