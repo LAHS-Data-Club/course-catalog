@@ -4,7 +4,7 @@ import Sidebar from "../components/Sidebar";
 import { PeriodsContext } from "../components/contexts/PeriodsContext";
 
 function AppLayout() {
-  // maybe could just pass down instead of using context 
+  // maybe could just pass down instead of using context
   // idk if this is right practice but someone else can figure it out :D
   const defaultPeriods = {
     "{Period 1}": "",
@@ -13,13 +13,13 @@ function AppLayout() {
     "{Period 4}": "",
     "{Period 5}": "",
     "{Period 6}": "",
-    "{Period 7}": ""
+    "{Period 7}": "",
   };
-  const storedPeriods = JSON.parse(localStorage.getItem('periods'));
+  const storedPeriods = JSON.parse(localStorage.getItem("periods") || "{}");
   const [periods, setPeriods] = useState(storedPeriods || defaultPeriods);
-  
+
   useEffect(() => {
-    localStorage.setItem('periods', JSON.stringify(periods));
+    localStorage.setItem("periods", JSON.stringify(periods));
   }, [periods]);
 
   return (

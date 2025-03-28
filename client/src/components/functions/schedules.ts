@@ -1,6 +1,15 @@
 import { DateTime } from "luxon";
 import scheduleData from "../../scripts/output/schedules.json";
 
+export interface ScheduleDay {
+  name: string;
+  schedule: { [key: string]: string };
+}
+
+export interface ScheduleData {
+  [key: string]: ScheduleDay;
+}
+
 async function getSpecialSchedule(date: DateTime) {
   const url = `${import.meta.env.VITE_API_URL}/api/calendar/${date.toFormat(
     "M-dd-yyyy"
@@ -19,7 +28,7 @@ async function getSpecialSchedule(date: DateTime) {
     } else if (name.substring(2, 5) === "day") {
       return "schedule-" + name.substring(0, 1).toLowerCase();
     } else if (name.substring(0, 6) === "finals") {
-      return "finals-" + date.weekdayShort.toLowerCase();
+      return "finals-" + date.weekdayShort?.toLowerCase();
     } else if (name.includes("psat")) {
       return "psat-testing";
     }
@@ -54,7 +63,10 @@ async function getScheduleName(date: DateTime) {
 // oops i got rid of everything and this has one line now
 async function getSchedule(date: DateTime) {
   const scheduleName = await getScheduleName(date);
-  return scheduleData[scheduleName];
+  if (!scheduleName) {
+    throw new Error("No schedule found for this date");
+  }
+  return scheduleData[scheduleName as keyof typeof scheduleData] as ScheduleDay;
 }
 
 export { getSchedule };

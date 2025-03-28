@@ -1,11 +1,12 @@
 import { useContext } from "react";
-import { PeriodsContext } from "./contexts/PeriodsContext";
+import { Periods, PeriodsContext } from "./contexts/PeriodsContext";
 
-function Profile () {
+function Profile() {
   const { periods, setPeriods } = useContext(PeriodsContext);
-  function handleInputChange(e) {
+
+  function handleInputChange(e: React.ChangeEvent<HTMLInputElement>) {
     const { name, value } = e.target;
-    setPeriods(prev => ({ ...prev, [name]: value,  }));
+    setPeriods((prev: Periods) => ({ ...prev, [name]: value }));
   }
 
   return (
@@ -19,19 +20,18 @@ function Profile () {
 
         <div className="bg-neutral-600 flex-2 flex flex-col min-w-80 rounded p-6 gap-3 items-center">
           {/** empty labels? */}
-          {Object.keys(periods).map(period => (
-            <input 
+          {Object.keys(periods).map((period) => (
+            <input
               key={period}
-              type="text" 
+              type="text"
               name={period}
-              placeholder={period.replace(/[{}]/g, '')}
+              placeholder={period.replace(/[{}]/g, "")}
               value={periods[period]}
               onChange={handleInputChange}
               className="text-black bg-neutral-300 rounded-md w-full p-2 pl-4"
             />
           ))}
         </div>
-
       </div>
     </div>
   );

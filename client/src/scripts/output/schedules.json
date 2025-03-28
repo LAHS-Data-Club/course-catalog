@@ -193,9 +193,11 @@
     }
   },
   "weekend": {
-    "name": "Weekend"
+    "name": "Weekend",
+    "schedule": {}
   },
   "no-school": {
-    "name": "No School"
+    "name": "No School",
+    "schedule": {}
   }
 }
