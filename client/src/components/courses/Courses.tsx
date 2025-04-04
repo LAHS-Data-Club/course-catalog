@@ -4,8 +4,6 @@ import generateHighlighter from "./highlights";
 import Class from "./Class";
 import { CoursesContext } from "../contexts/CoursesContext";
 
-// ISSUE: its hard to see classes because they arent aranged next to their prereqs, so super long lists are hell
-// OTHER CONSIDERATION: dance in pe or performing arts ? weird to put in both ? what shoudl we do considering pathways purpose
 const highlightColors = {
   "recommended-before": "bg-rose-400",
   "recommended-after": "bg-teal-400",
@@ -24,7 +22,7 @@ function Courses() {
   }, [dept]);
 
   const highlights = selectedID
-    ? generateHighlighter(classes, selectedID, true)
+    ? generateHighlighter(classes, selectedID, false)
     : ({} as Record<string, string>);
   const uniqueLevels = [...new Set(classes.map((c) => c.level.name))].sort(
     (a, b) => a.localeCompare(b)

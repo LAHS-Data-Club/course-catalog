@@ -1,12 +1,10 @@
-// pretty much exactly the same as from ivys lol prolly make sure this works at some pt later
-
 import { Course } from "../../lib/types";
 
 // deal wiht the imploictyly enabled at some point
 function generateHighlighter(
   classes: Course[],
   targetId: string,
-  implicitEnabled: boolean = true
+  implicitEnabled: boolean = false
 ): Record<string, string> {
   const highlights = {} as Record<string, string>;
   const x = classes.find((c) => c.id === targetId);

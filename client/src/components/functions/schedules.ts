@@ -60,7 +60,6 @@ async function getScheduleName(date: DateTime) {
   return getScheduleFromDate(weekday);
 }
 
-// oops i got rid of everything and this has one line now
 async function getSchedule(date: DateTime) {
   const scheduleName = await getScheduleName(date);
   if (!scheduleName) {

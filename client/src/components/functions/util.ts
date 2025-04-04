@@ -20,7 +20,6 @@ async function getEventEnd(startDate: DateTime, startSchedule: ScheduleDay) {
   let checkingDate = startDate;
   let res = startSchedule;
   while (true) {
-    // prolly exit in case error super long for some reason
     if (res.schedule) {
       for (const period of Object.keys(res.schedule)) {
         const [hours, minutes] = period.split(":");
@@ -40,13 +39,11 @@ async function getEventEnd(startDate: DateTime, startSchedule: ScheduleDay) {
   }
 }
 
-// the same exact function but like 3 changes + bad return asdjkl
-// i dont know how to code :sob: someone fix the repetition and this file :pray: ty
+
 async function getEventStart(startDate: DateTime, startSchedule: ScheduleDay) {
   let checkingDate = startDate;
   let res = startSchedule;
   while (true) {
-    // prolly exit in case error super long for some reason
     if (res.schedule) {
       for (const period of Object.keys(res.schedule).reverse()) {
         const [hours, minutes] = period.split(":");

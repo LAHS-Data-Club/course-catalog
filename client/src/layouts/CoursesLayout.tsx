@@ -35,16 +35,15 @@ function CoursesLayout() {
           </p>
         </div>
 
+        {/** does not close if u click outside lol */}
         <div className="p-5 w-5/6 bg-neutral-700 shadow-lg">
-          {/** dropdown uhaoishdoiashd someone fix this lol */}
-          {/** i think im div spamming too much */}
           <div className="flex justify-between relative z-2 border-b-3 border-b-neutral-600 mb-4 pb-4">
             <div className="w-2/3">
               <button
                 onClick={() => setShowDropdown(!showDropdown)}
-                className="cursor-pointer bg-neutral-800 border w-full py-2 px-7 flex justify-between items-center text-lg"
+                className="cursor-pointer bg-neutral-800 border border-neutral-500 w-full py-2 px-7 flex justify-between items-center text-lg"
               >
-                <div className="sfont-semibold">
+                <div>
                   {departments.find((d) => d.id === dept)?.name ||
                     "All Courses"}
                 </div>
@@ -59,11 +58,11 @@ function CoursesLayout() {
               <div
                 className={`${
                   showDropdown ? "scale-y-100" : "scale-y-0"
-                } origin-top duration-300 flex flex-col absolute bg-neutral-800 w-2/3`}
+                } origin-top duration-300 flex flex-col absolute bg-neutral-800 border border-neutral-500 w-2/3`}
               >
                 <NavLink
                   onClick={() => setShowDropdown(false)}
-                  className="hover:bg-blue-400 py-3 px-5 transition"
+                  className="hover:bg-blue-400 py-3 px-7 transition"
                   to={"/courses"}
                 >
                   All Courses
@@ -71,7 +70,7 @@ function CoursesLayout() {
                 {Object.entries(departments).map(([_key, value]) => (
                   <NavLink
                     onClick={() => setShowDropdown(false)}
-                    className="hover:bg-blue-400 py-3 px-5 transition"
+                    className="hover:bg-blue-400 py-3 px-7 transition"
                     to={value.id}
                     key={value.id}
                   >
@@ -80,7 +79,7 @@ function CoursesLayout() {
                 ))}
               </div>
             </div>
-            <div className="flex gap-4 text-blue-400 underline">
+            <div className="flex gap-4 text-blue-300">
               {/** pathway overview & help/info? */}
               <button>btn1</button>
               <button>btn2</button>

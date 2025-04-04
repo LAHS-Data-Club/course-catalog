@@ -9,7 +9,11 @@ export async function fetchCalendarData(formattedDate: string) {
   const key = process.env.API_KEY;
   const timeMin = date.startOf("week");
   const timeMax = date.endOf("week");
-  const params = `timeMin=${timeMin.toISO()}&timeMax=${timeMax.toISO()}&timeZone=America/Los_Angeles`;
+  const params = 
+    `timeMin=${timeMin.toISO()}` +
+    `&timeMax=${timeMax.toISO()}` +
+    `&timeZone=America/Los_Angeles` +
+    `&singleEvents=true`;
 
   const url =
     `https://www.googleapis.com/calendar/v3/calendars/` +
@@ -32,19 +36,28 @@ export async function fetchCalendarData(formattedDate: string) {
 
     for (const item of events) {
       if (item.status !== "cancelled") {
-        const eventStart = DateTime.fromISO(
+
+        const eventStartDay = DateTime.fromISO(
           item.start.dateTime || item.start.date
-        );
-        const eventEnd = DateTime.fromISO(item.end.dateTime || item.end.date);
+        ).startOf('day');
+
+        // either google calendar is stupid or i am stupid
+        let eventEndDay = item.end.dateTime || item.end.date;
+        if (eventEndDay.includes('T')) {
+          eventEndDay = DateTime.fromISO(eventEndDay);
+        } else {
+          eventEndDay = DateTime.fromISO(eventEndDay).startOf('day'); 
+        }
+
         if (
-          checkingDate >= eventStart.startOf("day") &&
-          checkingDate <= eventEnd.endOf("day")
+          checkingDate >= eventStartDay &&
+          checkingDate < eventEndDay
         ) {
           val.push(item);
         }
       }
     }
-    schedule.push({ key, val }); // formatted this way for node-cache
+    schedule.push({ key, val }); 
     checkingDate = checkingDate.plus({ days: 1 });
   }
   return schedule;

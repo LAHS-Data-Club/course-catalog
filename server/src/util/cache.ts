@@ -4,9 +4,6 @@ class Cache {
   cache: NodeCache;
 
   constructor(ttlSeconds = 60 * 60 * 24) {
-    // set a max size ? // dont let them go past a certain point
-    // if they go further than avaiable on calendar, make button run away
-    // if it goes too far back, left, too far future, right
     this.cache = new NodeCache({
       stdTTL: ttlSeconds,
     });

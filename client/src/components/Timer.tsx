@@ -13,7 +13,7 @@ interface Event {
   name: string;
 }
 
-// its like one second off from bell LOL someone add it ig
+// check if its still off from bell
 function Timer() {
   const { periods } = useContext(PeriodsContext);
   const [loaded, setLoaded] = useState(false);
@@ -21,7 +21,6 @@ function Timer() {
   const [timeRemaining, setTimeRemaining] = useState<Duration | null>(null);
   const showNextRef = useRef(true); // i dont know why this exists someone save me aaaaaaaaaaaaaa
 
-  // prolly good to try catch and handle error but im lazy and its fine it just status on loading :sob:
   useEffect(() => {
     async function initialize() {
       const currentEvent = await getCurrentEvent();
@@ -69,7 +68,6 @@ function Timer() {
 
   return (
     <div className="w-[calc(43%+120px)] mt-4">
-      {/** bar randomly shows up its kinda weird */}
       {/** annoying css for small screens -- like the free/no school part bounces around */}
       <div
         style={{ width: (percentDone || 0) + "%" }}
@@ -85,7 +83,6 @@ function Timer() {
                   (periods[currentEvent.name] ||
                     currentEvent.name.replace(/[{}]/g, ""))}
               </div>
-              {/** shows odd block/schedule name even when its free -- should we keep that ? */}
               <div>{currentEvent?.scheduleType}</div>
             </div>
           </>
