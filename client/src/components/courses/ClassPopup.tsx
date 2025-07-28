@@ -1,5 +1,9 @@
-import { useRef } from "react";
-import { Course } from "../../lib/types";
+// --- ClassPopup.tsx ---
+import { useRef, useState } from "react";
+import { Course } from "../../lib/types"; // Assuming Course type is defined here
+import { X } from "lucide-react";
+
+type Tab = "description" | "topics" | "grading";
 
 interface ClassPopupProps {
   c: Course;
@@ -8,66 +12,100 @@ interface ClassPopupProps {
 
 function ClassPopup({ c, closePopup }: ClassPopupProps) {
   const ref = useRef<HTMLDivElement>(null);
-  document.body.setAttribute("style", "overflow: hidden");
+  const [activeTab, setActiveTab] = useState<Tab>("description");
+
+  const tabClass = (tabName: Tab) => `
+    px-5 py-2.5 text-sm font-medium rounded-lg transition-colors
+    ${activeTab === tabName 
+      ? 'bg-slate-200 text-indigo-600 dark:bg-slate-700 dark:text-indigo-400' 
+      : 'text-slate-500 hover:bg-slate-200/50 dark:text-slate-400 dark:hover:bg-slate-700/50'
+    }
+  `;
 
   return (
     <div
-      onClick={(e) => {
-        if (!ref.current?.contains(e.target as Node)) {
-          closePopup();
-        }
-      }}
-      className="fixed z-10 top-0 bottom-0 left-0 right-0 bg-black/60 flex items-center justify-center"
+      onClick={(e) => !ref.current?.contains(e.target as Node) && closePopup()}
+      className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/70 p-4 backdrop-blur-xs" // Reduced blur
     >
       <div
-        id="modal"
         ref={ref}
-        className="relative z-15 h-110 w-110 bg-neutral-700 border-2 border-blue-300 p-5 overflow-auto"
+        className="relative flex flex-col max-h-[90vh] w-full max-w-3xl overflow-hidden rounded-xl border border-slate-300 bg-white shadow-xl dark:border-slate-700 dark:bg-slate-800" // Adjusted border and shadow
       >
-        <div className="flex items-center gap-5 flex-wrap mb-3 pr-5">
-          <h4 className="font-semibold uppercase">{c.name}</h4>
-          <div id="tags" className="flex gap-2">
-            {c.tags.map((tag) => (
-              <div
-                className="text-xs font-semibold bg-neutral-600 rounded py-1 px-3"
-                key={tag}
-              >
-                {tag}
+        <div className="flex-shrink-0 border-b border-slate-200 p-6 dark:border-slate-700">
+          <div className="flex items-start justify-between gap-4">
+            <div>
+              <h4 className="text-xl font-bold text-slate-900 dark:text-slate-100">{c.name}</h4>
+              <div className="mt-2 flex flex-wrap gap-2">
+                {c.tags.map((tag) => (
+                  <div key={tag} className="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-600 dark:bg-slate-700 dark:text-slate-300">
+                    {tag}
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
+            <button onClick={closePopup} className="rounded-full p-1 text-slate-500 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-700">
+              <X size={24} />
+            </button>
           </div>
         </div>
 
-        {c.recommendations && (
-        <p className="text-sm italic text-blue-300 mb-1">
-          *Recommended: {c.recommendations}
-        </p>
-        )}
-        <p className="text-sm mb-4">{c.description}</p>
-        <hr />
-        <div className="px-4">
-          {/** repetition */}
-          {c.units.length > 0 && <h5 className="font-semibold mt-4">Topics Covered:</h5>}
-          <ul className="list-disc pl-4 text-sm text-neutral-300">
-            {c.units.map(unit => (
-              <li>{unit.unit}</li>
-            ))}
-          </ul>
-          {c.gradingDescription.length > 0 && <h5 className="font-semibold mt-4">Workload Info:</h5>}
-          <ul className="list-disc pl-4 text-sm text-neutral-300">
-            {c.gradingDescription.map((x) => (
-              <li>{x}</li>
-            ))}
-          </ul>
-          {c.gradingCategories.length > 0 && <h5 className="font-semibold mt-4">Grading Categories:</h5>}
-          <ul className="text-sm text-gray-300">
-            {c.gradingCategories.map((x) => (
-              <li className="flex justify-between">
-                <span className="text-neutral-300">{x.name}</span>
-                <span className="text-blue-300">{x.weight}%</span>
-              </li>
-            ))}
-          </ul>
+        <div className="flex-grow overflow-y-auto p-6">
+          <div className="mb-5">
+            <div className="inline-flex rounded-xl bg-slate-100 p-1.5 dark:bg-slate-900/70 gap-2">
+              <button onClick={() => setActiveTab('description')} className={tabClass('description')}>Description</button>
+              <button onClick={() => setActiveTab('topics')} className={tabClass('topics')}>Topics</button>
+              <button onClick={() => setActiveTab('grading')} className={tabClass('grading')}>Grading</button>
+            </div>
+          </div>
+          
+          <div className="text-base leading-relaxed text-slate-600 dark:text-slate-300">
+            {activeTab === 'description' && (
+              <div className="space-y-4 prose prose-slate dark:prose-invert max-w-none">
+                {c.recommendations && (
+                  <p className="rounded-lg bg-indigo-50 p-3 text-indigo-800 dark:bg-indigo-900/50 dark:text-indigo-300">
+                    <strong>Recommended:</strong> {c.recommendations}
+                  </p>
+                )}
+                <p>{c.description}</p>
+              </div>
+            )}
+
+            {activeTab === 'topics' && (
+              <div className="prose prose-slate dark:prose-invert max-w-none">
+                {c.units.length > 0 ? (
+                  <ul className="list-disc list-inside space-y-1"> {/* Added explicit list styling for bullet points */}
+                    {c.units.map((unit, i) => <li key={i}>{unit.unit}</li>)}
+                  </ul>
+                ) : <p>No topics listed.</p>}
+              </div>
+            )}
+
+            {activeTab === 'grading' && (
+              <div className="space-y-5">
+                {c.gradingDescription.length > 0 && (
+                  <div>
+                    <h5 className="font-semibold text-slate-800 dark:text-slate-200">Workload Info</h5>
+                    <ul className="mt-2 list-inside list-disc space-y-1 pl-1 text-slate-600 dark:text-slate-400">
+                      {c.gradingDescription.map((x, i) => <li key={i}>{x}</li>)}
+                    </ul>
+                  </div>
+                )}
+                {c.gradingCategories.length > 0 && (
+                  <div>
+                    <h5 className="font-semibold text-slate-800 dark:text-slate-200">Grading Categories</h5>
+                    <ul className="mt-2 space-y-1">
+                      {c.gradingCategories.map((x, i) => (
+                        <li key={i} className="flex justify-between rounded-md p-2 hover:bg-slate-50 dark:hover:bg-slate-700/50">
+                          <span>{x.name}</span>
+                          <span className="font-medium text-indigo-500 dark:text-indigo-400">{x.weight}%</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </div>

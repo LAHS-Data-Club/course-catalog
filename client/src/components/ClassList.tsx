@@ -1,9 +1,9 @@
+// --- ClassList.tsx ---
 import { DateTime } from "luxon";
 import { getSchedule } from "./functions/schedules";
 import { useEffect, useState, useContext } from "react";
 import { PeriodsContext } from "./contexts/PeriodsContext";
 
-// i also have no clue when to add types im just doing it when red underline
 interface Period {
   startTime: string;
   endTime: string;
@@ -20,7 +20,6 @@ function ClassList({ date }: Props) {
   const [loaded, setLoaded] = useState(false);
   const [error, setError] = useState(false);
 
-  // make this more readable
   useEffect(() => {
     async function formatSchedule() {
       setLoaded(false);
@@ -36,14 +35,14 @@ function ClassList({ date }: Props) {
             }))
             .filter(
               (item) =>
-                !item.name.includes("Passing") && !item.name.includes("Free")
+                item.endTime && !item.name.includes("Passing") && !item.name.includes("Free")
             );
           setSchedule(formattedSchedule);
         } else {
           setSchedule([]);
         }
       } catch (err) {
-        console.log(err);
+        console.error(err);
         setError(true);
       }
       setLoaded(true);
@@ -51,36 +50,40 @@ function ClassList({ date }: Props) {
     formatSchedule();
   }, [date]);
 
-  if (error) return <div>Sorry, a network error occurred.</div>;
+  if (error) return <p className="text-center text-slate-500 dark:text-slate-400">Sorry, a network error occurred.</p>;
+
+  if (!loaded) return <p className="text-center text-slate-500 dark:text-slate-400">Loading schedule...</p>;
 
   return (
-    <div className="w-[calc(43%+120px)] flex flex-col gap-4 items-center">
-      {loaded &&
-        (schedule.length ? (
-          schedule.map((item) => (
-            <div className="text-white px-5 py-1.5 flex justify-between h-16 w-full bg-secondary rounded-md">
-              <div className="self-center">
-                <div className="text-lg font-semibold">
-                  {item.name.replace(/[{}]/g, "")}
+    <div className="w-full">
+      {schedule.length > 0 ? (
+        <div className="space-y-2.5"> {/* Slightly reduced space-y */}
+          {schedule.map((item) => (
+            <div key={item.startTime} className="rounded-xl border border-slate-200 bg-white p-3.5 dark:border-slate-800 dark:bg-slate-800"> {/* Slightly reduced padding */}
+              <div className="flex items-center justify-between">
+                {/* Left side content */}
+                <div>
+                  <p className="font-semibold text-slate-800 dark:text-slate-200">
+                    {item.name.replace(/[{}]/g, "")}
+                  </p>
+                  {periods[item.name] && (
+                    <p className="text-sm text-slate-500 dark:text-slate-400">{periods[item.name]}</p>
+                  )}
                 </div>
-                {/** this doesnt work for ie. Period 2/A, Period 2/B fix at some point */}
-                {periods[item.name] && (
-                  <div className="text-sm">{periods[item.name]}</div>
-                )}
-              </div>
-              <div className="self-center">
-                {item.startTime} - {item.endTime}
+                {/* Right side content */}
+                <div className="font-mono text-base text-slate-500 dark:text-slate-400">
+                  {item.startTime} - {item.endTime}
+                </div>
               </div>
             </div>
-          ))
-        ) : (
-          <>
-            <div className="text-lg">No School!</div>
-            <div className="h-fit w-80 p-7 bg-secondary">
-              something here because its so empty
-            </div>
-          </>
-        ))}
+          ))}
+        </div>
+      ) : (
+        <div className="text-center rounded-xl border border-dashed border-slate-300 dark:border-slate-700 p-12">
+            <h4 className="text-xl font-bold text-slate-800 dark:text-slate-200">No School Today</h4>
+            <p className="mt-1 text-slate-500 dark:text-slate-400">Enjoy your day off!</p>
+        </div>
+      )}
     </div>
   );
 }

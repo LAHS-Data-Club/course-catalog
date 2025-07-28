@@ -2,56 +2,62 @@ import { useState } from "react";
 import { DateTime } from "luxon";
 import Timer from "./Timer";
 import ClassList from "./ClassList";
+import { ChevronLeft, ChevronRight, X } from "lucide-react";
+import EventsSidebar from "./EventsSidebar";
 
 function Home() {
   const now = DateTime.now().setZone("America/Los_Angeles");
   const [displayDate, setDisplayDate] = useState(now);
-  const showPopup = !now.hasSame(displayDate, "day");
+  const [isPopupVisible, setIsPopupVisible] = useState(true);
+  const showPopup = !now.hasSame(displayDate, "day") && isPopupVisible;
+
+  const buttonClass = "cursor-pointer rounded-md p-1 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors";
 
   return (
-    <div className="flex flex-col p-6 items-center mt-5">
-      {/** i think im just purely stealing from watt oops but like */}
+    <div className="mx-auto max-w-screen-xl p-4 sm:p-6 lg:p-8">
       {showPopup && (
-        <div className="flex justify-between fixed bg-black top-5 py-2 px-4 rounded opacity-75 min-w-fit w-[calc(53%+100px)]">
-          <div>
-            You are viewing the schedule for {displayDate.toFormat("LLL dd")}
-          </div>
-          <div className="flex gap-3">
-            <div
-              className="underline cursor-pointer"
-              onClick={() =>
-                setDisplayDate(DateTime.now().setZone("America/Los_Angeles"))
-              }
-            >
+        <div className="fixed top-5 z-20 left-1/2 -translate-x-1/2 flex w-11/12 max-w-2xl items-center justify-between rounded-lg bg-slate-800/90 px-4 py-2.5 text-white shadow-lg backdrop-blur-sm">
+          <p className="text-sm">Viewing schedule for {displayDate.toFormat("LLL dd")}</p>
+          <div className="flex items-center gap-4">
+            <button className="underline-offset-2 text-sm underline" onClick={() => setDisplayDate(now)}>
               Jump to Present
-            </div>
-            <div className="cursor-pointer">x</div> {/** add functionality */}
+            </button>
+            <button onClick={() => setIsPopupVisible(false)}>
+              <X size={20} />
+            </button>
           </div>
         </div>
       )}
 
-      <div className="font-bold text-2xl w-fit">{displayDate.weekdayLong}</div>
-      <div className="flex gap-2 text-lg items-center">
-        <div
-          className="cursor-pointer hover:bg-secondary px-2 rounded transition"
-          onClick={() => setDisplayDate((prev) => prev.plus({ days: -1 }))}
-        >
-          &#8249;
-        </div>{" "}
-        {/** make into actual icons or smth */}
-        <div>{displayDate.toLocaleString(DateTime.DATE_FULL)}</div>
-        <div
-          className="cursor-pointer hover:bg-secondary px-2 rounded transition"
-          onClick={() => setDisplayDate((prev) => prev.plus({ days: 1 }))}
-        >
-          &#8250;
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
+        {/* Main Content Column */}
+        <div className="lg:col-span-2 flex flex-col gap-8">
+          {/* Date Selector */}
+          <div className="text-center">
+            <div className="text-3xl font-bold text-slate-800 dark:text-slate-200">{displayDate.weekdayLong}</div>
+            <div className="mt-1 flex justify-center items-center gap-2 text-lg text-slate-500 dark:text-slate-400">
+              <button className={buttonClass} onClick={() => setDisplayDate((prev) => prev.minus({ days: 1 }))}>
+                <ChevronLeft size={20} />
+              </button>
+              <span>{displayDate.toLocaleString(DateTime.DATE_FULL)}</span>
+              <button className={buttonClass} onClick={() => setDisplayDate((prev) => prev.plus({ days: 1 }))}>
+                <ChevronRight size={20} />
+              </button>
+            </div>
+          </div>
+
+          <Timer />
+          
+          <hr className="w-full border-t border-slate-200 dark:border-slate-800" />
+
+          <ClassList date={displayDate} />
+        </div>
+
+        {/* Right Sidebar Column */}
+        <div className="lg:col-span-1">
+          <EventsSidebar />
         </div>
       </div>
-
-      {/** css silly when smaller window fix later */}
-      <Timer />
-      <hr className="text-neutral-700 w-[calc(43%+120px)] my-4 border-2 rounded" />
-      <ClassList date={displayDate} />
     </div>
   );
 }

@@ -1,5 +1,6 @@
+// --- AllCourses.tsx ---
 import { useContext, useEffect, useState } from "react";
-import Class from "./Class";
+import Class from "./Class"; // Assuming Class component is here
 import { CoursesContext } from "../contexts/CoursesContext";
 import { SlidersHorizontal } from "lucide-react";
 
@@ -11,14 +12,12 @@ function AllCourses() {
   const [searchFilters, setSearchFilters] = useState<string[]>([]);
 
   useEffect(() => {
-    if (data.length) {
-      setLoading(false);
-    }
+    if (data.length) setLoading(false);
   }, [data]);
 
   const allClasses = data.flatMap((d) => d.classes);
-  const filterTags = [...new Set(allClasses.flatMap((c) => c.tags))]
-    .sort((a, b) => a.localeCompare(b));
+  const filterTags = [...new Set(allClasses.flatMap((c) => c.tags))].sort();
+  
   const searchResults = allClasses
     .filter((x) => x.name.toLowerCase().includes(searchQuery.toLowerCase()))
     .filter((x) => !searchFilters.length || x.tags.some(tag => searchFilters.includes(tag)))
@@ -29,59 +28,57 @@ function AllCourses() {
   }
 
   function handleFilterChange(e: React.ChangeEvent<HTMLInputElement>) {
-    if (e.target.checked) {
-      setSearchFilters((prev) => [...prev, e.target.id]);
-    } else {
-      setSearchFilters((prev) => prev.filter((tag) => tag != e.target.id));
-    }
+    setSearchFilters(prev => 
+      e.target.checked ? [...prev, e.target.id] : prev.filter(tag => tag !== e.target.id)
+    );
   }
 
   return (
     <>
-      <div className="flex gap-2 w-full">
+      <div className="flex w-full flex-col sm:flex-row gap-2">
         <input
           type="text"
           value={searchQuery}
-          placeholder="Search Classes..."
+          placeholder="Search all classes..."
           onChange={handleInputChange}
-          className="shadow-lg text-black placeholder:text-neutral-500 bg-neutral-300 flex-1 p-1 pl-4 rounded border-neutral-400 border-2"
+          className="w-full flex-1 rounded-lg border border-slate-300 bg-white p-2.5 px-4 placeholder:text-slate-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200"
         />
         <button 
           onClick={() => setFilterOpen(!filterOpen)}
-          className="shadow-lg flex items-center gap-2 px-4 py-2 text-white border-neutral-400 hover:bg-neutral-800 transition delay-50 rounded border-2 cursor-pointer"
+          className="flex items-center justify-center gap-2 rounded-lg border border-slate-300 bg-white px-4 py-2 text-slate-700 transition-colors hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700"
         >
-          <SlidersHorizontal className="w-5 h-5" />
+          <SlidersHorizontal className="h-5 w-5" />
           <span>Filter</span>
         </button>
       </div>
       {filterOpen && (
-        <div className="flex flex-wrap gap-4 mt-2 w-full bg-neutral-800 shadow-lg rounded-lg p-4 border border-neutral-600">
+        <div className="mt-4 w-full flex-wrap gap-x-6 gap-y-3 rounded-lg border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900/50">
           {filterTags.map((tag) => (
-            <div className="flex items-center gap-2">
+            <div key={tag} className="flex items-center gap-2">
               <input 
                 checked={searchFilters.includes(tag)} 
                 onChange={handleFilterChange} 
                 type="checkbox" 
                 id={tag} 
                 name={tag} 
-                className="w-4 h-4 cursor-pointer"
+                className="h-4 w-4 cursor-pointer rounded border-slate-400 text-blue-600 focus:ring-blue-500"
               />
-              <label 
-                htmlFor={tag} 
-                className="text-sm text-neutral-300">
+              <label htmlFor={tag} className="cursor-pointer text-sm text-slate-600 dark:text-slate-300">
                 {tag}
               </label>
             </div>
           ))}
         </div>
       )}
-      <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 grid-rows-auto gap-5 mt-4">
+      <div className="mt-7 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
         {searchResults.length > 0 ? (
           searchResults.map((c) => (
-            <Class onDoubleClick={() => setClassPopup(c)} c={c} />
+            // Changed to onClick to open the popup directly,
+            // as requested for "All Courses" single click.
+            <Class key={c.id} onClick={() => setClassPopup(c)} c={c} /> 
           ))
         ) : (
-          !loading && <p>No Classes!</p>
+          !loading && <p className="col-span-full text-center text-slate-500">No classes match your search.</p>
         )}
       </div>
     </>

@@ -10,27 +10,38 @@ function Profile() {
   }
 
   return (
-    <div className="flex flex-col p-6 items-center justify-center h-full gap-7">
-      <div className="bg-neutral-700 w-2/3 h-15 rounded-lg flex items-center py-4 px-6 gap-6">
-        <button>Profile</button>
-        <button>Friends</button>
-      </div>
-      <div className="bg-neutral-700 w-3/4 rounded flex px-10 py-7 justify-center gap-10 flex-wrap overflow-y-scroll">
-        <div className="bg-neutral-600 min-w-60 flex-1 h-full rounded"></div>
-
-        <div className="bg-neutral-600 flex-2 flex flex-col min-w-80 rounded p-6 gap-3 items-center">
-          {/** empty labels? */}
-          {Object.keys(periods).map((period) => (
-            <input
-              key={period}
-              type="text"
-              name={period}
-              placeholder={period.replace(/[{}]/g, "")}
-              value={periods[period]}
-              onChange={handleInputChange}
-              className="text-black bg-neutral-300 rounded-md w-full p-2 pl-4"
-            />
-          ))}
+    <div className="flex h-full w-full flex-col items-center gap-8 p-4 sm:p-6 lg:p-8">
+      <div className="w-full max-w-4xl rounded-lg border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-800/50">
+        <div className="flex gap-2 border-b border-slate-200 dark:border-slate-700">
+          <button className="border-b-2 border-blue-500 px-4 py-2 font-semibold text-blue-500">
+            My Schedule
+          </button>
+          <button className="px-4 py-2 font-medium text-slate-500 hover:text-slate-800 dark:text-slate-400 dark:hover:text-slate-200">
+            Profile
+          </button>
+        </div>
+        
+        <div className="p-2 pt-6">
+            <h2 className="text-lg font-semibold text-slate-800 dark:text-slate-200">Your Classes</h2>
+            <p className="mb-6 text-sm text-slate-500 dark:text-slate-400">Enter your class names for each period. This will be shown on the home page.</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {Object.keys(periods).map((period) => (
+                <div key={period}>
+                  <label htmlFor={period} className="mb-1 block text-sm font-medium text-slate-700 dark:text-slate-300">
+                    {period.replace(/[{}]/g, "")}
+                  </label>
+                  <input
+                    id={period}
+                    type="text"
+                    name={period}
+                    placeholder="e.g. AP Calculus BC"
+                    value={periods[period]}
+                    onChange={handleInputChange}
+                    className="w-full rounded-md border border-slate-300 bg-white p-2 px-3 placeholder:text-slate-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-slate-600 dark:bg-slate-700 dark:text-slate-200"
+                  />
+                </div>
+              ))}
+            </div>
         </div>
       </div>
     </div>
