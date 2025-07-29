@@ -1,4 +1,3 @@
-// --- ClassList.tsx ---
 import { DateTime } from "luxon";
 import { getSchedule } from "./functions/schedules";
 import { useEffect, useState, useContext } from "react";
@@ -14,12 +13,13 @@ interface Props {
   date: DateTime;
 }
 
-function ClassList({ date }: Props) {
+export default function ClassList({ date }: Props) {
   const { periods } = useContext(PeriodsContext);
   const [schedule, setSchedule] = useState<Period[]>([]);
   const [loaded, setLoaded] = useState(false);
   const [error, setError] = useState(false);
 
+  // make this more readable
   useEffect(() => {
     async function formatSchedule() {
       setLoaded(false);
@@ -35,14 +35,14 @@ function ClassList({ date }: Props) {
             }))
             .filter(
               (item) =>
-                item.endTime && !item.name.includes("Passing") && !item.name.includes("Free")
+                !item.name.includes("Passing") && !item.name.includes("Free")
             );
           setSchedule(formattedSchedule);
         } else {
           setSchedule([]);
         }
       } catch (err) {
-        console.error(err);
+        console.log(err);
         setError(true);
       }
       setLoaded(true);
@@ -50,18 +50,17 @@ function ClassList({ date }: Props) {
     formatSchedule();
   }, [date]);
 
-  if (error) return <p className="text-center text-slate-500 dark:text-slate-400">Sorry, a network error occurred.</p>;
-
-  if (!loaded) return <p className="text-center text-slate-500 dark:text-slate-400">Loading schedule...</p>;
+  if (error) return <div>Sorry, a network error occurred.</div>;
+  if (!loaded) return <div>Loading...</div>;
 
   return (
     <div className="w-full">
       {schedule.length > 0 ? (
-        <div className="space-y-2.5"> {/* Slightly reduced space-y */}
+
+        <div className="space-y-2.5"> 
           {schedule.map((item) => (
-            <div key={item.startTime} className="rounded-xl border border-slate-200 bg-white p-3.5 dark:border-slate-800 dark:bg-slate-800"> {/* Slightly reduced padding */}
+            <div key={item.startTime} className="rounded-sm border border-slate-200 bg-white p-3.5 dark:border-slate-800 dark:bg-slate-800"> 
               <div className="flex items-center justify-between">
-                {/* Left side content */}
                 <div>
                   <p className="font-semibold text-slate-800 dark:text-slate-200">
                     {item.name.replace(/[{}]/g, "")}
@@ -70,22 +69,20 @@ function ClassList({ date }: Props) {
                     <p className="text-sm text-slate-500 dark:text-slate-400">{periods[item.name]}</p>
                   )}
                 </div>
-                {/* Right side content */}
-                <div className="font-mono text-base text-slate-500 dark:text-slate-400">
+                <div className="text-slate-500 dark:text-slate-400">
                   {item.startTime} - {item.endTime}
                 </div>
               </div>
             </div>
           ))}
         </div>
+
       ) : (
         <div className="text-center rounded-xl border border-dashed border-slate-300 dark:border-slate-700 p-12">
-            <h4 className="text-xl font-bold text-slate-800 dark:text-slate-200">No School Today</h4>
-            <p className="mt-1 text-slate-500 dark:text-slate-400">Enjoy your day off!</p>
+          <h4 className="text-xl font-bold text-slate-800 dark:text-slate-200">No School Today</h4>
+          <p className="mt-1 text-slate-500 dark:text-slate-400">Enjoy your day off!</p>
         </div>
       )}
     </div>
   );
 }
-
-export default ClassList;

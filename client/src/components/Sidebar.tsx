@@ -1,45 +1,47 @@
 import { NavLink, useLocation } from "react-router-dom";
-import { Book, Home, User } from "lucide-react";
+import { FaHome, FaRegCalendarAlt, FaRegUserCircle, FaPeopleCarry } from "react-icons/fa";
 
-function Sidebar() {
-  const location = useLocation();
-
-  const navLinkClass = (path: string) => `
-    flex h-12 w-12 items-center justify-center rounded-lg transition-colors
-    ${
-      location.pathname.startsWith(path) && path !== "/" || location.pathname === path
-        ? "bg-blue-500 text-white"
-        : "text-slate-500 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-800"
-    }
-  `;
-
+export default function Sidebar() {
   return (
-    <div className="fixed top-0 left-0 bottom-0 flex w-20 flex-col items-center justify-between border-r border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900/50">
-      {/* Logo Placeholder */}
-      <div className="h-8 w-8 rounded-lg bg-slate-200 dark:bg-slate-700"></div>
-      
-      <nav className="flex flex-col gap-4">
-        <NavLink to="/">
-          <div className={navLinkClass("/")}>
-            <Home />
-          </div>
-        </NavLink>
-        <NavLink to="/courses">
-          <div className={navLinkClass("/courses")}>
-            <Book />
-          </div>
-        </NavLink>
-        <NavLink to="/profile">
-          <div className={navLinkClass("/profile")}>
-            <User />
-          </div>
-        </NavLink>
+    <div className="flex dark:bg-slate-900/50 fixed top-0 left-0 bottom-0 w-22 flex-col items-center border-r-4 border-slate-200 dark:border-slate-800 ">
+      <div className="h-23 w-full dark:bg-slate-800"></div>
+    
+      <nav className="flex flex-col w-full">
+        <SidebarItem path={"/"}>
+          <FaHome className="w-7 h-7"/>
+          <p>Home</p>
+        </SidebarItem>
+        <SidebarItem path={"/courses"}>
+          <FaRegCalendarAlt className="w-7 h-7"/>
+          <p>Courses</p>
+        </SidebarItem>
+        <SidebarItem path={"/clubs"}>
+          <FaPeopleCarry className="w-7 h-7"/>
+          <p>Clubs</p>
+        </SidebarItem>
+        <SidebarItem path={"/profile"}>
+          <FaRegUserCircle className="w-7 h-7"/>
+          <p>User</p>
+        </SidebarItem>
       </nav>
-
-      {/* Spacer */}
       <div />
     </div>
   );
 }
 
-export default Sidebar;
+function SidebarItem({ path, children }) {
+  const location = useLocation();
+  const selected = location.pathname.startsWith(path) && path !== "/" || location.pathname === path
+
+  return (
+    <div className={`py-4 w-full cursor-pointer
+      ${selected
+        ? "bg-blue-500 text-white"
+        : "text-slate-500 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-800"}
+    `}>
+      <NavLink to={path} className="flex gap-1 flex-col justify-center items-center">
+        {children}
+      </NavLink>
+    </div>
+  );
+}

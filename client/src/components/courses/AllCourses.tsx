@@ -1,10 +1,9 @@
-// --- AllCourses.tsx ---
 import { useContext, useEffect, useState } from "react";
-import Class from "./Class"; // Assuming Class component is here
+import Class from "./Class"; 
 import { CoursesContext } from "../contexts/CoursesContext";
 import { SlidersHorizontal } from "lucide-react";
 
-function AllCourses() {
+export default function AllCourses() {
   const { data, setClassPopup } = useContext(CoursesContext);
   const [loading, setLoading] = useState(true);
   const [filterOpen, setFilterOpen] = useState(false);
@@ -41,7 +40,7 @@ function AllCourses() {
           value={searchQuery}
           placeholder="Search all classes..."
           onChange={handleInputChange}
-          className="w-full flex-1 rounded-lg border border-slate-300 bg-white p-2.5 px-4 placeholder:text-slate-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200"
+          className="w-full flex-1 rounded border border-slate-300 bg-white p-2.5 px-4 placeholder:text-slate-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200"
         />
         <button 
           onClick={() => setFilterOpen(!filterOpen)}
@@ -52,7 +51,7 @@ function AllCourses() {
         </button>
       </div>
       {filterOpen && (
-        <div className="mt-4 w-full flex-wrap gap-x-6 gap-y-3 rounded-lg border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900/50">
+        <div className="w-full flex-wrap gap-x-6 gap-y-3 rounded-b border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-800/50">
           {filterTags.map((tag) => (
             <div key={tag} className="flex items-center gap-2">
               <input 
@@ -73,16 +72,12 @@ function AllCourses() {
       <div className="mt-7 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
         {searchResults.length > 0 ? (
           searchResults.map((c) => (
-            // Changed to onClick to open the popup directly,
-            // as requested for "All Courses" single click.
             <Class key={c.id} onClick={() => setClassPopup(c)} c={c} /> 
           ))
         ) : (
-          !loading && <p className="col-span-full text-center text-slate-500">No classes match your search.</p>
+          !loading && <p className="col-span-full text-center text-slate-500">No classes.</p>
         )}
       </div>
     </>
   );
 }
-
-export default AllCourses;

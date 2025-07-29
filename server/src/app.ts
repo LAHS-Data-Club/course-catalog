@@ -12,6 +12,7 @@ import { Department, departments } from "./util/types";
 const app = express();
 const cache = new Cache();
 
+// TODO:
 const corsOptions = {
   origin: ["http://localhost:5173"],
   credentials: true,
@@ -21,7 +22,8 @@ app.use(cors(corsOptions));
 app.get(
   "/api/calendar/:date",
   asyncHandler(async (req, res) => {
-    const { date } = req.params;
+    // const { date } = req.params;
+    const { dateStart, dateEnd } = req.query;
     const events = await cache.get(date, () => fetchCalendarData(date));
     res.json(events);
   })
@@ -56,5 +58,5 @@ app.get(
   })
 );
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`listening on port ${PORT}`));

@@ -8,7 +8,7 @@ export async function fetchCalendarData(formattedDate: string) {
     "c_e281ee0055e616856c4f83178cad4a88da4cd3e11bc8b5354efb1ea14f45617e@group.calendar.google.com";
   const key = process.env.API_KEY;
   const timeMin = date.startOf("week");
-  const timeMax = date.endOf("week");
+  const timeMax = timeMin.plus({ months: 1 });
   const params = 
     `timeMin=${timeMin.toISO()}` +
     `&timeMax=${timeMax.toISO()}` +
@@ -28,6 +28,7 @@ export async function fetchCalendarData(formattedDate: string) {
   const json = await response.json();
   const events = json.items;
 
+  // TODO:
   const schedule: any[] = [];
   let checkingDate = timeMin;
   while (checkingDate <= timeMax) {
@@ -35,26 +36,25 @@ export async function fetchCalendarData(formattedDate: string) {
     const val: any[] = [];
 
     for (const item of events) {
-      if (item.status !== "cancelled") {
+      if (item.status === "cancelled") continue;
 
-        const eventStartDay = DateTime.fromISO(
-          item.start.dateTime || item.start.date
-        ).startOf('day');
+      const eventStartDay = DateTime.fromISO(
+        item.start.dateTime || item.start.date
+      ).startOf('day');
 
-        // either google calendar is stupid or i am stupid
-        let eventEndDay = item.end.dateTime || item.end.date;
-        if (eventEndDay.includes('T')) {
-          eventEndDay = DateTime.fromISO(eventEndDay);
-        } else {
-          eventEndDay = DateTime.fromISO(eventEndDay).startOf('day'); 
-        }
+      // either google calendar is stupid or i am stupid
+      let eventEndDay = item.end.dateTime || item.end.date;
+      if (eventEndDay.includes('T')) {
+        eventEndDay = DateTime.fromISO(eventEndDay);
+      } else {
+        eventEndDay = DateTime.fromISO(eventEndDay).startOf('day'); 
+      }
 
-        if (
-          checkingDate >= eventStartDay &&
-          checkingDate < eventEndDay
-        ) {
-          val.push(item);
-        }
+      if (
+        checkingDate >= eventStartDay &&
+        checkingDate < eventEndDay
+      ) {
+        val.push(item);
       }
     }
     schedule.push({ key, val }); 
