@@ -10,6 +10,7 @@ import Courses from './components/courses/Courses';
 import AllCourses from './components/courses/AllCourses';
 
 import PageNotFound from './components/PageNotFound';
+import ClubsLayout from './layouts/ClubsLayout';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
               <Route index element={<AllCourses />} />
               <Route path=':dept' element={<Courses />} />
             </Route>
+            <Route path='/clubs' element={<ClubsLayout />}/>
           </Route>
           <Route path='*' element={<PageNotFound />} />
         </Routes>
