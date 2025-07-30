@@ -10,13 +10,13 @@ export default function ClubCard({ c }: { c: Club }) {
     <NavLink to={c.url}>
       <div
         className={
-          (c.name === "Data Club" ? " glow " : " card ") +
-          "text-md lg:text-base bg-slate-600/40 p-5 rounded drop-shadow-xl font-body lg:flex lg:flex-col h-90"
+          (c.name === "Data Club" ? " glow " : " ") +
+          "group sm:h-70 lg:h-90 flex cursor-pointer flex-col rounded p-5 ring-1 ring-slate-200/80 transition-all hover:shadow-xl hover:ring-blue-500/50 dark:ring-slate-700 dark:hover:ring-blue-500/50 bg-white dark:bg-slate-800 drop-shadow-xl"
         }
       >
-        <p className="font-display text-base lg:text-xl font-semibold">
+        <h4 className="text-lg font-bold">
           {c.name}
-        </p>
+        </h4>
         <div className="my-2 flex flex-col gap-2 mb-3">
           <div className="flex items-start gap-1">
             <FaRegCalendarAlt className="w-6 h-6" />
@@ -29,7 +29,9 @@ export default function ClubCard({ c }: { c: Club }) {
             <div>{parseLocation(c.location)}</div>
           </div>
         </div>
-        <p className="line-clamp-6">{c.description}</p>
+        <p className="line-clamp-6 dark:text-slate-400">
+          {c.description}
+        </p>
       </div>
     </NavLink>
   );

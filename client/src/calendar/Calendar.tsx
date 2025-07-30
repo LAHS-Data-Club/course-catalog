@@ -1,36 +1,26 @@
-import React, { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, Clock, MapPin, X } from 'lucide-react';
-import DOMPurify from 'dompurify';
-import { DateTime } from 'luxon';
+import { useState, useEffect } from 'react';
+
+import { ChevronLeft, ChevronRight, Clock, MapPin, X } from 'lucide-react'; //asdasd
 import { GoLinkExternal } from "react-icons/go";
 import { MdOutlineCalendarToday } from "react-icons/md";
+
+import DOMPurify from 'dompurify';
+import type { CalendarEvent, SelectedEventDetails } from './types';
+
+import { DateTime } from 'luxon';
+
+
 
 const API_KEY = 'AIzaSyDTku4CyKHMvZkQ80fDdy4XqfhuqPiD0P0';
 const CALENDAR_ID = 'c_e281ee0055e616856c4f83178cad4a88da4cd3e11bc8b5354efb1ea14f45617e@group.calendar.google.com';
 
-interface CalendarEvent {
-  id: string;
-  summary: string;
-  description?: string;
-  start: {
-    dateTime?: string;
-    date?: string;
-  };
-  end: {
-    dateTime?: string;
-    date?: string;
-  };
-  location?: string;
-  htmlLink: string;
-}
+const monthNames = [
+  'January', 'February', 'March', 'April', 'May', 'June',
+  'July', 'August', 'September', 'October', 'November', 'December'
+];
+const weekdays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
-interface SelectedEventDetails extends CalendarEvent {
-  formattedStart: string;
-  formattedEnd: string;
-  isAllDay: boolean;
-}
-
-const Calendar = () => {
+export default function Calendar() {
   const [currentDate, setCurrentDate] = useState(new Date());
   const [events, setEvents] = useState<CalendarEvent[]>([]);
   const [loading, setLoading] = useState(true);
@@ -44,14 +34,7 @@ const Calendar = () => {
   const firstDayOfMonth = new Date(year, month, 1);
   const lastDayOfMonth = new Date(year, month + 1, 0);
   const firstDayWeekday = firstDayOfMonth.getDay();
-  const daysInMonth = lastDayOfMonth.getDate();
-
-  const monthNames = [
-    'January', 'February', 'March', 'April', 'May', 'June',
-    'July', 'August', 'September', 'October', 'November', 'December'
-  ];
-
-  const weekdays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+  const daysInMonth = lastDayOfMonth.getDate();  
 
   const fetchEvents = async () => {
     try {
@@ -87,7 +70,7 @@ const Calendar = () => {
 
   useEffect(() => {
     fetchEvents();
-  }, [currentDate]);
+  }, []);
 
   useEffect(() => {
     const handleEsc = (event: KeyboardEvent) => {
@@ -117,10 +100,6 @@ const Calendar = () => {
     });
   };
 
-  const goToToday = () => {
-    setCurrentDate(new Date());
-  };
-
   const getEventsForDate = (date: number) => {
     const targetDate = new Date(year, month, date);
     return events.filter(event => {
@@ -130,17 +109,6 @@ const Calendar = () => {
       
       return eventStart.toDateString() === targetDate.toDateString();
     });
-  };
-
-  const formatEventTime = (event: CalendarEvent) => {
-    if (event.start.date) {
-      return 'All day';
-    }
-    
-    const start = new Date(event.start.dateTime!);
-    const end = new Date(event.end.dateTime!);
-    
-    return `${start.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' })} - ${end.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' })}`;
   };
 
   const handleEventClick = (event: CalendarEvent) => {
@@ -224,34 +192,26 @@ const Calendar = () => {
       {/* Header */}
       <div className="mb-8">
         <div className="flex items-center justify-between mb-4">
-          <div className="flex items-center gap-4">
-            <h1 className="text-3xl font-bold text-slate-800 dark:text-slate-200 flex items-center gap-2">
-              <MdOutlineCalendarToday className="w-8 h-8"/>
-              Calendar
-            </h1>
-            <button
-              onClick={goToToday}
-              className="px-3 py-1 text-md bg-white/50 dark:bg-slate-700/50 rounded-md drop-shadow-md hover:drop-shadow-lg hover:bg-white/70 dark:hover:bg-slate-700/70 transition duration-75 cursor-pointer"
-            >
-              Today
-            </button>
-          </div>
-          <div className="flex items-center gap-2">
+          <h1 className="text-3xl font-bold text-slate-800 dark:text-slate-200 flex items-center gap-2">
+            <MdOutlineCalendarToday className="w-8 h-8"/>
+            Calendar
+          </h1>
+          <div className="flex items-center gap-2 classn">
             <button
               onClick={() => navigateMonth('prev')}
               className="p-2 rounded-md hover:bg-slate-200 dark:hover:bg-slate-700 transition cursor-pointer"
             >
               <ChevronLeft size={20} />
             </button>
-            <h2 className="text-xl font-semibold text-slate-800 dark:text-slate-200 min-w-max">
-              {monthNames[month]} {year}
-            </h2>
             <button
               onClick={() => navigateMonth('next')}
               className="p-2 rounded-md hover:bg-slate-200 dark:hover:bg-slate-700 transition cursor-pointer"
             >
               <ChevronRight size={20} />
             </button>
+            <h2 className="text-xl font-semibold text-slate-800 dark:text-slate-200 min-w-max">
+              {monthNames[month]} {year}
+            </h2>
           </div>
         </div>
 
@@ -355,5 +315,3 @@ const Calendar = () => {
     </div>
   );
 };
-
-export default Calendar;

@@ -1,12 +1,12 @@
 import { Club } from "../lib/types";
 
-export async function readClubs(resolve: (c: Club[]) => void) {
+export async function readClubs() {
 	const res = await readClubsFromCache();
 	const clubs = replaceEmptyTime(res);
 
 	localStorage.setItem('last_loaded', new Date().toISOString());
 	localStorage.setItem('clubs', JSON.stringify(clubs));
-	resolve(clubs);
+	return clubs;
 }
 
 async function readClubsFromCache() {

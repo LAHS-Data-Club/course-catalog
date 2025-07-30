@@ -51,14 +51,6 @@
 	}
 }
 
-.card {
-  transition: box-shadow 0.2s ease; 
-}
-
-.card:hover {
-  box-shadow: 0 0 0 2px rgba(49, 89, 155); 
-}
-
 @media (prefers-color-scheme: dark) {
   .glow::before,
   .glow::after {
@@ -87,10 +79,9 @@
 
 	.glow:hover {
 		background-color: rgb(255, 255, 191);
-		color: rgb(30, 30, 74);
 	}
 
-  .card:hover, .glow:hover {
-		box-shadow: 0 0 0 2px rgb(63, 120, 211) inset;
-  }
+	.glow:hover * {
+		color: rgb(30, 30, 74);
+	}
 }

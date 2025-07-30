@@ -26,7 +26,7 @@ function AppLayout() {
     <PeriodsContext.Provider value={{ periods, setPeriods }}>
       <div className="flex min-h-screen h-fit bg-slate-50 text-slate-800 dark:bg-gray-900 dark:text-slate-300">
         <Sidebar />
-        <main className="w-full pl-22">
+        <main className="w-full ml-22">
           <Outlet />
         </main>
       </div>

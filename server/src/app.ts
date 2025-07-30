@@ -22,8 +22,8 @@ app.use(cors(corsOptions));
 app.get(
   "/api/calendar/:date",
   asyncHandler(async (req, res) => {
-    // const { date } = req.params;
-    const { dateStart, dateEnd } = req.query;
+    const { date } = req.params;
+    // const { dateStart, dateEnd } = req.query;
     const events = await cache.get(date, () => fetchCalendarData(date));
     res.json(events);
   })

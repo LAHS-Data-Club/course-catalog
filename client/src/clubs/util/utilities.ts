@@ -27,10 +27,3 @@ export const generateMailto = (text: string, clubName: string) => {
 export const parseLocation = (location: string | number) => {
   return !Number.isNaN(location) ? "Room " + location : location;
 };
-
-
-export const getUniqueValues = (allData, property) => {
-  return [...new Set(allData.map((doc) => doc[property]))].map((value) =>
-    value === '' ? 'No Time Specified' : value,
-  );
-}

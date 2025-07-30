@@ -20,21 +20,16 @@ export default function Class({ c, onDoubleClick, onClick, highlight }: Props) {
         highlight || "bg-white dark:bg-slate-800"
       }`}
     >
-      <div className="flex-grow">
-        <h4 className={`text-lg font-bold ${titleColorClass}`}>{c.name}</h4>
-        <p className={`mt-2 text-sm line-clamp-3 ${textColorClass}`}>
-          {c.description}
-        </p>
-      </div>
-      
-      <div className="mt-4 flex-shrink-0">
-        <div className="flex flex-wrap gap-2">
-          {c.tags.slice(0, 3).map((tag) => (
-            <span key={tag} className="rounded bg-indigo-50 px-2.5 py-1 text-xs font-medium text-blue-700 dark:bg-blue-900/50 dark:text-blue-300">
-              {tag}
-            </span>
-          ))}
-        </div>
+      <h4 className={`text-lg font-bold ${titleColorClass}`}>{c.name}</h4>
+      <p className={`mt-2 text-sm line-clamp-3 ${textColorClass}`}>
+        {c.description}
+      </p>
+      <div className="flex flex-wrap gap-2 mt-4">
+        {c.tags.slice(0, 3).map((tag) => (
+          <span key={tag} className="rounded bg-indigo-50 px-2.5 py-1 text-xs font-medium text-blue-700 dark:bg-blue-900/50 dark:text-blue-300">
+            {tag}
+          </span>
+        ))}
       </div>
     </div>
   );

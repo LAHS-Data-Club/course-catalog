@@ -6,13 +6,11 @@ import CoursesLayout from './layouts/CoursesLayout';
 
 import Home from './components/Home';
 import Profile from './components/Profile';
-import Calendar from './components/Calendar';
+import Calendar from './calendar/Calendar';
 import Courses from './components/courses/Courses';
 import AllCourses from './components/courses/AllCourses';
 
 import PageNotFound from './components/PageNotFound';
-
-// TODO: starting from scratch...
 import ClubCollection from './clubs/components/ClubCollection';
 import ClubPage from './clubs/components/ClubPage';
 

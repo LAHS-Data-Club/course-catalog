@@ -9,6 +9,8 @@ export interface Club {
   advisor: string,
   advisor_email: string,
   president: string,
+  tags: string,
+  sign_up?: string,
   president_email: string,
   tier: string,
   activities: string,

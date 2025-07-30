@@ -17,7 +17,6 @@ export function getSearchResults(
   searchQuery: string, 
   dateFilters: string[],
   timeFilters: string[],
-  tagFilters: string[],
 ) {
   const query: Fuse.Expression = { $and: [] };
 
@@ -41,13 +40,6 @@ export function getSearchResults(
   if (timeFilters.length > 0) {
     query.$and?.push({
       $or: timeFilters.map((filter) => ({ time: filter })),
-    });
-  }
-
-  // tag filters
-  if (tagFilters.length > 0) {
-    query.$and?.push({
-      $or: tagFilters.map((filter) => ({ tags: filter })),
     });
   }
 
