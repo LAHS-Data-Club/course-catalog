@@ -6,6 +6,7 @@ import CoursesLayout from './layouts/CoursesLayout';
 
 import Home from './components/Home';
 import Profile from './components/Profile';
+import Calendar from './components/Calendar';
 import Courses from './components/courses/Courses';
 import AllCourses from './components/courses/AllCourses';
 
@@ -22,6 +23,8 @@ function App() {
           <Route element={<AppLayout />}>
             <Route path='/' element={<Home />} />
             <Route path='/profile' element={<Profile />} />
+            <Route path='/calendar' element={<Calendar />} />
+
             {/** wasnt sure whether to do this or just children & passing props */}
             <Route path='/courses' element={<CoursesLayout />}>
               <Route index element={<AllCourses />} />

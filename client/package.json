@@ -13,6 +13,7 @@
   "description": "",
   "dependencies": {
     "@tailwindcss/vite": "^4.0.9",
+    "dompurify": "^3.2.6",
     "fuse.js": "^6.6.2",
     "infinitescroll": "^0.1.9",
     "ldrs": "^1.1.2",
