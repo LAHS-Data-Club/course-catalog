@@ -1,34 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Clock, MapPin, X } from 'lucide-react';
 import DOMPurify from 'dompurify';
 import { DateTime } from 'luxon';
 import { GoLinkExternal } from "react-icons/go";
 import { MdOutlineCalendarToday } from "react-icons/md";
+import BellSchedules from './BellSchedules';
+import { CalendarEvent, SelectedEventDetails } from '../lib/types';
 
 const API_KEY = 'AIzaSyDTku4CyKHMvZkQ80fDdy4XqfhuqPiD0P0';
 const CALENDAR_ID = 'c_e281ee0055e616856c4f83178cad4a88da4cd3e11bc8b5354efb1ea14f45617e@group.calendar.google.com';
 
-interface CalendarEvent {
-  id: string;
-  summary: string;
-  description?: string;
-  start: {
-    dateTime?: string;
-    date?: string;
-  };
-  end: {
-    dateTime?: string;
-    date?: string;
-  };
-  location?: string;
-  htmlLink: string;
-}
-
-interface SelectedEventDetails extends CalendarEvent {
-  formattedStart: string;
-  formattedEnd: string;
-  isAllDay: boolean;
-}
 
 const Calendar = () => {
   const [currentDate, setCurrentDate] = useState(new Date());
@@ -352,6 +333,7 @@ const Calendar = () => {
           </div>
         </div>
       )}
+      <BellSchedules/>
     </div>
   );
 };
