@@ -1,17 +1,16 @@
 import { SlidersHorizontal } from 'lucide-react';
 import { useState } from 'react';
+import { dateValues, tagValues } from '../util/clubOptions'; // TODO: will we ever use tags
 
 export default function Search({
-	onChange,
+	setSearchQuery,
 	setDateFilters,
 	setTimeFilters,
 	setTagFilters,
 	dateFilters,
 	timeFilters,
 	tagFilters,
-	dateValues,
 	timeValues,
-	tagValues,
 }) {
 	const [open, setOpen] = useState(true);
 
@@ -20,6 +19,11 @@ export default function Search({
 		TIME: 1,
 		TAG: 2,
 	};
+
+	const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+		setSearchQuery(e.target.value);
+	};
+
 
 	const handleCheckOnChange = (e, name, filterType) => {
 		name = name.toLowerCase();
@@ -70,7 +74,7 @@ export default function Search({
 				<input
           type="text"
 					placeholder="Search for clubs..."
-					onChange={onChange}
+					onChange={handleSearch}
           className="w-full flex-1 rounded border border-slate-300 bg-white p-2.5 px-4 placeholder:text-slate-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200"
         />
 				{/* Filter button */}
@@ -82,72 +86,54 @@ export default function Search({
           <span>Filter</span>
         </button>
 			</div>
+			{/** Popup Filter */}
 			{open && (
-				// Popup filter
 				<div className="relative">
 					<div
-						className="w-full flex-wrap gap-x-6 gap-y-3 rounded-b border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-800/50"
+						className="w-full flex-wrap gap-x-6 gap-y-3 rounded-b bg-white p-4 dark:bg-slate-800"
 						role="menu"
 						aria-orientation="vertical"
 						aria-labelledby="menu-button"
-						tabIndex="-1"
 					>
 						{/* Date filter */}
-						<div className="py-4">
+						<div>
 							<div className="font-bold text-lg mb-1">Days</div>
-							<div className="flex flex-wrap">
+							<div className="flex flex-wrap gap-3">
 								{dateValues.map((day) => (
 									<div
 										key={day + '_cb'}
-										className="me-3 flex items-center"
+										className="flex items-center"
 									>
 										<input
 											id={day + '_datecb'}
 											className="me-1"
 											type="checkbox"
-											onChange={(e) =>
-												handleCheckOnChange(
-													e,
-													day,
-													FILTER.DATE,
-												)
-											}
-										></input>
-										<label
-											htmlFor={day + '_datecb'}
-											className="capitalize"
-										>
+											onChange={(e) => handleCheckOnChange(e, day, FILTER.DATE)}
+										/>
+										<label htmlFor={day + '_datecb'}>
 											{day}
 										</label>
 									</div>
 								))}
 							</div>
 						</div>
+						<hr className='dark:text-slate-600 my-3' />
 						{/* Time filter */}
-						<div className="py-3">
+						<div>
 							<div className="font-bold text-lg mb-1">Times</div>
-							<div className="flex flex-wrap">
+							<div className="flex flex-wrap gap-3">
 								{timeValues.map((time) => (
 									<div
 										key={time + '_cb'}
-										className="me-3 flex items-center"
+										className="flex items-center"
 									>
 										<input
 											id={time + '_timecb'}
 											className="me-1"
 											type="checkbox"
-											onChange={(e) =>
-												handleCheckOnChange(
-													e,
-													time,
-													FILTER.TIME,
-												)
-											}
-										></input>
-										<label
-											htmlFor={time + '_timecb'}
-											className="capitalize"
-										>
+											onChange={(e) => handleCheckOnChange(e, time, FILTER.TIME)}
+										/>
+										<label htmlFor={time + '_timecb'}>
 											{time}
 										</label>
 									</div>

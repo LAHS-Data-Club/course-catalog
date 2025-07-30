@@ -1,7 +1,8 @@
 import Fuse from "fuse.js";
-import { searchFields } from "../clubOptions";
+import { searchFields } from "./clubOptions";
+import { Club } from "../lib/types";
 
-export const options = {
+const fuseOptions = {
   includeScore: true,
   includeMatches: true,
   threshold: 0.2,
@@ -9,12 +10,14 @@ export const options = {
   keys: searchFields,
 };
 
+export const fuse = new Fuse<Club>([], fuseOptions);
+
 export function getSearchResults(
-  fuse,
-  searchQuery, 
-  dateFilters,
-  timeFilters,
-  tagFilters,
+  clubs: Club[],
+  searchQuery: string, 
+  dateFilters: string[],
+  timeFilters: string[],
+  tagFilters: string[],
 ) {
   const query: Fuse.Expression = { $and: [] };
 
@@ -52,5 +55,5 @@ export function getSearchResults(
     const results = fuse.search(query).map((result) => result.item);
     return results
   }
-  return null; // TODO: fix
+  return clubs; 
 }

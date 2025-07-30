@@ -1,5 +1,5 @@
 import { NavLink, useLocation } from "react-router-dom";
-import { FaHome, FaRegCalendarAlt, FaRegUserCircle, FaPeopleCarry } from "react-icons/fa";
+import { FaHome, FaRegCalendarAlt, FaRegUserCircle, FaPeopleCarry, FaBook } from "react-icons/fa";
 
 export default function Sidebar() {
   return (
@@ -11,8 +11,12 @@ export default function Sidebar() {
           <FaHome className="w-7 h-7"/>
           <p>Home</p>
         </SidebarItem>
-        <SidebarItem path={"/courses"}>
+        <SidebarItem path={"/calendar"}>
           <FaRegCalendarAlt className="w-7 h-7"/>
+          <p>Calendar</p>
+        </SidebarItem>
+        <SidebarItem path={"/courses"}>
+          <FaBook className="w-7 h-7"/>
           <p>Courses</p>
         </SidebarItem>
         <SidebarItem path={"/clubs"}>
@@ -23,6 +27,7 @@ export default function Sidebar() {
           <FaRegUserCircle className="w-7 h-7"/>
           <p>User</p>
         </SidebarItem>
+
       </nav>
       <div />
     </div>
