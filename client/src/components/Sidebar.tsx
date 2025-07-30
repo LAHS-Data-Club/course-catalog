@@ -3,7 +3,7 @@ import { FaHome, FaRegCalendarAlt, FaRegUserCircle, FaPeopleCarry } from "react-
 
 export default function Sidebar() {
   return (
-    <div className="flex dark:bg-slate-900/50 fixed top-0 left-0 bottom-0 w-22 flex-col items-center border-r-4 border-slate-200 dark:border-slate-800 ">
+    <div className="flex dark:bg-slate-900 fixed top-0 left-0 bottom-0 w-22 flex-col items-center border-r-4 border-slate-200 dark:border-slate-800 ">
       <div className="h-23 w-full dark:bg-slate-800"></div>
     
       <nav className="flex flex-col w-full">

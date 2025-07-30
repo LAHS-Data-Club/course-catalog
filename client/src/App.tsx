@@ -10,7 +10,10 @@ import Courses from './components/courses/Courses';
 import AllCourses from './components/courses/AllCourses';
 
 import PageNotFound from './components/PageNotFound';
-import ClubsLayout from './layouts/ClubsLayout';
+
+// TODO: starting from scratch...
+import ClubCollection from './clubs/components/ClubCollection';
+import ClubPage from './clubs/components/ClubPage';
 
 function App() {
   return (
@@ -24,7 +27,12 @@ function App() {
               <Route index element={<AllCourses />} />
               <Route path=':dept' element={<Courses />} />
             </Route>
-            <Route path='/clubs' element={<ClubsLayout />}/>
+
+            <Route path='/clubs'>
+              <Route index element={<ClubCollection />} />
+              <Route path=':id' element={<ClubPage />} />
+            </Route>
+
           </Route>
           <Route path='*' element={<PageNotFound />} />
         </Routes>

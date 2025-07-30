@@ -44,7 +44,7 @@ export default function AllCourses() {
         />
         <button 
           onClick={() => setFilterOpen(!filterOpen)}
-          className="flex items-center justify-center gap-2 rounded-lg border border-slate-300 bg-white px-4 py-2 text-slate-700 transition-colors hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700"
+          className="flex items-center justify-center gap-2 rounded border border-slate-300 bg-white px-4 py-2 text-slate-700 transition-colors hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700"
         >
           <SlidersHorizontal className="h-5 w-5" />
           <span>Filter</span>

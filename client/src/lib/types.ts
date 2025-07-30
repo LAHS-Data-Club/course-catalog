@@ -81,3 +81,5 @@ export const departments = [
   { id: "visual-arts", name: "Visual Arts" },
   { id: "language", name: "World Languages" },
 ] as { id: Department; name: string }[];
+
+

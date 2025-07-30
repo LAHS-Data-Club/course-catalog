@@ -1,6 +1,6 @@
-import { db } from './firebaseConfiguration.js';
-import { collection, getDocs, getDoc, doc } from 'firebase/firestore';
-import { sanitize } from '../../../../ClubList2.0/src/utilities.js';
+// import { db } from './firebaseConfiguration.js';
+// import { collection, getDocs, getDoc, doc } from 'firebase/firestore';
+// import { sanitize } from '../utilities.js';
 
 // export const fbClubsCollection = collection(db, "clubs-2024");
 

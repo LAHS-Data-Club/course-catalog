@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { readClubs } from '../../../../server/src/firebase/firebaseRepository';
-import { generateMailto, parseLocation } from './utilities';
+import { readClubs } from '../firebase/firebaseRepository';
+import { generateMailto, parseLocation } from '../utilities';
 
-export default function ClubPage({}) {
-	let { id } = useParams();
+export default function ClubPage() {
+	let { id } = useParams() as { id: string };
 
 	const [loading, setLoading] = useState(true);
 	const RELOAD_LS_TIME = 1000 * 60 * 60 * 24; // reload local storage every x milliseconds (1 day)
@@ -42,7 +42,7 @@ export default function ClubPage({}) {
 	}, [clubs]);
 
 	return (
-		<div className="">
+		<div>
 			<div className="w-100 mb-3 text-center bg-white/40 drop-shadow-xl backdrop-blur p-3">
 				<div className="text-xl font-display font-bold me-1">
 					<Link to="/">LAHS Club List</Link>
