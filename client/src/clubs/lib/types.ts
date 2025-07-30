@@ -3,7 +3,7 @@ export interface Club {
   day: string,
   time: string,
   description: string,
-  location: string | number,  
+  location: string | number, // TODO:
   name: string,
   url: string,
   advisor: string,

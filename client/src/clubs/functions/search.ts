@@ -1,16 +1,13 @@
 import Fuse from "fuse.js";
-import { searchFields } from "./clubOptions";
-import { Club } from "../lib/types";
+import { searchFields } from "../clubOptions";
 
-const fuseOptions = {
+export const options = {
   includeScore: true,
   includeMatches: true,
   threshold: 0.2,
   ignoreLocation: true,
   keys: searchFields,
 };
-
-export const fuse = new Fuse<Club>([], fuseOptions);
 
 export function getSearchResults(
   clubs: Club[],
@@ -47,5 +44,5 @@ export function getSearchResults(
     const results = fuse.search(query).map((result) => result.item);
     return results
   }
-  return clubs; 
+  return null; // TODO: fix
 }

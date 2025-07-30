@@ -24,7 +24,7 @@ export default function ClubCollection() {
 			timeFilters,
 		);
 		setSearchResults(results);
-		setDisplayedResults(results.slice(0, 20));
+		setDisplayedResults(results.slice(0, 10));
 	}, [searchQuery, dateFilters, timeFilters, clubs]);
 
 	const uniqueTimeValues = [...new Set(clubs.map((c) => c.time))]
@@ -38,7 +38,7 @@ export default function ClubCollection() {
 				Clubs List
 			</h1>
 			<p className="max-w-2xl text-slate-600 dark:text-slate-400 mb-5">
-				<span className="text-slate-700 dark:text-blue-400 font-semibold">Click</span> on a club to view full details.
+				<span className="text-slate-700 dark:text-blue-400 font-semibold">Click</span> on a club to view more info<span className="text-slate-700 font-semibold dark:text-blue-400">double-click</span> for full details.
 			</p>
 			<Search
 				setSearchQuery={setSearchQuery}
@@ -56,7 +56,7 @@ export default function ClubCollection() {
 						displayedResults.concat(
 							searchResults.slice(
 								displayedResults.length,
-								displayedResults.length + 20,
+								displayedResults.length + 10,
 							),
 						),
 					);

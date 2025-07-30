@@ -1,0 +1,132 @@
+# Bell Schedules
+
+## Regular Weekly Schedules
+
+### Monday
+**Schedule A**
+*All Periods*
+[class]Period 1|8:30-9:20 am
+[class]Period 2|9:27-10:17 am
+[break]Brunch|10:17-10:25 am
+[class]Period 3|10:32-11:22 am
+[class]Period 4|11:29-12:19 pm
+[break]Lunch|12:19-12:54 pm
+[class]Period 5|1:01-1:51 pm
+[class]Period 6|1:58-2:48 pm
+
+### Tuesday
+**Schedule B**
+*Odd Periods*
+[class]Period 1|8:30-10:00 am
+[break]Brunch|10:00-10:08 am
+[special]ACT|10:07-11:00 am
+[class]Period 3|10:15-11:45 am
+[break]Lunch|11:45-12:25 pm
+[class]Period 5|12:32-2:02 pm
+[class]Period 7|2:09-3:39 pm
+
+### Wednesday
+**Schedule C**
+*Even Periods*
+[class]Period 2|8:30-10:00 am
+[special]ACT|10:07-11:00 am
+[break]Brunch|11:00-11:08 am
+[class]Period 4|11:15-12:45 pm
+[break]Lunch|12:45-1:25 pm
+[class]Period 6|1:32-3:02 pm
+
+### Thursday
+**Schedule B**
+*Odd Periods*
+[class]Period 1|8:30-10:00 am
+[break]Brunch|10:00-10:08 am
+[special]ACT|10:07-11:00 am
+[class]Period 3|10:15-11:45 am
+[break]Lunch|11:45-12:25 pm
+[class]Period 5|12:32-2:02 pm
+[class]Period 7|2:09-3:39 pm
+
+### Friday
+**Schedule C**
+*Even Periods*
+[class]Period 2|8:30-10:00 am
+[special]ACT|10:07-11:00 am
+[break]Brunch|11:00-11:08 am
+[class]Period 4|11:15-12:45 pm
+[break]Lunch|12:45-1:25 pm
+[class]Period 6|1:32-3:02 pm
+
+## Special Bell Schedules
+
+### Schedule D
+**Modified Tues. & Thurs. Block**
+*(PM Professional Dev)*
+[class]Period 1|8:30 - 9:30
+[class]Period 3|9:37 - 10:37
+[break]Brunch|10:37 - 10:45
+[class]Period 5|10:52 - 11:52
+[class]Period 7|11:59 - 12:59
+[break]Lunch|12:59 - 1:40
+
+### Schedule E
+**Modified Wed. & Fri. Block**
+*(PM Professional Dev)*
+[class]Period 2|8:30 - 9:30
+[special]ACT|9:37 - 10:20
+[break]Brunch|10:20 - 10:28
+[class]Period 4|10:35 - 11:35
+[class]Period 6|11:42 - 12:42
+[break]Lunch|12:42 - 1:25
+
+### Schedule G
+**Assembly Schedule**
+*(Double 2nd Period)*
+[class]Period 1|8:30 - 9:13
+[class]**Period 2A**|9:20-10:03
+[class]**Period 2B**|10:10-10:53
+[break]Brunch|10:53 - 11:01
+[class]Period 3|11:08-11:51
+[class]Period 4|11:58-12:41
+[break]Lunch|12:41- 1:16
+[class]Period 5|1:23 - 2:06
+[class]Period 6|2:13 - 2:56
+[class]Period 7|3:03- 3:46
+
+### Schedule H
+**Modified Tues. & Thurs. Block**
+*(AM Professional Dev)*
+[class]Period 1|10:30 - 11:30
+[class]Period 3|11:37 - 12:37
+[break]Lunch|12:37 - 1:12
+[class]Period 5|1:19 - 2:19
+[class]Period 7|2:26 - 3:26
+
+### Schedule I
+**Modified Wed. & Fri. Block**
+*(AM Professional Dev)*
+[class]Period 2|10:30 - 11:30
+[break]Lunch|11:30 - 12:05
+[class]Period 4|12:12 - 1:12
+[special]ACT|1:19 - 2:02
+[class]Period 6|2:09 - 3:09
+
+## Final Bell Schedules
+
+### Finals Day 1
+[class]Period 1|8:30 - 10:30
+[break]Break|10:30 - 10:43
+[class]Period 6|10:50 - 12:50
+[break]Lunch|12:50 - 1:30
+[class]Period 7|1:37 - 3:37
+
+### Finals Day 2
+[class]Period 2|8:30 - 10:30
+[break]Break|10:30 - 10:43
+[class]Period 5|10:50 - 12:50
+[break]Enrichment|12:50-1:50
+
+### Finals Day 3
+[class]Period 3|8:30 - 10:30
+[break]Break|10:30 - 10:43
+[class]Period 4|10:50 - 12:50
+[break]Enrichment|12:50-1:50

@@ -1,5 +1,46 @@
 import { nanoid } from "nanoid";
 
+export interface Period {
+  type: string;
+  name: string;
+  time: string;
+}
+
+export interface Schedule {
+  name: string;
+  title: string;
+  subtitle: string;
+  periods: Period[];
+}
+
+export interface ScheduleData {
+  regularSchedules: Schedule[];
+  specialSchedules: Schedule[];
+  finalSchedules: Schedule[];
+}
+
+export interface CalendarEvent {
+  id: string;
+  summary: string;
+  description?: string;
+  start: {
+    dateTime?: string;
+    date?: string;
+  };
+  end: {
+    dateTime?: string;
+    date?: string;
+  };
+  location?: string;
+  htmlLink: string;
+}
+
+export interface SelectedEventDetails extends CalendarEvent {
+  formattedStart: string;
+  formattedEnd: string;
+  isAllDay: boolean;
+}
+
 export type Department =
   | "pe"
   | "electives"

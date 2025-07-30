@@ -22,6 +22,7 @@ function App() {
             <Route path='/' element={<Home />} />
             <Route path='/profile' element={<Profile />} />
             <Route path='/calendar' element={<Calendar />} />
+
             {/** wasnt sure whether to do this or just children & passing props */}
             <Route path='/courses' element={<CoursesLayout />}>
               <Route index element={<AllCourses />} />

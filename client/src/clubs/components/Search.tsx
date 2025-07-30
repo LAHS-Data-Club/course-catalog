@@ -14,7 +14,7 @@ interface Props {
 }
 
 export default function Search({
-	setSearchQuery,
+	onChange,
 	setDateFilters,
 	setTimeFilters,
 	dateFilters,
@@ -34,7 +34,7 @@ export default function Search({
 				<input
           type="text"
 					placeholder="Search for clubs..."
-					onChange={handleSearch}
+					onChange={onChange}
           className="w-full flex-1 rounded border border-slate-300 bg-white p-2.5 px-4 placeholder:text-slate-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200"
         />
 				<button 
@@ -53,6 +53,7 @@ export default function Search({
 						role="menu"
 						aria-orientation="vertical"
 						aria-labelledby="menu-button"
+						tabIndex="-1"
 					>
 						<div>
 							<div className="font-bold text-lg mb-1">Days</div>
