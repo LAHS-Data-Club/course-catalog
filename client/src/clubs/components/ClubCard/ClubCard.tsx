@@ -3,11 +3,9 @@ import { NavLink } from "react-router-dom";
 import { IoLocationOutline } from "react-icons/io5";
 import { FaRegCalendarAlt } from "react-icons/fa";
 import type { Club } from "../../lib/types";
+import { parseLocation } from "../../functions/utilities";
 
 export default function ClubCard({ c }: { c: Club }) {
-  const formattedLocation = !Number.isNaN(c.location)
-    ? "Room " + c.location
-    : c.location;
   return (
     <NavLink to={c.url}>
       <div
@@ -28,7 +26,7 @@ export default function ClubCard({ c }: { c: Club }) {
           </div>
           <div className="flex items-start gap-1">
             <IoLocationOutline className="w-6 h-6" />
-            <div>{formattedLocation}</div>
+            <div>{parseLocation(c.location)}</div>
           </div>
         </div>
         <p className="line-clamp-6 dark:text-slate-400">

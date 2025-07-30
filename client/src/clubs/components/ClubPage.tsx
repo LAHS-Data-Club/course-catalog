@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
-import { readClubs } from '../firebase/firebaseRepository';
-import { generateMailto, parseLocation } from '../utilities';
+import { NavLink, useParams } from 'react-router-dom';
+import { generateMailto, parseLocation } from '../functions/utilities';
+import { IoArrowBackSharp, IoMailOutline, IoPersonOutline } from 'react-icons/io5';
+import { useClubs } from '../functions/useClubs';
 
 export default function ClubPage() {
 	const { id } = useParams() as { id: string };

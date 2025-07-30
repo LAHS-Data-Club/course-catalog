@@ -18,7 +18,7 @@ export function useClubs() {
 
       // load clubs from firebase if specified time has passed / clubs is empty
       const shouldFetch = 
-        !lastLoaded || 
+        !lastLoaded ||
         !clubs ||
         isNaN(Date.parse(lastLoaded)) ||
         new Date().getTime() - Date.parse(lastLoaded) >= RELOAD_LS_TIME;

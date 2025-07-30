@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react';
 import ClubCard from './ClubCard/ClubCard';
 import Search from './Search';
 import InfiniteScroll from 'react-infinite-scroll-component';
-import { getSearchResults } from '../util/search';
-import { useClubs } from '../util/useClubs';
+import { getSearchResults } from '../functions/search';
+import { useClubs } from '../functions/useClubs';
 import { Club } from '../lib/types';
 
 export default function ClubCollection() {
@@ -24,7 +24,7 @@ export default function ClubCollection() {
 			timeFilters,
 		);
 		setSearchResults(results);
-		setDisplayedResults(results.slice(0, 10));
+		setDisplayedResults(results.slice(0, 20));
 	}, [searchQuery, dateFilters, timeFilters, clubs]);
 
 	const uniqueTimeValues = [...new Set(clubs.map((c) => c.time))]
@@ -38,7 +38,7 @@ export default function ClubCollection() {
 				Clubs List
 			</h1>
 			<p className="max-w-2xl text-slate-600 dark:text-slate-400 mb-5">
-				<span className="text-slate-700 dark:text-blue-400 font-semibold">Click</span> on a club to view more info<span className="text-slate-700 font-semibold dark:text-blue-400">double-click</span> for full details.
+				<span className="text-slate-700 dark:text-blue-400 font-semibold">Click</span> a club to view full details.
 			</p>
 			<Search
 				setSearchQuery={setSearchQuery}
@@ -56,7 +56,7 @@ export default function ClubCollection() {
 						displayedResults.concat(
 							searchResults.slice(
 								displayedResults.length,
-								displayedResults.length + 10,
+								displayedResults.length + 20,
 							),
 						),
 					);
