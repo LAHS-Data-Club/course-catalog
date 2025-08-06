@@ -2,12 +2,13 @@ import { DateTime } from "luxon";
 import { config } from "dotenv";
 config();
 
+// fetches data for the whole month of the given date
 export async function fetchCalendarData(formattedDate: string) {
-  const date = DateTime.fromFormat(formattedDate, "M-dd-yyyy");
+  const date = DateTime.fromFormat(formattedDate, "M-dd-yyyy"); 
   const calendarUrl =
     "c_e281ee0055e616856c4f83178cad4a88da4cd3e11bc8b5354efb1ea14f45617e@group.calendar.google.com";
   const key = process.env.API_KEY;
-  const timeMin = date.startOf("week");
+  const timeMin = date.startOf("month");
   const timeMax = timeMin.plus({ months: 1 });
   const params = 
     `timeMin=${timeMin.toISO()}` +
@@ -21,14 +22,13 @@ export async function fetchCalendarData(formattedDate: string) {
     `/events?key=${key}&` +
     `${params}`;
 
-  const response = await fetch(url);
-  if (!response.ok) {
-    throw Error(response.statusText);
+  const res = await fetch(url);
+  if (!res.ok) {
+    throw Error(res.statusText);
   }
-  const json = await response.json();
-  const events = json.items;
+  const data = await res.json();
+  const events = data.items;
 
-  // TODO:
   const schedule: any[] = [];
   let checkingDate = timeMin;
   while (checkingDate <= timeMax) {

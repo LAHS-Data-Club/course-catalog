@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Periods, PeriodsContext } from "./contexts/PeriodsContext";
+import { Periods, PeriodsContext } from "../contexts/PeriodsContext";
 
 export default function Profile() {
   const { periods, setPeriods } = useContext(PeriodsContext);

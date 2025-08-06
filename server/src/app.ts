@@ -1,8 +1,7 @@
 import express from "express";
 import cors from "cors";
-import Cache from "./util/cache";
+import { ScheduleCache } from "./util/cache";
 import { asyncHandler } from "./util/utils";
-import { fetchCalendarData } from "./fetchers/google-calendar";
 import {
   fetchAllCourses,
   fetchAllDepartments,
@@ -10,24 +9,24 @@ import {
 } from "./fetchers/classes";
 import { Department, departments } from "./util/types";
 const app = express();
-const cache = new Cache();
+const scheduleCache = new ScheduleCache();
 
-// TODO:
-const corsOptions = {
-  origin: ["http://localhost:5173"],
+app.use(cors({
+  origin: ["http://localhost:5173"], // TODO:
   credentials: true,
-};
-app.use(cors(corsOptions));
+}));
 
-app.get(
-  "/api/calendar/:date",
+/**
+ * Returns a list of events for that date given a 
+ * key in the format M-dd-yyyy // TODO: use like ISO date instead or smth...
+ */
+app.get("/api/calendar", 
   asyncHandler(async (req, res) => {
-    const { date } = req.params;
-    // const { dateStart, dateEnd } = req.query;
-    const events = await cache.get(date, () => fetchCalendarData(date));
+    const { startDate, endDate } = req.query
+    const events = await scheduleCache.getRange(startDate, endDate);
     res.json(events);
-  })
-);
+    // throw new Error("oioihoih");
+}));
 
 app.get(
   "/api/classes",

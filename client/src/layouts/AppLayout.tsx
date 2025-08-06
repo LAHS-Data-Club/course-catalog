@@ -1,14 +1,20 @@
 import { Outlet } from "react-router-dom";
 import { useState, useEffect } from "react";
-import Sidebar from "../components/Sidebar";
-import { PeriodsContext } from "../components/contexts/PeriodsContext";
+import { PeriodsContext } from "../contexts/PeriodsContext";
 
-function AppLayout() {
-  const defaultPeriods = {
-    "{Period 1}": "", "{Period 2}": "", "{Period 3}": "", "{Period 4}": "",
-    "{Period 5}": "", "{Period 6}": "", "{Period 7}": "",
-  };
+import Navbar from "../components/layout/Navbar";
+import Sidebar from "../components/layout/Sidebar";
 
+// TODO:
+const defaultPeriods = {
+  "{Period 1}": "", "{Period 2}": "", "{Period 3}": "", "{Period 4}": "",
+  "{Period 5}": "", "{Period 6}": "", "{Period 7}": "",
+};
+
+export default function AppLayout() {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  // TODO: why is only one part try catched
   const [periods, setPeriods] = useState(() => {
     try {
       const stored = localStorage.getItem("periods");
@@ -24,14 +30,15 @@ function AppLayout() {
 
   return (
     <PeriodsContext.Provider value={{ periods, setPeriods }}>
-      <div className="flex min-h-screen h-fit bg-slate-50 text-slate-800 dark:bg-gray-900 dark:text-slate-300">
-        <Sidebar />
-        <main className="w-full ml-22">
+      <div className="flex min-h-screen">
+        {/** for normal & large screens */}
+        <Sidebar isExpanded={isExpanded} setIsExpanded={setIsExpanded} />
+        <main className={`${isExpanded ? "lg:pl-60" : "lg:pl-22"} w-full flex-1 pb-16 lg:pb-0 p-4`}>
           <Outlet />
         </main>
+        {/** for small screens */}
+        <Navbar />  
       </div>
     </PeriodsContext.Provider>
   );
 }
-
-export default AppLayout;

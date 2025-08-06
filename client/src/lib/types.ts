@@ -123,4 +123,20 @@ export const departments = [
   { id: "language", name: "World Languages" },
 ] as { id: Department; name: string }[];
 
-
+export interface Club {
+  id: number,
+  day: string,
+  time: string,
+  description: string,
+  location: string | number, 
+  name: string,
+  url: string,
+  advisor: string,
+  advisor_email: string,
+  president: string,
+  tags: string,
+  sign_up?: string,
+  president_email: string,
+  tier: string,
+  activities: string,
+}
