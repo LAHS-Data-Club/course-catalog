@@ -13,7 +13,7 @@ import ClubPage from './pages/clubs/components/ClubPage';
 import ErrorBoundary from './components/ErrorBoundary';
 
 import Home from './pages/home/Home';
-import Profile from './components/Profile';
+import Profile from './components/profile/Profile';
 import Calendar from './pages/calendar/Calendar';
 import Courses from './pages/courses/components/CoursesTab';
 import CourseCollection from './pages/courses/components/CourseCollection';
