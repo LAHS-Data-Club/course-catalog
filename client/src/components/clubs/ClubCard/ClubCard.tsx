@@ -2,8 +2,8 @@ import "./ClubCard.css";
 import { NavLink } from "react-router-dom";
 import { IoLocationOutline } from "react-icons/io5";
 import { FaRegCalendarAlt } from "react-icons/fa";
-import { Club } from "../../../../lib/types";
-import { parseLocation } from "../../utilities";
+import { Club } from "../../../lib/types";
+import { parseLocation } from "../../../functions/clubs/utilities";
 
 export default function ClubCard({ c }: { c: Club }) {
   return (

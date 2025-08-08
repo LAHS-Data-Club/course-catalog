@@ -6,5 +6,5 @@ export const routes = [
   { path: "/calendar", label: "Calendar", icon: FaRegCalendarAlt },
   { path: "/courses", label: "Courses", icon: FaBook },
   { path: "/clubs", label: "Clubs", icon: IoPeopleSharp },
-  { path: "/profile", label: "User", icon: FaRegUserCircle },
+  { path: "/user", label: "User", icon: FaRegUserCircle },
 ];

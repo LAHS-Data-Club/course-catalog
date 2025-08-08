@@ -1,20 +1,26 @@
-import { useCalendar } from "../../functions/useCalendar";
+import { useCalendar } from "../../functions/calendar/useCalendar";
 import { DateTime } from 'luxon';
 
-// TODO: filter out certain events
 export default function EventsSidebar() {
   const start = DateTime.now();
-  const { events, isError, isPending } = useCalendar(start, start.plus({ weeks: 1 }));
+  const { data, isError, isPending } = useCalendar(start, start.plus({ weeks: 1 }));
 
   if (isPending) return <p>Loading events...</p>
   if (isError) return <p>Error fetching events...</p>
+
+  // TODO: deal with duplicates?
+  const events = Object.values(data).flatMap((x) => x.events);
+  console.log(events)
 
   return (
     <div className="h-fit min-h-100 rounded p-5 ring-1 bg-white dark:bg-slate-800 ring-slate-200/80 dark:ring-slate-700">
       <h3 className="text-lg text-slate-900 dark:text-slate-100 mb-3">Upcoming Events</h3>
       <ul className="space-y-1">
         {events.length > 0 ? events.map((event) => {
-          const formattedDate = DateTime.fromISO(event.start.dateTime).toFormat("LLLL d");
+          const date = event.start.date || event.start.dateTime;
+          const formattedDate = date 
+            ? DateTime.fromISO(date).toFormat("LLLL d")
+            : "";
           return (
             <li 
               key={event.id} 

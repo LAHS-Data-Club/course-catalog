@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import CourseCard from "./CourseCard"; 
-import { CoursesContext } from "../../../contexts/CoursesContext";
+import { CoursesContext } from "../../contexts/CoursesContext";
 import { IoFilter } from "react-icons/io5";
 
 export default function CourseCollection() {

@@ -1,6 +1,6 @@
 import { useState, useEffect, useContext } from "react";
 import { DateTime, Duration } from "luxon";
-import { useCurrEvent } from "../../functions/useCalendar2";
+import { useCurrEvent } from "../../functions/calendar/useCurrEvent";
 import { PeriodsContext } from "../../contexts/PeriodsContext";
 
 const offset = { hours: 0 }; // for testing
@@ -8,7 +8,7 @@ const offset = { hours: 0 }; // for testing
 // this is really silly - version using google calendar api
 // TODO: version using bell.plus txt file
 export default function Timer() {
-  const { periods } = useContext(PeriodsContext);
+  const { periods } = useContext(PeriodsContext); // TODO:
   const { startTime, endTime, isLoading, update } = useCurrEvent(); 
   const [timeRemaining, setTimeRemaining] = useState<Duration | null>(null);
 

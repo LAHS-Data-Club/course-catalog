@@ -1,24 +1,23 @@
 import { DateTime } from "luxon";
-import { getSchedule } from "../../functions/schedules";
 import { useContext } from "react";
 import { PeriodsContext } from "../../contexts/PeriodsContext";
-import { useCalendar } from "../../functions/useCalendar";
+import { useCalendar } from "../../functions/calendar/useCalendar";
 
-export default function ClassList({ date }: { date: DateTime}) {
+export default function ClassList({ date }: { date: DateTime }) {
   const { periods } = useContext(PeriodsContext);
-  const { events, isError, isPending } = useCalendar(date);
+  const { data, isError, isPending } = useCalendar(date);
 
   if (isError) return <div>Sorry, a network error occurred.</div>;
   if (isPending) return <div>Loading...</div>;
 
-  const data = getSchedule(date, events);
-  // TODO: maybe change the structure of schedule so that this isnt so silly
-  const keys = Object.keys(data.schedule);
+  // this is so incredibly awfully written help
+  const scheduleData = Object.values(data)[0].schedule;
+  const keys = Object.keys(scheduleData);
   const schedule = keys
-    .map((curr, index) => ({
-      startTime: curr,
+    .map((time, index) => ({
+      startTime: time,
       endTime: keys[index + 1],
-      name: data.schedule[curr],
+      name: scheduleData[time],
     }))
     .filter((x) => !(x.name.includes("Free") || x.name.includes("Passing")));
 

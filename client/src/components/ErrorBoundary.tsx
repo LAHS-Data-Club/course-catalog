@@ -1,5 +1,5 @@
 import React, { ReactNode, ErrorInfo} from "react";
-import ErrorPage from "../pages/ErrorPage";
+import ErrorPage from "./pages/ErrorPage";
 
 // TODO:
 export default class ErrorBoundary extends React.Component {  

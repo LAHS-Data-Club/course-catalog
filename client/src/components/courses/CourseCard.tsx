@@ -1,4 +1,4 @@
-import { Course } from "../../../lib/types";
+import type { Course } from "../../lib/types";
 
 interface Props {
   c: Course;

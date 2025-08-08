@@ -1,5 +1,5 @@
 import SidebarItem from "./SidebarItem";
-import { routes } from "../routes";
+import { routes } from "../../functions/routes";
 
 export default function Navbar() {
   return (

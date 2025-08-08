@@ -1,6 +1,6 @@
 import { IoFilter } from "react-icons/io5";
 import { useState } from 'react';
-import { dateValues } from '../options';
+import { dateValues } from "../../functions/clubs/options";
 import Filter from './Filter';
 
 // kms......

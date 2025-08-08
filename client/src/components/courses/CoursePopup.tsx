@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { Course } from "../../../lib/types";
-import Modal from "../../../components/Modal";
+import type { Course } from "../../lib/types";
+import Modal from "../Modal";
 
 type Tab = "description" | "topics" | "grading";
 

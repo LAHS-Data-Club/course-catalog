@@ -1,8 +1,8 @@
 import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router";
 import CourseCard from "./CourseCard"; 
-import { CoursesContext } from "../../../contexts/CoursesContext";
-import generateHighlighter from "../highlights";
+import { CoursesContext } from "../../contexts/CoursesContext";
+import generateHighlighter from "../../functions/courses/highlights";
 
 const highlightColors = {
   "recommended-before": "bg-rose-500/20 dark:bg-rose-500/20 text-rose-800 dark:text-rose-200",

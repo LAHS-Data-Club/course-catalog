@@ -1,7 +1,7 @@
 import { Outlet, NavLink } from "react-router-dom";
 import { useState } from "react";
-import CoursePopup from "../pages/courses/components/CoursePopup";
-import { Course, departments } from "../lib/types"; // Assuming 'departments' is defined and exported in '../lib/types'
+import CoursePopup from "../components/courses/CoursePopup";
+import { Course, departments } from "../lib/types"; 
 import { CoursesContext } from "../contexts/CoursesContext";
 import { departmentOptions } from "../functions/queryOptions";
 import { useQuery } from "@tanstack/react-query";
@@ -11,7 +11,7 @@ export default function CoursesLayout() {
   const [classPopup, setClassPopup] = useState<Course | null>(null);
   const { data: courses, isPending, isError } = useQuery(departmentOptions());
 
-  // bleh
+  // TODO: bleh
   const navLinkClass = (isActive: boolean) =>
     `whitespace-nowrap p-4 transition-colors ${
       isActive
@@ -52,7 +52,6 @@ export default function CoursesLayout() {
             ))}
           </nav>
         </div>
-        {/** TODO: */}
         <Outlet />
       </div>
     </CoursesContext.Provider>

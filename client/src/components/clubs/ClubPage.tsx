@@ -1,7 +1,7 @@
 import { NavLink, useParams } from 'react-router-dom';
-import { generateMailto, parseLocation } from '../utilities';
+import { generateMailto, parseLocation } from '../../functions/clubs/utilities';
 import { IoArrowBackSharp, IoMailOutline, IoPersonOutline } from 'react-icons/io5';
-import { clubOptions } from '../../../functions/queryOptions';
+import { clubOptions } from '../../functions/queryOptions';
 import { useQuery } from '@tanstack/react-query';
 
 

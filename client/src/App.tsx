@@ -7,16 +7,18 @@ import { BrowserRouter, Routes, Route } from "react-router";
 
 import AppLayout from './layouts/AppLayout';
 import CoursesLayout from './layouts/CoursesLayout';
-import PageNotFound from './pages/PageNotFound';
-import ClubCollection from './pages/clubs/components/ClubCollection';
-import ClubPage from './pages/clubs/components/ClubPage';
+import PageNotFound from './components/pages/PageNotFound';
+import ClubCollection from './components/clubs/ClubCollection';
+import ClubPage from './components/clubs/ClubPage';
 import ErrorBoundary from './components/ErrorBoundary';
 
-import Home from './pages/home/Home';
-import Profile from './components/profile/Profile';
-import Calendar from './pages/calendar/Calendar';
-import Courses from './pages/courses/components/CoursesTab';
-import CourseCollection from './pages/courses/components/CourseCollection';
+import Home from './components/home/Home';
+import UserLayout from './layouts/UserLayout';
+import Calendar from './components/calendar/Calendar';
+import Courses from './components/courses/CoursesTab';
+import CourseCollection from './components/courses/CourseCollection';
+import Schedule from './components/user/Schedule';
+import Profile from './components/user/Profile';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -28,11 +30,12 @@ const queryClient = new QueryClient({
   }
 });
 
+// TODO: this persistor is having issues
 const asyncStoragePersister = createAsyncStoragePersister({
   storage: window.localStorage,
 }); 
 
-// maybe component library but learning experience!!!
+// maybe component library but learning experience!!! (kms)
 export default function App() {
   return (
     <PersistQueryClientProvider
@@ -44,7 +47,10 @@ export default function App() {
           <Routes>
             <Route element={<AppLayout />}>
               <Route path='/' element={<Home />} />
-              <Route path='/profile' element={<Profile />} />
+              <Route path='/user' element={<UserLayout />}>
+                <Route index element={<Profile />} />
+                <Route path='schedule' element={<Schedule />} />
+              </Route>
               <Route path='/calendar' element={<Calendar />} />
               <Route path='/courses' element={<CoursesLayout />}>
                 <Route index element={<CourseCollection />} />

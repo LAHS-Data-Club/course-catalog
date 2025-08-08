@@ -2,12 +2,12 @@ import { useState, useEffect } from 'react';
 import ClubCard from './ClubCard/ClubCard';
 import Search from './Search';
 import InfiniteScroll from 'react-infinite-scroll-component';
-import { getSearchResults } from '../search';
-import { clubOptions } from '../../../functions/queryOptions';
-import { Club } from '../../../lib/types';
+import { getSearchResults } from '../../functions/clubs/search';
+import { clubOptions } from '../../functions/queryOptions';
+import { Club } from '../../lib/types';
 import { useQuery } from '@tanstack/react-query';
-import { fuse } from '../search';
-import Error from '../../../components/Error';
+import { fuse } from '../../functions/clubs/search';
+import Error from '../Error';
 
 export default function ClubCollection() {
 	const [searchQuery, setSearchQuery] = useState('');

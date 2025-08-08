@@ -1,5 +1,5 @@
 import SidebarItem from "./SidebarItem";
-import { routes } from "../routes";
+import { routes } from "../../functions/routes";
 import { FaBars } from "react-icons/fa";
 
 interface Props {
@@ -17,7 +17,7 @@ export default function Sidebar({ isExpanded, setIsExpanded }: Props) {
       <div className={`${isExpanded ? "justify-between" : "justify-center"} h-25 flex items-center w-full px-4 py-6 border-b border-gray-700`}>
         {isExpanded && (
           <h1 className="text-3xl font-bold text-white px-2">
-            lahs.<span className="text-blue-400">+</span>
+            lahs.<span className="text-blue-400">-</span>
           </h1>
         )}
         <button

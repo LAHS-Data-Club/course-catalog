@@ -1,5 +1,5 @@
 import { DateTime } from "luxon";
-import scheduleData from "../scripts/output/schedules.json";
+import scheduleData from "../../scripts/output/schedules.json";
 
 export interface ScheduleDay {
   name: string; 
@@ -26,7 +26,6 @@ function getSpecialSchedule(
   events: any, // TODO:
 ) {
   // events becomes undefined
-  console.log(events)
   for (const event of events) {
     const name = event.summary.toLowerCase();
 
