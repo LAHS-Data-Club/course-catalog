@@ -1,5 +1,9 @@
 import { nanoid } from "nanoid";
 
+export interface Periods {
+  [key: string]: string;
+}
+
 export type Department =
   | "pe"
   | "electives"
@@ -81,3 +85,5 @@ export const departments = [
   { id: "visual-arts", name: "Visual Arts" },
   { id: "language", name: "World Languages" },
 ] as { id: Department; name: string }[];
+
+

@@ -1,10 +1,10 @@
 import { DateTime } from "luxon";
 import { useContext } from "react";
-import { PeriodsContext } from "../../contexts/PeriodsContext";
 import { useCalendar } from "../../functions/calendar/useCalendar";
+import { UserContext } from "../../contexts/UserContext";
 
 export default function ClassList({ date }: { date: DateTime }) {
-  const { periods } = useContext(PeriodsContext);
+  const { scheduleQuery } = useContext(UserContext);
   const { data, isError, isPending } = useCalendar(date);
 
   if (isError) return <div>Sorry, a network error occurred.</div>;
@@ -35,8 +35,8 @@ export default function ClassList({ date }: { date: DateTime }) {
                   <p className="font-semibold text-slate-800 dark:text-slate-200">
                     {item.name.replace(/[{}]/g, "")}
                   </p>
-                  {periods[item.name] && (
-                    <p className="text-sm text-slate-500 dark:text-slate-400">{periods[item.name]}</p>
+                  {scheduleQuery.data[item.name] && (
+                    <p className="text-sm text-slate-500 dark:text-slate-400">{scheduleQuery.data[item.name]}</p>
                   )}
                 </div>
                 <div className="text-slate-500 dark:text-slate-400">

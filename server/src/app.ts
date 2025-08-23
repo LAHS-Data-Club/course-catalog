@@ -8,13 +8,23 @@ import {
   fetchDepartment,
 } from "./fetchers/classes";
 import { Department, departments } from "./util/types";
+import { authRouter } from "./auth/authRouter";
+import cookieParser from 'cookie-parser';
+import { scheduleRouter } from "./db/scheduleRouter";
 const app = express();
 const scheduleCache = new ScheduleCache();
 
 app.use(cors({
-  origin: ["http://localhost:5173"], // TODO:
+  origin: ["http://localhost:5173"], // TODO: change later to production
   credentials: true,
 }));
+app.use(express.json());
+app.use(cookieParser()); 
+app.use(express.urlencoded({ extended: true })); 
+
+
+app.use('/api/auth', authRouter);
+app.use('/api/schedule', scheduleRouter)
 
 /**
  * Returns a list of events for that date given a 
@@ -22,10 +32,9 @@ app.use(cors({
  */
 app.get("/api/calendar", 
   asyncHandler(async (req, res) => {
-    const { startDate, endDate } = req.query
+    const { startDate, endDate } = req.query as { startDate: string, endDate: string };
     const events = await scheduleCache.getRange(startDate, endDate);
     res.json(events);
-    // throw new Error("oioihoih");
 }));
 
 app.get(
@@ -59,3 +68,4 @@ app.get(
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`listening on port ${PORT}`));
+

@@ -140,3 +140,21 @@ export interface Club {
   tier: string,
   activities: string,
 }
+
+export interface Group {
+  id: string;
+  title: string;
+  owner_id: string;
+  members: User[];
+}
+
+export interface User {
+  google_id: string;
+  name: string;
+  email: string;
+  schedule: Record<string, string>;
+}
+
+export interface Periods {
+  [key: string]: string;
+}

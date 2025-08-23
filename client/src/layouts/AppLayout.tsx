@@ -1,35 +1,29 @@
 import { Outlet } from "react-router-dom";
-import { useState, useEffect } from "react";
-import { PeriodsContext } from "../contexts/PeriodsContext";
-
+import { useEffect, useState } from "react";
 import Navbar from "../components/layout/Navbar";
 import Sidebar from "../components/layout/Sidebar";
+import { useQuery } from "@tanstack/react-query";
+import { userOptions, scheduleOptions } from "../functions/queryOptions";
+import { UserContext } from "../contexts/UserContext";
 
-// TODO:
 const defaultPeriods = {
   "{Period 1}": "", "{Period 2}": "", "{Period 3}": "", "{Period 4}": "",
   "{Period 5}": "", "{Period 6}": "", "{Period 7}": "",
 };
 
 export default function AppLayout() {
-  const [isExpanded, setIsExpanded] = useState(false);
-
-  // TODO: why is only one part try catched
-  const [periods, setPeriods] = useState(() => {
-    try {
-      const stored = localStorage.getItem("periods");
-      return stored ? JSON.parse(stored) : defaultPeriods;
-    } catch {
-      return defaultPeriods;
-    }
+  const [isExpanded, setIsExpanded] = useState(false); // sidebar
+  const userQuery = useQuery(userOptions());
+  const scheduleQuery = useQuery({
+    ...scheduleOptions(),
+    enabled: !!userQuery.data, // TODO: eh
+    placeholderData: defaultPeriods
   });
-
-  useEffect(() => {
-    localStorage.setItem("periods", JSON.stringify(periods));
-  }, [periods]);
+  
+  console.log('rerenders AppLayout');
 
   return (
-    <PeriodsContext.Provider value={{ periods, setPeriods }}>
+    <UserContext.Provider value={{ userQuery, scheduleQuery }}>
       <div className="flex min-h-screen">
         {/** for normal & large screens */}
         <Sidebar isExpanded={isExpanded} setIsExpanded={setIsExpanded} />
@@ -37,8 +31,8 @@ export default function AppLayout() {
           <Outlet />
         </main>
         {/** for small screens */}
-        <Navbar />  
+        <Navbar />
       </div>
-    </PeriodsContext.Provider>
+    </UserContext.Provider>
   );
 }

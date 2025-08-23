@@ -6,6 +6,7 @@ interface Props {
 }
 
 // TODO: dialog
+
 export default function Modal({ children, onClose }: Props) {
    return (
     <div 
@@ -15,7 +16,7 @@ export default function Modal({ children, onClose }: Props) {
       <div 
         className="max-w-2xl w-full max-h-[80vh] overflow-y-auto drop-shadow-xl rounded border border-slate-300 bg-white shadow-xl dark:border-slate-700 dark:bg-slate-800" 
         onClick={(e) => e.stopPropagation()}
-      >
+      > 
         <button
           onClick={onClose}
           className="absolute right-3 top-3 cursor-pointer"

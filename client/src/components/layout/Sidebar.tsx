@@ -1,6 +1,7 @@
 import SidebarItem from "./SidebarItem";
 import { routes } from "../../functions/routes";
 import { FaBars } from "react-icons/fa";
+import { PiSignInBold } from "react-icons/pi";
 
 interface Props {
   isExpanded: boolean;
@@ -8,9 +9,14 @@ interface Props {
 }
 
 export default function Sidebar({ isExpanded, setIsExpanded }: Props) {
+  // redirect to google oauth page
+  function handleSignIn() {
+    window.location.href = `/api/auth/google`;
+  }
+
   return (
     <div
-      className={`transition-all hidden lg:flex flex-col items-center fixed top-0 left-0 bottom-0 bg-gray-800 ${
+      className={`hidden lg:flex flex-col items-center fixed top-0 left-0 bottom-0 bg-gray-800 ${
         isExpanded ? "w-60" : "w-22"
       }`}
     >
@@ -28,17 +34,27 @@ export default function Sidebar({ isExpanded, setIsExpanded }: Props) {
         </button>
       </div>
 
-      <nav className="flex flex-col w-full">
-        {routes.map(({ path, icon, label }) => (
-          <SidebarItem 
-            key={path}
-            to={path} 
-            icon={icon} 
-            isExpanded={isExpanded}
-          >
-            {label}
-          </SidebarItem>
-        ))}
+      <nav className="flex flex-col w-full justify-between flex-1">
+        <div>
+          {routes.map(({ path, icon, label }) => (
+            <SidebarItem 
+              key={path}
+              to={path} 
+              icon={icon} 
+              isExpanded={isExpanded}
+            >
+              {label}
+            </SidebarItem>
+          ))}
+        </div>
+
+        <button 
+          onClick={() => handleSignIn()}
+          className='cursor-pointer hover:bg-gray-700 border-t border-gray-700 overflow-hidden flex justify-center lg:justify-normal items-center gap-3 px-7 py-5 transition-colors'
+        >
+          <span><PiSignInBold size={27} className="text-white" /></span>
+          {isExpanded && (<p>Sign In</p>)}
+        </button>
       </nav>
     </div>
   );

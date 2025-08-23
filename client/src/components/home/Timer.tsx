@@ -1,14 +1,14 @@
 import { useState, useEffect, useContext } from "react";
 import { DateTime, Duration } from "luxon";
 import { useCurrEvent } from "../../functions/calendar/useCurrEvent";
-import { PeriodsContext } from "../../contexts/PeriodsContext";
+import { UserContext } from "../../contexts/UserContext";
 
 const offset = { hours: 0 }; // for testing
 
 // this is really silly - version using google calendar api
 // TODO: version using bell.plus txt file
 export default function Timer() {
-  const { periods } = useContext(PeriodsContext); // TODO:
+  const { scheduleQuery } = useContext(UserContext); // TODO: add periods and names to the timer
   const { startTime, endTime, isLoading, update } = useCurrEvent(); 
   const [timeRemaining, setTimeRemaining] = useState<Duration | null>(null);
 

@@ -14,11 +14,13 @@ import ErrorBoundary from './components/ErrorBoundary';
 
 import Home from './components/home/Home';
 import UserLayout from './layouts/UserLayout';
+import ScheduleLayout from './layouts/ScheduleLayout';
 import Calendar from './components/calendar/Calendar';
 import Courses from './components/courses/CoursesTab';
 import CourseCollection from './components/courses/CourseCollection';
-import Schedule from './components/user/Schedule';
+import ScheduleInput from './components/user/ScheduleInput';
 import Profile from './components/user/Profile';
+import { ProtectedRoute } from './functions/auth/ProtectedRoute';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -32,7 +34,8 @@ const queryClient = new QueryClient({
 
 // TODO: this persistor is having issues
 const asyncStoragePersister = createAsyncStoragePersister({
-  storage: window.localStorage,
+  // storage: window.localStorage,
+  storage: null,
 }); 
 
 // maybe component library but learning experience!!! (kms)
@@ -48,14 +51,15 @@ export default function App() {
             <Route element={<AppLayout />}>
               <Route path='/' element={<Home />} />
               <Route path='/user' element={<UserLayout />}>
-                <Route index element={<Profile />} />
-                <Route path='schedule' element={<Schedule />} />
+                <Route index element={<ProtectedRoute><Profile /></ProtectedRoute>} />
+                <Route path='schedule' element={<ScheduleInput />} />
               </Route>
               <Route path='/calendar' element={<Calendar />} />
               <Route path='/courses' element={<CoursesLayout />}>
                 <Route index element={<CourseCollection />} />
                 <Route path=':dept' element={<Courses />} />
               </Route>
+              <Route path='/schedule-sharing' element={<ProtectedRoute><ScheduleLayout /></ProtectedRoute>} />
               <Route path='/clubs'>
                 <Route index element={<ClubCollection />} />
                 <Route path=':id' element={<ClubPage />} />

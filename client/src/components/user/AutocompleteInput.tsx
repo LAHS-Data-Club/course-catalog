@@ -5,7 +5,6 @@ interface Props {
   fuse: Fuse<any>; // TODO:
   value: string;
   setValue: (val: string) => void;
-  disabled: boolean;
   suggestions: string[];
   placeholder?: string;
 }
@@ -16,7 +15,6 @@ export default function AutocompleteInput({
   value, 
   setValue,
   suggestions,
-  disabled,
   placeholder = "",
 }: Props) {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -27,7 +25,7 @@ export default function AutocompleteInput({
     .slice(0, 6)
     .map((result) => result.item);
 
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+  const handleKeyDown = (e: React.KeyboardEvent) => {
     if (!showDropdown || filtered.length === 0) return;
     if (e.key === "ArrowDown") {
       e.preventDefault();
@@ -61,7 +59,6 @@ export default function AutocompleteInput({
     <div className="relative w-full">
       <input
         type="text"
-        disabled={disabled}
         value={value}
         onChange={handleOnChange}
         onKeyDown={handleKeyDown}
@@ -73,7 +70,6 @@ export default function AutocompleteInput({
           ${isValid
             ? "border-slate-300 bg-white text-slate-900 placeholder:text-slate-400 dark:border-slate-600 dark:bg-slate-700 dark:text-slate-200"
             : "border-red-500 focus:border-transparent"}
-          ${disabled && "bg-slate-100 text-slate-400 cursor-not-allowed dark:bg-slate-800 dark:text-slate-500"}
         `}
       />
 
