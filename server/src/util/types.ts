@@ -92,6 +92,11 @@ export const departments = [
   { id: "language", name: "World Languages" },
 ] as { id: Department; name: string }[];
 
-export interface Periods {
-  [key: string]: string;
+export type PeriodNumber = 1 | 2 | 3 | 4 | 5 | 6 | 7;
+
+export type Periods = Record<PeriodNumber, Period>
+
+export interface Period {
+  class: string;
+  teacher: string;
 }

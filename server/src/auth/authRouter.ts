@@ -1,7 +1,8 @@
 import { Router } from "express";
 import * as client from "openid-client";
 import { asyncHandler } from "../util/utils";
-import { createUser, getUserBySub, getUserById } from "../db/queries/user";
+import { createUser } from "../db/queries/user";
+import { getUserById } from "../db/queries/queries";
 import { isAuthenticated } from "../util/utils";
 
 export const authRouter = Router();
@@ -22,7 +23,7 @@ authRouter.get(
     const state = client.randomState(); 
     
     const authUrl: URL = client.buildAuthorizationUrl(config, {
-      redirect_uri: process.env.REDIRECT_URI!,
+      redirect_uri: process.env.AUTH_REDIRECT_URI!,
       scope: 'openid email profile', 
       code_challenge,
       code_challenge_method: "S256",
@@ -48,21 +49,16 @@ authRouter.get(
     });
     const userInfo = tokens.claims();
     if (!userInfo) throw new Error('Error authenticating user.');
-    
+    const user = await createUser(userInfo);
+    req.session.userId = user.id;
+
     delete req.session.code_verifier; 
     delete req.session.state;
-
-    // TODO: better structure the below
-    // TODO: check if user is already in db, if not, create user
-    let user = await getUserBySub(userInfo.sub);
-    if (!user) user = await createUser(userInfo); 
-    req.session.userId = user.id;
 
     res.redirect(req.session.redirect ?? process.env.REACT_APP_URL ?? "http://localhost:5173/");
   })
 );
 
-// get the active session
 authRouter.get( 
   "/session",
   isAuthenticated,
@@ -71,10 +67,24 @@ authRouter.get(
   })
 );
 
-// TODO: implememt logout
+// TODO: fix the below TODO:
 authRouter.get(
   "/logout",
   asyncHandler(async (req, res) => { 
-    // TODO:
+    // ohhh ok
+    const logoutUrl = client.buildEndSessionUrl(config, {
+      post_logout_redirect_uri: process.env.LOGOUT_REDIRECT_URI!,
+    });
+    res.redirect(logoutUrl.href);
+  })
+);
+
+authRouter.get(
+  "/logout/callback",
+  asyncHandler(async (req, res) => { 
+    req.session.destroy(() => {
+      // TODO: session is destroyed by here
+      res.redirect(req.session.redirect ?? process.env.REACT_APP_URL ?? "http://localhost:5173/");
+    });
   })
 );

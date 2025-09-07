@@ -16,6 +16,7 @@ export function calendarOptions(date: DateTime) {
     queryFn: () => fetchMonthEvents(date),
     refetchOnMount: false,
     staleTime: 1000 * 60 * 60 * 24,
+    meta: { persist: true }
   });
 }
 
@@ -24,6 +25,7 @@ export function departmentOptions() {
     queryKey: ["departments"],
     queryFn: () => fetchDepartment(),
     staleTime: 1000 * 60 * 60 * 24, 
+    meta: { persist: true }
   });
 }
 
@@ -32,6 +34,7 @@ export function clubOptions() {
     queryKey: ["clubs"],
     queryFn: fetchClubs,
     staleTime: 1000 * 60 * 60 * 24,
+    meta: { persist: true }
   });
 }
 

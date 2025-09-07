@@ -1,7 +1,8 @@
 import { Router } from "express";
 import { asyncHandler, isAuthenticated } from "../util/utils";
 import { getSchedule, updateSchedule } from "../db/queries/schedules";
-import { getGroups, createGroup, createGroupInvite } from "../db/queries/groups";
+import { getGroups, createGroup, createGroupInvite, acceptInvite } from "../db/queries/groups";
+import { getInvite } from "./queries/queries";
 
 export const scheduleRouter = Router();
 
@@ -43,6 +44,7 @@ scheduleRouter.post(
   })
 );
 
+// TODO:
 scheduleRouter.post(
   "/groups/invite",
   isAuthenticated,
@@ -50,5 +52,25 @@ scheduleRouter.post(
     const { issuedBy, expiryDate, groupId } = req.body; // group name
     const invite = await createGroupInvite(issuedBy, groupId, expiryDate);
     res.json(invite);
+  })
+);
+
+scheduleRouter.get(
+  "/groups/invite/:inviteId",
+  asyncHandler(async (req, res) => {
+    const invite = await getInvite(req.params.inviteId);
+    console.log(invite);
+    res.json(invite);
+  })
+);
+
+// TODO: accept invites
+scheduleRouter.post(
+  "/groups/invite/:inviteId/accept",
+  isAuthenticated,
+  asyncHandler(async (req, res) => {
+    console.log('accepting invite...');
+    await acceptInvite(req.params.inviteId, req.session.userId!);
+    res.end();
   })
 );

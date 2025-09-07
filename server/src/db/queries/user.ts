@@ -1,8 +1,9 @@
-import pool from "../db";
-// import type { Periods } from "../../util/types";
+import { insertUser, insertSchedule } from "./queries";
+import { Periods } from "../../util/types";
 
-// TODO: ehh
-export const defaultPeriods = {
+// TODO: fix the sql at some.... point....
+
+export const defaultPeriods: Periods = {
   1: { class: "", teacher: "" }, 
   2: { class: "", teacher: "" },
   3: { class: "", teacher: "" }, 
@@ -12,37 +13,13 @@ export const defaultPeriods = {
   7: { class: "", teacher: "" },
 };
 
-export async function getUserBySub(sub: string) {
-  const { rows } = await pool.query(
-    "SELECT * FROM users WHERE oidc_sub = $1",
-    [sub]
-  );
-  return rows[0];
-}
-
-// TODO: feels kinda arbitrary to have two seperate ways to 
-// query user, but i didnt want session to be based on oidc sub ? idk
-export async function getUserById(id: string) {
-  const { rows } = await pool.query(
-    "SELECT * FROM users WHERE id = $1",
-    [id]
-  );
-  return rows[0];
-}
-
+// TODO: makesure this works
 export async function createUser(userInfo) {
   // insert new user into users table
-  const { rows } = await pool.query(
-    `INSERT INTO users(oidc_sub, name, email)
-    VALUES ($1, $2, $3) 
-    RETURNING *`,
-    [userInfo.sub, userInfo.name, userInfo.email]
-  );
+  const user = await insertUser(userInfo.sub, userInfo.name, userInfo.email);
 
   // initialize schedule for user
-  await pool.query(
-    `INSERT INTO schedules(user_id, schedule) VALUES ($1, $2)`,
-    [rows[0].id, defaultPeriods]
-  );
-  return rows[0];
+  await insertSchedule(user.id, defaultPeriods);
+
+  return user;
 }

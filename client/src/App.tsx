@@ -36,15 +36,19 @@ const queryClient = new QueryClient({
 });
 
 const asyncStoragePersister = createAsyncStoragePersister({
-  // storage: window.localStorage,
-  storage: null,
+  storage: window.localStorage,
 }); 
 
 export default function App() {
   return (
     <PersistQueryClientProvider
       client={queryClient}
-      persistOptions={{ persister: asyncStoragePersister }}
+      persistOptions={{ 
+        persister: asyncStoragePersister, 
+        dehydrateOptions: {
+          shouldDehydrateQuery: (query) => query.meta?.persist === true,
+        }
+      }}
     >
       <BrowserRouter>
         <ErrorBoundary> 

@@ -2,6 +2,7 @@ import pool from "../db";
 import type { Periods } from "../../util/types";
 import { validateSchedule } from "./util";
 
+// TODO: fix the sql at some.... point....
 // TODO: relations brocken
 export async function getSchedule(userId: string) {
   const { rows } = await pool.query(

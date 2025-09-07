@@ -1,7 +1,8 @@
 import pool from "../db";
-import { getInvite, addInvite, addMember, addGroup, getGroup, getGroupMembers } from "./queries";
+import { getInvite, addInvite, addMember, addGroup, getGroupMembers } from "./queries";
 
 // TODO: this is all extremely dubious code
+// TODO: fix the sql at some.... point....
 
 export async function getGroups(userId: string) {
   const { rows } = await pool.query(
@@ -26,15 +27,6 @@ export async function createGroup(ownerId: string, name: string) {
   await addMember(group.id, ownerId);
 }
 
-// export async function getGroupData(groupId: string) {
-//   const group = await getGroup(groupId);
-//   const members = await getGroupMembers(groupId);
-//   const groupData = { ...group, members }; 
-//   return groupData;
-// }
-
-
-
 
 
 
@@ -57,21 +49,16 @@ export async function createGroupInvite(
 
 }
 
+
+
 // Verifies invite then adds user to group
 export async function acceptInvite(uuid: string, memberId: string) {
-  const start = performance.now();
-
   // TODO: can combine these into one query
   const invite = await getInvite(uuid); 
   if (!invite) throw new Error("Invalid invite");
 
   // add member TODO:
   await addMember(invite.group_id, memberId);
-  const schedules = await getGroup(invite.group_id);
-  const end = performance.now();
-
-  console.log(`Took ${end - start} ms`);
-  return schedules;
 }
 
 

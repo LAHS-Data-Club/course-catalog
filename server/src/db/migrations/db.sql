@@ -21,6 +21,8 @@ CREATE TABLE members (
   member_id INT REFERENCES users(id)
 );
 
+ALTER TABLE members ADD CONSTRAINT unique_rows UNIQUE (group_id, member_id);
+
 CREATE TABLE invites (
   uuid TEXT PRIMARY KEY DEFAULT gen_random_uuid(),
   group_id INT REFERENCES groups(id),

@@ -12,7 +12,6 @@ export async function fetchMonthEvents(startDate: DateTime) {
   const url =
     `/api/calendar?` + // TODO: ISO instead?
     `startDate=${start}&endDate=${end}`;
-
   return fetch(url).then((res) => res.json());
 }
 
@@ -32,7 +31,7 @@ export async function fetchClubs(): Promise<Club[]> {
     clubs.push({ ...club, id: i });
   }
 
-  // shift data club to the front :>
+  // shift data club to the front :)
   const dataClubIndex = clubs.findIndex((club) => club.name === "Data Club");
   if (dataClubIndex !== -1) {
     const dataClub = clubs.splice(dataClubIndex, 1);
@@ -41,18 +40,10 @@ export async function fetchClubs(): Promise<Club[]> {
   return clubs;
 }
 
-
-
-
-// TODO: 
 export async function fetchUser() {
-  return fetch("/api/session", { credentials: 'include' }).then((res) => res.json());
+  return fetch("/api/session", { credentials: 'include' })
+    .then((res) => res.json());
 }
-
-
-// TODO: below is dubious
-
-
 
 // schedules.ts
 export async function fetchSchedule() { 
@@ -91,7 +82,7 @@ export async function createInvite(issuedBy: string, groupId: string, expiryDate
 }
 
 export async function fetchInvite(inviteId: string) {
-  return fetch(`/api/schedule/invite/${inviteId}`).then((res) => res.json());
+  return fetch(`/api/schedule/groups/invite/${inviteId}`).then((res) => res.json());
 }
 
 export async function acceptInvite(inviteId: string) {
