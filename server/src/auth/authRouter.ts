@@ -1,55 +1,80 @@
 import { Router } from "express";
-import { oauth2Client, CLASSROOM_SCOPES } from "./authConfig";
+import * as client from "openid-client";
 import { asyncHandler } from "../util/utils";
-import { getCredentials } from "./auth";
-import url from "url";
-import { createUser, getUser } from '../db/queries/user';
-import { config } from "dotenv";
-config();
+import { createUser, getUserBySub, getUserById } from "../db/queries/user";
+import { isAuthenticated } from "../util/utils";
 
 export const authRouter = Router();
 
+const server = new URL('https://accounts.google.com');
+const clientId = process.env.CLIENT_ID!;
+const clientSecret = process.env.CLIENT_SECRET!;
+const config = await client.discovery(server, clientId, clientSecret);
+
+authRouter.get(
+  "/login",
+  asyncHandler(async (req, res) => {
+    const redirect = req.query.redirect as string;
+    req.session.redirect = redirect;
+
+    const code_verifier = client.randomPKCECodeVerifier();
+    const code_challenge = await client.calculatePKCECodeChallenge(code_verifier);
+    const state = client.randomState(); 
+    
+    const authUrl: URL = client.buildAuthorizationUrl(config, {
+      redirect_uri: process.env.REDIRECT_URI!,
+      scope: 'openid email profile', 
+      code_challenge,
+      code_challenge_method: "S256",
+      state,
+      access_type: 'offline',
+      include_granted_scopes: 'true',
+    });
+
+    req.session.code_verifier = code_verifier;
+    req.session.state = state;
+
+    res.redirect(authUrl.href);
+  })
+);
+
+authRouter.get(
+  "/login/callback",
+  asyncHandler(async (req, res) => {
+    const currentURL = new URL(`${req.protocol}://${req.get("host")}${req.originalUrl}`);
+    const tokens = await client.authorizationCodeGrant(config, currentURL, {
+        pkceCodeVerifier: req.session.code_verifier,
+        expectedState: req.session.state,
+    });
+    const userInfo = tokens.claims();
+    if (!userInfo) throw new Error('Error authenticating user.');
+    
+    delete req.session.code_verifier; 
+    delete req.session.state;
+
+    // TODO: better structure the below
+    // TODO: check if user is already in db, if not, create user
+    let user = await getUserBySub(userInfo.sub);
+    if (!user) user = await createUser(userInfo); 
+    req.session.userId = user.id;
+
+    res.redirect(req.session.redirect ?? process.env.REACT_APP_URL ?? "http://localhost:5173/");
+  })
+);
+
+// get the active session
 authRouter.get( 
-  "/google",
-  asyncHandler(async (req, res) => {
-    const authUrl = oauth2Client.generateAuthUrl({
-      access_type: "offline",
-      scope: CLASSROOM_SCOPES.join(" "),
-      prompt: "consent",
-    });
-    res.redirect(authUrl);
+  "/session",
+  isAuthenticated,
+  asyncHandler(async (req, res) => { 
+    getUserById(req.session.userId!).then((user) => res.json(user));
   })
 );
 
-
-// TODO: stuff below is lowk dubious :pensive:
+// TODO: implememt logout
 authRouter.get(
-  "/google/callback",
-  asyncHandler(async (req, res) => {
-    const q = url.parse(req.url, true).query;
-    const { tokens } = await oauth2Client.getToken(q.code as string);
-    const token = tokens.refresh_token as string;
-    res.cookie("refresh_token", token, {
-      httpOnly: true,
-      secure: true,
-      maxAge: 1000 * 60 * 60 * 24 * 7, // 1 week
-    });
-
-    // TODO: meh i feel like it shoudlnt go here but wtv...
-    // TODO: might be a better way without making so many api calls
-    const credentials = await getCredentials(token);
-    await createUser(credentials);
-    res.redirect(process.env.REACT_APP_URL ?? 'http://localhost:5173/');
+  "/logout",
+  asyncHandler(async (req, res) => { 
+    // TODO:
   })
 );
-
-
-authRouter.get(
-  "/google/login",
-  asyncHandler(async (req, res) => {
-    const { refresh_token } = req.cookies;
-    const credentials = await getCredentials(refresh_token);
-    res.json(credentials);
-  })
-);
-

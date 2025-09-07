@@ -12,6 +12,7 @@ import ClubCollection from './components/clubs/ClubCollection';
 import ClubPage from './components/clubs/ClubPage';
 import ErrorBoundary from './components/ErrorBoundary';
 
+import { ProtectedRoute } from './functions/auth/ProtectedRoute';
 import Home from './components/home/Home';
 import UserLayout from './layouts/UserLayout';
 import ScheduleLayout from './layouts/ScheduleLayout';
@@ -20,7 +21,8 @@ import Courses from './components/courses/CoursesTab';
 import CourseCollection from './components/courses/CourseCollection';
 import ScheduleInput from './components/user/ScheduleInput';
 import Profile from './components/user/Profile';
-import { ProtectedRoute } from './functions/auth/ProtectedRoute';
+import AcceptInvitePage from './components/schedules/AcceptInvitePage';
+import ScheduleGroup from './components/schedules/ScheduleGroup';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -28,17 +30,16 @@ const queryClient = new QueryClient({
       gcTime: Infinity,
       refetchOnWindowFocus: false,
       refetchOnReconnect: false,
+      retry: 1,
     }
   }
 });
 
-// TODO: this persistor is having issues
 const asyncStoragePersister = createAsyncStoragePersister({
   // storage: window.localStorage,
   storage: null,
 }); 
 
-// maybe component library but learning experience!!! (kms)
 export default function App() {
   return (
     <PersistQueryClientProvider
@@ -49,22 +50,29 @@ export default function App() {
         <ErrorBoundary> 
           <Routes>
             <Route element={<AppLayout />}>
+              {/** Public routes */}
               <Route path='/' element={<Home />} />
-              <Route path='/user' element={<UserLayout />}>
-                <Route index element={<ProtectedRoute><Profile /></ProtectedRoute>} />
-                <Route path='schedule' element={<ScheduleInput />} />
-              </Route>
               <Route path='/calendar' element={<Calendar />} />
               <Route path='/courses' element={<CoursesLayout />}>
                 <Route index element={<CourseCollection />} />
                 <Route path=':dept' element={<Courses />} />
               </Route>
-              <Route path='/schedule-sharing' element={<ProtectedRoute><ScheduleLayout /></ProtectedRoute>} />
               <Route path='/clubs'>
                 <Route index element={<ClubCollection />} />
                 <Route path=':id' element={<ClubPage />} />
               </Route>
+              {/** Protected routes */}
+              <Route element={<ProtectedRoute />}>
+                <Route path='/user' element={<UserLayout />}>
+                  <Route index element={<Profile />} />
+                  <Route path='schedule' element={<ScheduleInput />} />
+                </Route>
+                <Route path='/schedule-sharing' element={<ScheduleLayout />}>
+                  <Route path=':id' element={<ScheduleGroup />} />
+                </Route>
+              </Route>
             </Route>
+            <Route path='/schedule-sharing/invite/:id' element={<AcceptInvitePage />} />
             <Route path='*' element={<PageNotFound />} />
           </Routes>
         </ErrorBoundary> 

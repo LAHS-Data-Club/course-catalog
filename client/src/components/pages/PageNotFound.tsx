@@ -7,7 +7,7 @@ function PageNotFound() {
       <div className="text-slate-100 text-lg mb-2">Oops... page not found</div>
       <div className="text-slate-400">
         why are you here? you should go{" "}
-        <NavLink className="underline text-blue-400 italic hover:text-blue-300 transition-colors duration-200" to="/">
+        <NavLink className="underline text-blue-400 italic hover:text-blue-300" to="/">
           away
         </NavLink>{" "}
         now

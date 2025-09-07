@@ -1,8 +1,14 @@
 import { nanoid } from "nanoid";
+import "express-session";
 
-export interface Periods {
-  [key: string]: string;
-}
+declare module "express-session" {
+  interface SessionData {
+    userId: string; 
+    redirect: string; 
+    code_verifier?: string; 
+    state?: string;
+  }
+};
 
 export type Department =
   | "pe"
@@ -86,4 +92,6 @@ export const departments = [
   { id: "language", name: "World Languages" },
 ] as { id: Department; name: string }[];
 
-
+export interface Periods {
+  [key: string]: string;
+}

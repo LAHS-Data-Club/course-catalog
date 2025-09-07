@@ -1,32 +1,36 @@
 import { HiX } from "react-icons/hi";
+import { Dialog, DialogPanel, DialogBackdrop } from '@headlessui/react'
 
 interface Props {
-  children: React.ReactNode;
+  open: boolean;
   onClose: () => void;
+  children: React.ReactNode;
+  className?: string;
 }
 
-// TODO: dialog
-
-export default function Modal({ children, onClose }: Props) {
-   return (
-    <div 
-      className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50" 
-      onClick={onClose}
-    >
-      <div 
-        className="max-w-2xl w-full max-h-[80vh] overflow-y-auto drop-shadow-xl rounded border border-slate-300 bg-white shadow-xl dark:border-slate-700 dark:bg-slate-800" 
-        onClick={(e) => e.stopPropagation()}
-      > 
-        <button
-          onClick={onClose}
-          className="absolute right-3 top-3 cursor-pointer"
-        >
-          <HiX size={20} />
-        </button>
-        <div className="p-7">
-          {children}
-        </div>
+export default function Modal({ 
+  open,
+  onClose,
+  className,
+  ...props
+}: Props) {
+  return (
+    <Dialog open={open} onClose={onClose} className="relative z-50">
+      <DialogBackdrop className="fixed inset-0 bg-black/60 backdrop-blur-xs" />
+      <div className="fixed inset-0 flex w-screen items-center justify-center">
+        <DialogPanel className="p-8 fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 drop-shadow-xl rounded border shadow-xl border-slate-700 bg-slate-800">
+          <div className={className}>
+            {props.children}
+          </div>
+          <button 
+            aria-label="Close" 
+            className="fixed right-3 top-3 cursor-pointer" 
+            onClick={onClose}
+          >
+            <HiX size={20} />
+          </button>
+        </DialogPanel>
       </div>
-    </div>
+    </Dialog>
   );
 }

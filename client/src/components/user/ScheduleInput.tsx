@@ -8,51 +8,51 @@ import Fuse from "fuse.js";
 import { ring2 } from 'ldrs';
 ring2.register();
 
-// TODO: fix css + loader
+const fuseOptions = {
+  includeScore: true,
+  includeMatches: true,
+  threshold: 1,
+  ignoreLocation: true,
+}
+
 // TODO: suspense ??? theres SO many like random loadings/errors here it might be optimal
 export default function ScheduleInput() {
   const queryClient = useQueryClient();
-  const { data: depts, isPending, isError } = useQuery(departmentOptions()); // TODO:
+  const deptQuery = useQuery(departmentOptions()); 
   const scheduleQuery = useQuery(scheduleOptions());
-  const [values, setValues] = useState(scheduleQuery.data); 
-  // TODO: maybe?
+  const [values, setValues] = useState(scheduleQuery.data); // TODO: below kinda ehhhh
   const [formError, setFormError] = useState("");
-  const [formSucess, setFormSucess] = useState("");
+  // const [formSucess, setFormSucess] = useState(""); ? form message?
+
+  useEffect(() => {
+    setValues(scheduleQuery.data);
+  }, [scheduleQuery.data]);
 
   const scheduleMutation = useMutation({
     mutationFn: (schedule) => updateSchedule(schedule),
     onSettled: () => queryClient.invalidateQueries({ queryKey: ['schedule'] }),
   });  
 
-  useEffect(() => {
-    setValues(scheduleQuery.data);
-  }, [scheduleQuery.data]);
-
-  // TODO: ehhhh idk how to do this part properly...
-  const allClasses = depts?.flatMap((d) => d.classes.map((c) => c.name)) || [];
-  // TODO: meh, initializes each render
-  const fuse = new Fuse(allClasses, {
-    includeScore: true,
-    includeMatches: true,
-    threshold: 1,
-    ignoreLocation: true,
-  });
-
+  // // TODO: ehhhh idk how to do this part properly...
+  const allClasses = deptQuery.data?.flatMap((d) => d.classes.map((c) => c.name)) || [];
+  const classIsValid = (val: string) => val.trim() === "" || allClasses.includes(val);
+  // const teacherIsValid = (val: string) => true;
+  const fuse = new Fuse(allClasses, fuseOptions); // TODO: meh, initializes each render
+  
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
+    const isValid = Object.values(values).every((val) => classIsValid(val.class));
     setFormError("");
-    const isValid = Object.values(values).every((x) => x.trim() === "" || allClasses.includes(x));
     if (isValid) {
       scheduleMutation.mutate(values);
-      // optimistic update 
-
+      // TODO: visual cue of completion 
     } else {
       setFormError("*Error: Please enter only valid LAHS classes.");
     }
   }
   
-  if (scheduleQuery.isPending || isPending) return <p>Loading...</p>;
-  if (isError) return <p>Error</p>;
+  if (scheduleQuery.isPending || deptQuery.isPending) return <p>Loading...</p>; // meh...
+  if (scheduleQuery.isError ||deptQuery.isError) return <p>Error</p>;
 
   return (
     <div className="w-full">
@@ -66,24 +66,32 @@ export default function ScheduleInput() {
       {formError && <p className="text-red-400">{formError}</p>}
 
       <form className="flex flex-col gap-4 mt-6" onSubmit={handleSubmit}>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-2.5">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-2.5">
           {Object.keys(scheduleQuery.data).map((period) => (
             <div key={period}>
-              <label
-                htmlFor={period}
-                className="mb-1.5 block text-sm font-medium text-slate-700 dark:text-slate-300"
-              >
-                {period.replace(/[{}]/g, "")}:
-              </label>
-              <AutocompleteInput
-                fuse={fuse}
-                suggestions={allClasses}
-                value={values[period]}
-                setValue={(val) =>
-                  setValues((prev) => ({ ...prev, [period]: val }))
-                }
-                placeholder={period.replace(/[{}]/g, "")}
-              />
+              <p className="mb-1.5 block text-sm font-medium text-slate-700 dark:text-slate-300">
+               Period {period}:
+              </p>
+              <div className="flex gap-1">
+                <AutocompleteInput
+                  fuse={fuse}
+                  isValid={classIsValid(values[period].class)}
+                  value={values[period].class}
+                  setValue={(val) =>
+                    setValues((prev) => ({ ...prev, [period]: { ...prev[period], class: val } }))
+                  }
+                  placeholder={`Period ${period}`}
+                />
+                {/* <AutocompleteInput
+                  fuse={fuse} // TODO: fuse
+                  isValid={teacherIsValid(values[period].teacher)}
+                  value={values[period].teacher}
+                  setValue={(val) =>
+                    setValues((prev) => ({ ...prev, [period]: { ...prev[period], teacher: val } }))
+                  }
+                  placeholder={`Teacher`}
+                /> */}
+              </div>
             </div>
           ))}
         </div>

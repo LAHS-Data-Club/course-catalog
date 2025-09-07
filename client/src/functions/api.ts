@@ -2,7 +2,6 @@ import { DateTime } from "luxon";
 import type { Club, DepartmentData } from "../lib/types";
 
 // TODO: all of this is kindaaaa dubious... also we dont really need a server oop
-
 export async function fetchDepartment(): Promise<DepartmentData[]> {
   return fetch("/api/departments").then((res) => res.json());
 }
@@ -42,18 +41,21 @@ export async function fetchClubs(): Promise<Club[]> {
   return clubs;
 }
 
+
+
+
 // TODO: 
 export async function fetchUser() {
-  return fetch("/api/auth/google/login").then((res) => res.json());
+  return fetch("/api/session", { credentials: 'include' }).then((res) => res.json());
 }
-
 
 
 // TODO: below is dubious
 
 
+
 // schedules.ts
-export async function fetchSchedule() {
+export async function fetchSchedule() { 
 	return fetch('/api/schedule').then((res) => res.json());
 }
 
@@ -77,4 +79,25 @@ export async function createGroup(name: string) {
   });
 }
 
+// invites.ts
+export async function createInvite(issuedBy: string, groupId: string, expiryDate: DateTime) {
+  const res = await fetch("/api/schedule/groups/invite", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ issuedBy, groupId, expiryDate }),
+  });
+  const data = await res.json();
+  return data;
+}
 
+export async function fetchInvite(inviteId: string) {
+  return fetch(`/api/schedule/invite/${inviteId}`).then((res) => res.json());
+}
+
+export async function acceptInvite(inviteId: string) {
+  await fetch("/api/schedule/invite", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ inviteId }),
+  });
+}

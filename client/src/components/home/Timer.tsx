@@ -6,10 +6,9 @@ import { UserContext } from "../../contexts/UserContext";
 const offset = { hours: 0 }; // for testing
 
 // this is really silly - version using google calendar api
-// TODO: version using bell.plus txt file
+// TODO: later switch to using bell txt file
 export default function Timer() {
-  const { scheduleQuery } = useContext(UserContext); // TODO: add periods and names to the timer
-  const { startTime, endTime, isLoading, update } = useCurrEvent(); 
+  const { startTime, endTime, isLoading, update } = useCurrEvent(); // TODO:
   const [timeRemaining, setTimeRemaining] = useState<Duration | null>(null);
 
   useEffect(() => {
@@ -48,17 +47,9 @@ export default function Timer() {
       </div>
       <div className="flex h-45 flex-wrap items-center justify-between gap-4 p-6 rounded-b ring-1 bg-white dark:bg-slate-800 ring-slate-200/80 dark:ring-slate-700">
         {!isLoading ? (
-          <>
-            <div className="flex items-end text-5xl sm:text-6xl tracking-wide text-slate-800 dark:text-slate-100">
-              {formattedTime}
-            </div>
-            <div className="text-right text-slate-500 dark:text-slate-400">
-              {/* <div className="font-semibold text-slate-700 dark:text-slate-300">
-                {periods[currentEvent.name] || currentEvent.name.replace(/[{}]/g, "")}
-              </div> */}
-              {/* <div className="text-sm">{currentEvent.scheduleType}</div> */}
-            </div>
-          </>
+          <div className="flex items-end text-5xl sm:text-6xl tracking-wide text-slate-800 dark:text-slate-100">
+            {formattedTime}
+          </div>
         ) : (
           <div>Loading...</div>
         )}

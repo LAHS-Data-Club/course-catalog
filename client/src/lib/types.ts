@@ -141,6 +141,7 @@ export interface Club {
   activities: string,
 }
 
+// TODO: temp ! ! !
 export interface Group {
   id: string;
   title: string;
@@ -149,12 +150,13 @@ export interface Group {
 }
 
 export interface User {
-  google_id: string;
+  id: string;
   name: string;
   email: string;
-  schedule: Record<string, string>;
+  schedule: Record<number, Period>;
 }
 
-export interface Periods {
-  [key: string]: string;
+export interface Period {
+  class: string;
+  teacher: string;
 }

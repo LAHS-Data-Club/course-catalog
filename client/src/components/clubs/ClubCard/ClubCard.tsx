@@ -11,7 +11,7 @@ export default function ClubCard({ c }: { c: Club }) {
       <div
         className={
           (c.name === "Data Club" ? " glow " : " ") +
-          "group sm:h-70 lg:h-90 flex cursor-pointer flex-col rounded p-5 ring-1 ring-slate-200/80 transition-all hover:shadow-xl hover:ring-blue-500/50 dark:ring-slate-700 dark:hover:ring-blue-500/50 bg-white dark:bg-slate-800 drop-shadow-xl"
+          "group sm:h-70 lg:h-90 flex cursor-pointer flex-col rounded p-5 ring-1 transition-all hover:shadow-xl ring-slate-700 hover:ring-blue-500/50 bg-slate-800 drop-shadow-xl"
         }
       >
         <h4 className="text-lg font-bold">

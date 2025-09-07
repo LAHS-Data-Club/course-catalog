@@ -1,35 +1,58 @@
 import express from "express";
 import cors from "cors";
+import session from "express-session";
+import connectPgSimple from "connect-pg-simple";
+import cookieParser from 'cookie-parser';
+import pool from "./db/db";
+import { authRouter } from "./auth/authRouter";
+import { scheduleRouter } from "./db/scheduleRouter";
+
+// TODO: move later
 import { ScheduleCache } from "./util/cache";
 import { asyncHandler } from "./util/utils";
-import {
-  fetchAllCourses,
-  fetchAllDepartments,
-  fetchDepartment,
-} from "./fetchers/classes";
+import { fetchAllCourses, fetchAllDepartments, fetchDepartment } from "./fetchers/classes";
 import { Department, departments } from "./util/types";
-import { authRouter } from "./auth/authRouter";
-import cookieParser from 'cookie-parser';
-import { scheduleRouter } from "./db/scheduleRouter";
-const app = express();
-const scheduleCache = new ScheduleCache();
 
-app.use(cors({
-  origin: ["http://localhost:5173"], // TODO: change later to production
-  credentials: true,
-}));
+const app = express();
+const pgSession = connectPgSimple(session);
+
 app.use(express.json());
 app.use(cookieParser()); 
 app.use(express.urlencoded({ extended: true })); 
 
+app.use(cors({
+  origin: [process.env.REACT_APP_URL ?? "http://localhost:5173"], 
+  credentials: true,
+}));
 
-app.use('/api/auth', authRouter);
+app.use(
+  session({
+    store: new pgSession({
+      pool, 
+      tableName: 'session'
+    }),
+    secret: process.env.SESSION_SECRET!,
+    saveUninitialized: false,
+    resave: false,
+    cookie: {
+      httpOnly: true,
+      maxAge: 1000 * 60 * 60 * 24, // 1 day
+      secure: process.env.NODE_ENV === "production",
+    },
+  })
+);
+
+// TODO: extract the rest to be just routers?
+
+app.use('/api', authRouter);
 app.use('/api/schedule', scheduleRouter)
 
+// TODO: this is annoying
 /**
  * Returns a list of events for that date given a 
  * key in the format M-dd-yyyy // TODO: use like ISO date instead or smth...
  */
+const scheduleCache = new ScheduleCache();
 app.get("/api/calendar", 
   asyncHandler(async (req, res) => {
     const { startDate, endDate } = req.query as { startDate: string, endDate: string };

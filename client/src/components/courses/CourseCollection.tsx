@@ -9,8 +9,6 @@ export default function CourseCollection() {
   const [searchFilters, setSearchFilters] = useState<string[]>([]);
   const { data, setClassPopup } = useContext(CoursesContext);
 
-  console.log(data)
-
   const allClasses = data.flatMap((d) => d.classes);
   const filterTags = [...new Set(allClasses.flatMap((c) => c.tags))].sort();
   

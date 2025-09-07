@@ -1,22 +1,48 @@
 import pool from "../db";
-import { oauth2_v2 } from "googleapis";
+// import type { Periods } from "../../util/types";
 
+// TODO: ehh
+export const defaultPeriods = {
+  1: { class: "", teacher: "" }, 
+  2: { class: "", teacher: "" },
+  3: { class: "", teacher: "" }, 
+  4: { class: "", teacher: "" }, 
+  5: { class: "", teacher: "" }, 
+  6: { class: "", teacher: "" }, 
+  7: { class: "", teacher: "" },
+};
 
-export async function getUser(id: string) {
+export async function getUserBySub(sub: string) {
   const { rows } = await pool.query(
-    "SELECT name, email FROM users WHERE google_id = $1",
+    "SELECT * FROM users WHERE oidc_sub = $1",
+    [sub]
+  );
+  return rows[0];
+}
+
+// TODO: feels kinda arbitrary to have two seperate ways to 
+// query user, but i didnt want session to be based on oidc sub ? idk
+export async function getUserById(id: string) {
+  const { rows } = await pool.query(
+    "SELECT * FROM users WHERE id = $1",
     [id]
   );
   return rows[0];
 }
 
-// create user in db if not exists already
-export async function createUser(credentials: oauth2_v2.Schema$Userinfo) {
-  console.log("creating new user", credentials.name);
-  await pool.query(
-    `INSERT INTO users(name, email, google_id)
+export async function createUser(userInfo) {
+  // insert new user into users table
+  const { rows } = await pool.query(
+    `INSERT INTO users(oidc_sub, name, email)
     VALUES ($1, $2, $3) 
-    ON CONFLICT (google_id) DO NOTHING`,
-    [credentials.name, credentials.email, credentials.id]
+    RETURNING *`,
+    [userInfo.sub, userInfo.name, userInfo.email]
   );
+
+  // initialize schedule for user
+  await pool.query(
+    `INSERT INTO schedules(user_id, schedule) VALUES ($1, $2)`,
+    [rows[0].id, defaultPeriods]
+  );
+  return rows[0];
 }

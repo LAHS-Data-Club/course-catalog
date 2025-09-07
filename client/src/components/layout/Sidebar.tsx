@@ -9,14 +9,17 @@ interface Props {
 }
 
 export default function Sidebar({ isExpanded, setIsExpanded }: Props) {
+
   // redirect to google oauth page
+  // TODO: repeated logic
   function handleSignIn() {
-    window.location.href = `/api/auth/google`;
+    const redirect = encodeURIComponent(window.location.href);
+    window.location.href = `/api/login?redirect=${redirect}`;
   }
 
   return (
     <div
-      className={`hidden lg:flex flex-col items-center fixed top-0 left-0 bottom-0 bg-gray-800 ${
+      className={`hidden lg:flex flex-col items-center fixed top-0 left-0 bottom-0 bg-gray-900 border-r border-gray-700 ${
         isExpanded ? "w-60" : "w-22"
       }`}
     >
@@ -46,10 +49,10 @@ export default function Sidebar({ isExpanded, setIsExpanded }: Props) {
               {label}
             </SidebarItem>
           ))}
-        </div>
+        </div> 
 
         <button 
-          onClick={() => handleSignIn()}
+          onClick={handleSignIn}
           className='cursor-pointer hover:bg-gray-700 border-t border-gray-700 overflow-hidden flex justify-center lg:justify-normal items-center gap-3 px-7 py-5 transition-colors'
         >
           <span><PiSignInBold size={27} className="text-white" /></span>

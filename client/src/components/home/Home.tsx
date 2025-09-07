@@ -6,7 +6,6 @@ import { MdOutlineChevronLeft, MdOutlineChevronRight } from "react-icons/md";
 import EventsSidebar from "./EventsSidebar";
 
 export default function Home() {
-  console.log('this rerenders')
   const now = DateTime.now().setZone("America/Los_Angeles");
   const [displayDate, setDisplayDate] = useState(now);
 

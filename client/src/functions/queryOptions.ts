@@ -1,4 +1,4 @@
-import { queryOptions, mutationOptions } from "@tanstack/react-query";
+import { queryOptions } from "@tanstack/react-query";
 import { DateTime } from "luxon";
 import {
   fetchMonthEvents,
@@ -7,6 +7,7 @@ import {
   fetchUser,
   fetchGroups,
   fetchSchedule,
+  fetchInvite
 } from "./api";
 
 export function calendarOptions(date: DateTime) {
@@ -56,6 +57,15 @@ export function groupOptions() {
   return queryOptions({
     queryKey: ["schedule", "groups"],
     queryFn: () => fetchGroups(),
+    staleTime: 0, 
+  });
+}
+
+// invites.ts
+export function inviteOptions(inviteId: string) {
+  return queryOptions({
+    queryKey: ["invite", inviteId],
+    queryFn: () => fetchInvite(inviteId),
     staleTime: 0, 
   });
 }

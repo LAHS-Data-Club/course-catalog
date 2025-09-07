@@ -1,46 +1,54 @@
 import { Router } from "express";
-import { userHandler } from "../util/utils";
+import { asyncHandler, isAuthenticated } from "../util/utils";
 import { getSchedule, updateSchedule } from "../db/queries/schedules";
-import { getGroups, createGroup } from "../db/queries/groups";
+import { getGroups, createGroup, createGroupInvite } from "../db/queries/groups";
 
-// NOTE: schedule will reset on initial reload..?
 export const scheduleRouter = Router();
 
 scheduleRouter.get(
   "/",
-  userHandler(async (req, res) => {
-    const { user } = res.locals;
-    const schedule = await getSchedule(user.id);
+  isAuthenticated,
+  asyncHandler(async (req, res) => {
+    const schedule = await getSchedule(req.session.userId!);
     res.json(schedule);
   })
 );
 
 scheduleRouter.get(
   "/groups",
-  userHandler(async (req, res) => {
-    const { user } = res.locals;
-    const groups = await getGroups(user.id);
+  isAuthenticated,
+  asyncHandler(async (req, res) => {
+    const groups = await getGroups(req.session.userId!);
     res.json(groups);
   })
 );
 
 scheduleRouter.post(
   "/update",
-  userHandler(async (req, res) => {
-    const { user } = res.locals;
+  isAuthenticated,
+  asyncHandler(async (req, res) => {
     const { schedule } = req.body;
-    await updateSchedule(user.id, schedule);
+    await updateSchedule(req.session.userId!, schedule);
     res.end();
   })
 );
 
 scheduleRouter.post(
   "/groups/create",
-  userHandler(async (req, res) => {
-    const { user } = res.locals;
+  isAuthenticated,
+  asyncHandler(async (req, res) => {
     const { name } = req.body; // group name
-    console.log(name);
-    await createGroup(user.id, name);
+    await createGroup(req.session.userId!, name);
     res.end();
+  })
+);
+
+scheduleRouter.post(
+  "/groups/invite",
+  isAuthenticated,
+  asyncHandler(async (req, res) => {
+    const { issuedBy, expiryDate, groupId } = req.body; // group name
+    const invite = await createGroupInvite(issuedBy, groupId, expiryDate);
+    res.json(invite);
   })
 );
