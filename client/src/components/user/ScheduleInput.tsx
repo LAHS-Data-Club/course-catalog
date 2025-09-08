@@ -53,6 +53,7 @@ export default function ScheduleInput() {
   
   if (scheduleQuery.isPending || deptQuery.isPending) return <p>Loading...</p>; // meh...
   if (scheduleQuery.isError ||deptQuery.isError) return <p>Error</p>;
+  if (!values) return <p>asidasd</p>;
 
   return (
     <div className="w-full">
@@ -67,7 +68,7 @@ export default function ScheduleInput() {
 
       <form className="flex flex-col gap-4 mt-6" onSubmit={handleSubmit}>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-2.5">
-          {Object.keys(scheduleQuery.data).map((period) => (
+          {Object.keys(scheduleQuery.data).map((period, i) => (
             <div key={period}>
               <p className="mb-1.5 block text-sm font-medium text-slate-700 dark:text-slate-300">
                Period {period}:

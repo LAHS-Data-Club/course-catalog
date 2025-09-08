@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { DateTime } from 'luxon';
 import { MdOutlineChevronLeft, MdOutlineChevronRight } from "react-icons/md";
-import EventPopup from './EventPopup';
+import EventDialog from './EventDialog';
 import { calendarOptions } from '../../functions/queryOptions';
 import { useQuery, useQueryClient } from '@tanstack/react-query';
 import CalendarCard from './CalendarCard';
@@ -80,9 +80,10 @@ export default function Calendar() {
       </div>
 
       {selectedEvent && (
-        <EventPopup 
+        <EventDialog 
+          open={!!selectedEvent}
+          onClose={() => setSelectedEvent(null)}
           event={selectedEvent}
-          setSelectedEvent={setSelectedEvent}
         />
       )}
     </div>

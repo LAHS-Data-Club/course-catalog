@@ -1,9 +1,15 @@
 import DOMPurify from 'dompurify';
 import { FaRegClock, FaMapMarkerAlt, FaExternalLinkAlt } from "react-icons/fa";
-import Modal from '../../components/Modal';
+import Modal from '../Modal';
 import { DateTime } from 'luxon';
 
-export default function EventPopup({ event, setSelectedEvent }) {
+interface Props {
+  open: boolean;
+  onClose: () => void;
+  event: any; // TODO:
+}
+
+export default function EventDialog({ open, onClose, event }: Props) {
   // TODO: deal with better date formatting
   const start = event.start.dateTime ? DateTime.fromISO(event.start.dateTime).toFormat("LLLL d, h:mm a") : event.start.date;
   const end = event.end.dateTime ? DateTime.fromISO(event.end.dateTime).toFormat("LLLL d, h:mm a") : event.end.date;
@@ -12,7 +18,7 @@ export default function EventPopup({ event, setSelectedEvent }) {
   const formattedLocation = event.location && event.location.endsWith(", USA") ? event.location.slice(0, -5) : event.location;
 
   return (
-    <Modal onClose={() => setSelectedEvent(null)}>
+    <Modal open={open} onClose={onClose} className='min-w-100'>
       <h3 className="text-xl font-bold text-slate-800 dark:text-slate-200 mb-4">
         {event.summary}
       </h3>
