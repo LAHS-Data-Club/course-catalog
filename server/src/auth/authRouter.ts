@@ -79,6 +79,7 @@ authRouter.get(
   })
 );
 
+// TODO:
 authRouter.get(
   "/logout/callback",
   asyncHandler(async (req, res) => { 

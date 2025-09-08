@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 import { DateTime } from 'luxon';
-import { MdOutlineCalendarToday, MdOutlineChevronLeft, MdOutlineChevronRight } from "react-icons/md";
+import { MdOutlineChevronLeft, MdOutlineChevronRight } from "react-icons/md";
 import EventPopup from './EventPopup';
 import { calendarOptions } from '../../functions/queryOptions';
 import { useQuery, useQueryClient } from '@tanstack/react-query';
-import CalendarCard from './CalendarItem';
+import CalendarCard from './CalendarCard';
 import Error from '../../components/Error';
 
 const WEEKDAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
@@ -27,31 +27,28 @@ export default function Calendar() {
   return (
     <div className="mx-auto max-w-screen-xl p-4 sm:p-6 lg:p-8">
       {/* Header */}
-      <div className="mb-8">
-        <div className="flex items-center justify-between mb-4">
-          <h1 className="flex gap-2 text-4xl text-slate-800 dark:text-slate-200 mb-1 items-center">
-            <MdOutlineCalendarToday className="w-8 h-8"/>
-            Calendar
-          </h1>
-          <div className="flex items-center gap-2 w-60 justify-between">
-            <div>
-              <button
-                onClick={() => setCurrDate((prev) => prev.plus({ month: -1 }))}
-                className="p-2 rounded-md hover:bg-slate-200 dark:hover:bg-slate-700 transition cursor-pointer"
-              >
-                <MdOutlineChevronLeft className='w-6 h-6' />
-              </button>
-              <button
-                onClick={() => setCurrDate((prev) => prev.plus({ month: 1 }))}
-                className="p-2 rounded-md hover:bg-slate-200 dark:hover:bg-slate-700 transition cursor-pointer"
-              >
-                <MdOutlineChevronRight className='w-6 h-6' />
-              </button>
-            </div>
-            <h2 className="text-xl font-semibold text-slate-800 dark:text-slate-200 min-w-max">
-              {currDate.toFormat('MMM yyyy')}
-            </h2>
+      <div className="flex items-center justify-between mb-5">
+        <h1 className="flex gap-2 text-4xl text-slate-200 mb-1 items-center">
+          Calendar
+        </h1>
+        <div className="flex items-center gap-2 w-60 justify-between">
+          <div>
+            <button
+              onClick={() => setCurrDate((prev) => prev.plus({ month: -1 }))}
+              className="p-2 rounded-md hover:bg-slate-700 transition cursor-pointer"
+            >
+              <MdOutlineChevronLeft className='w-6 h-6' />
+            </button>
+            <button
+              onClick={() => setCurrDate((prev) => prev.plus({ month: 1 }))}
+              className="p-2 rounded-md hover:bg-slate-700 transition cursor-pointer"
+            >
+              <MdOutlineChevronRight className='w-6 h-6' />
+            </button>
           </div>
+          <h2 className="text-xl font-semibold text-slate-200 min-w-max">
+            {currDate.toFormat('MMM yyyy')}
+          </h2>
         </div>
       </div>
 

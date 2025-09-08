@@ -9,7 +9,6 @@ import AppLayout from './layouts/AppLayout';
 import CoursesLayout from './layouts/CoursesLayout';
 import PageNotFound from './components/pages/PageNotFound';
 import ClubCollection from './components/clubs/ClubCollection';
-import ClubPage from './components/clubs/ClubPage';
 import ErrorBoundary from './components/ErrorBoundary';
 
 import { ProtectedRoute } from './functions/auth/ProtectedRoute';
@@ -61,10 +60,7 @@ export default function App() {
                 <Route index element={<CourseCollection />} />
                 <Route path=':dept' element={<Courses />} />
               </Route>
-              <Route path='/clubs'>
-                <Route index element={<ClubCollection />} />
-                <Route path=':id' element={<ClubPage />} />
-              </Route>
+              <Route path='/clubs' element={<ClubCollection />} />
               {/** Protected routes */}
               <Route element={<ProtectedRoute />}>
                 <Route path='/user' element={<UserLayout />}>

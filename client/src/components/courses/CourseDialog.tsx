@@ -25,7 +25,7 @@ export default function CourseDialog({
     }
   `;
 
-  if (!course) return null; // TODO: ehhh
+  if (!course) return null; // TODO: ehhh someone told me to do this instead of conditional rendering
 
   return (
     <Modal open={open} onClose={onClose}>

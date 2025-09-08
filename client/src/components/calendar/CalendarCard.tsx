@@ -14,6 +14,7 @@ export default function CalendarCard({ date, events, setSelectedEvent }) {
         {dateObj.day}
       </div>
       
+      {/** TODO */}
       <div 
         className={`
           space-y-0.5 text-xs transition duration-300 h-fit

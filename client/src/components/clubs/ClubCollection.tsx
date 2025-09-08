@@ -8,15 +8,16 @@ import { Club } from '../../lib/types';
 import { useQuery } from '@tanstack/react-query';
 import { fuse } from '../../functions/clubs/search';
 import Error from '../Error';
+import ClubDialog from './ClubDialog';
 
 export default function ClubCollection() {
 	const [searchQuery, setSearchQuery] = useState('');
 	const [dateFilters, setDateFilters] = useState<string[]>([]);
 	const [timeFilters, setTimeFilters] = useState<string[]>([]);
-	// const [tagFilters, setTagFilters] = useState<string[]>([]); // TODO: will we ever use tags 
 	const [searchResults, setSearchResults] = useState<Club[]>([]);
 	const [displayedResults, setDisplayedResults] = useState<Club[]>([]);
 	const { data: clubs, isPending, isError } = useQuery(clubOptions());
+	const [selectedClub, setSelectedClub] = useState<Club | null>(null);
 
 	useEffect(() => {
 		if (!isPending) {
@@ -46,11 +47,11 @@ export default function ClubCollection() {
 
 	return (
 		<div className="mx-auto max-w-7xl p-3 sm:p-5 lg:p-6 mt-12">
-			<h1 className="text-4xl text-slate-800 dark:text-slate-200 mb-1">
+			<h1 className="text-4xl text-slate-200 mb-1">
 				Clubs List
 			</h1>
-			<p className="max-w-2xl text-slate-600 dark:text-slate-400 mb-5">
-				<span className="text-slate-700 dark:text-blue-400 font-semibold">Click</span> a club to view full details.
+			<p className="text-slate-400 mb-5">
+				<span className="text-blue-400 font-semibold">Click</span> a club to view full details.
 			</p>
 			<Search
 				setSearchQuery={setSearchQuery}
@@ -78,10 +79,20 @@ export default function ClubCollection() {
 			> 
 				<div className="grid lg:grid-cols-2 2xl:grid-cols-3 gap-4">
 					{displayedResults.map((club) => (
-						<ClubCard key={club.id} c={club} />
+						<ClubCard 
+							key={club.id} 
+							c={club} 
+							onClick={() => setSelectedClub(club)}
+						/>
 					))}
 				</div>
 			</InfiniteScroll>
+
+			<ClubDialog 
+				open={!!selectedClub} 
+				onClose={() => setSelectedClub(null)} 
+				club={selectedClub} 
+			/>
 		</div>
 	);
 }
