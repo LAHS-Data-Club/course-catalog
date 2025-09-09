@@ -39,7 +39,7 @@ export default function Schedule({ user, group, selectedIndex }: Props) {
               <div className="px-4 flex flex-col justify-center overflow-hidden">
                 <p className="text-nowrap truncate w-full">
                   <span className="font-semibold">{period.class || "Free"}</span>
-                  <span className="text-slate-500 text-nowrap"> - Smith, Brent</span> {/** TODO: replace with teacher */}
+                  <span className="text-slate-500 text-nowrap"> {period.teacher ? " — " + period.teacher : ""}</span> {/** TODO: replace with teacher */}
                 </p>
                 {classmates.length > 0 && (
                   <p className="text-sm font-medium text-slate-400">

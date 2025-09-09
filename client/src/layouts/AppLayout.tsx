@@ -7,7 +7,7 @@ import { userOptions, scheduleOptions } from "../functions/queryOptions";
 import { UserContext } from "../contexts/UserContext";
 
 export default function AppLayout() {
-  const [isExpanded, setIsExpanded] = useState(false); // sidebar
+  const [isExpanded, setIsExpanded] = useState(true); // sidebar
   // TODO: this isnt working and sometimes takes like 300 seconds to load
   const userQuery = useQuery(userOptions());
 

@@ -1,4 +1,4 @@
-import { FaHome, FaRegCalendarAlt, FaRegUserCircle, FaBook, FaAddressBook } from "react-icons/fa";
+import { FaHome, FaRegCalendarAlt, FaRegUserCircle, FaBook, FaAddressBook, FaWrench } from "react-icons/fa";
 import { IoPeopleSharp } from "react-icons/io5";
 
 export const routes = [
@@ -7,5 +7,5 @@ export const routes = [
   { path: "/courses", label: "Courses", icon: FaBook },
   { path: "/schedule-sharing", label: "Schedules", icon: FaAddressBook },
   { path: "/clubs", label: "Clubs", icon: IoPeopleSharp },
-  { path: "/user", label: "User", icon: FaRegUserCircle },
+  { path: "/settings", label: "Settings", icon: FaWrench }, // we can use a diff icon i don't love this one
 ];

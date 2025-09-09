@@ -8,8 +8,7 @@ export default function ClassList({ date }: { date: DateTime }) {
   const { data, isError, isPending } = useCalendar(date);
 
   if (isError) return <div>Sorry, a network error occurred.</div>;
-  if (isPending) return <div>Loading...</div>;
-
+  if (scheduleQuery.isPending || isPending) return <div>Loading...</div>;
   // this is so incredibly awfully written help changing to txt structure file probably will fix
   const scheduleData = Object.values(data)[0].schedule; 
   const keys = Object.keys(scheduleData); // get the {Period 1}, {Period 2}, etc. keys

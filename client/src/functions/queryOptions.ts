@@ -7,7 +7,8 @@ import {
   fetchUser,
   fetchGroups,
   fetchSchedule,
-  fetchInvite
+  fetchInvite,
+  fetchTeachers
 } from "./api";
 
 export function calendarOptions(date: DateTime) {
@@ -70,5 +71,14 @@ export function inviteOptions(inviteId: string) {
     queryKey: ["invite", inviteId],
     queryFn: () => fetchInvite(inviteId),
     staleTime: 0, 
+  });
+}
+
+export function teacherOptions() {
+  return queryOptions({
+    queryKey: ["teachers"],
+    queryFn: fetchTeachers,
+    staleTime: 1000 * 60 * 60 * 24,
+    meta: { persist: true }
   });
 }

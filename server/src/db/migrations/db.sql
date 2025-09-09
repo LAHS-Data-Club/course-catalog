@@ -1,7 +1,7 @@
 CREATE TABLE users (
   id SERIAL PRIMARY KEY,
   oidc_sub TEXT UNIQUE NOT NULL,
-  name TEXT NOT NULL,
+  profile_picture_url TEXT NOT NULL,
   email TEXT UNIQUE NOT NULL
 );
 

@@ -12,6 +12,7 @@ import { ScheduleCache } from "./util/cache";
 import { asyncHandler } from "./util/utils";
 import { fetchAllCourses, fetchAllDepartments, fetchDepartment } from "./fetchers/classes";
 import { Department, departments } from "./util/types";
+import { getAllTeachers } from "./db/queries/queries";
 
 const app = express();
 const pgSession = connectPgSimple(session);
@@ -86,6 +87,14 @@ app.get(
     }
     const classes = await fetchDepartment(dept as Department);
     res.json(classes);
+  })
+);
+
+app.get(
+  "/api/teachers",
+  asyncHandler(async (req, res) => {
+    const teachers = await getAllTeachers();
+    res.json(teachers);
   })
 );
 

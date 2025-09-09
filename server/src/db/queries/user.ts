@@ -16,7 +16,7 @@ export const defaultPeriods: Periods = {
 // TODO: makesure this works
 export async function createUser(userInfo) {
   // insert new user into users table
-  const user = await insertUser(userInfo.sub, userInfo.name, userInfo.email);
+  const user = await insertUser(userInfo.sub, userInfo.name, userInfo.email, userInfo.picture);
 
   // initialize schedule for user
   await insertSchedule(user.id, defaultPeriods);

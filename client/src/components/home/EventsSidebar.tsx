@@ -3,7 +3,7 @@ import { DateTime } from 'luxon';
 
 export default function EventsSidebar() {
   const start = DateTime.now();
-  const { data, isError, isPending } = useCalendar(start, start.plus({ weeks: 1 }));
+  const { data, isError, isPending } = useCalendar(start, start.plus({ weeks: 2 }));
 
   if (isPending) return <p>Loading events...</p>
   if (isError) return <p>Error fetching events...</p>
@@ -16,7 +16,9 @@ export default function EventsSidebar() {
     <div className="h-fit min-h-100 rounded p-5 ring-1 bg-white dark:bg-slate-800 ring-slate-200/80 dark:ring-slate-700">
       <h3 className="text-lg text-slate-900 dark:text-slate-100 mb-3">Upcoming Events</h3>
       <ul className="space-y-1">
-        {events.length > 0 ? events.map((event) => {
+        {events.length > 0 ? events.filter((event, index, array) =>
+        index === array.findIndex(e => e.id === event.id) && !event.summary?.includes('A Day Schedule') && !event.summary?.includes('B Day Schedule') && !event.summary?.includes('C Day Schedule') && !event.summary?.includes('A La Carte')) // awful code
+        .map((event) => {
           const date = event.start.date || event.start.dateTime;
           const formattedDate = date 
             ? DateTime.fromISO(date).toFormat("LLLL d")

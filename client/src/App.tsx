@@ -19,7 +19,7 @@ import Calendar from './components/calendar/Calendar';
 import Courses from './components/courses/CoursesTab';
 import CourseCollection from './components/courses/CourseCollection';
 import ScheduleInput from './components/user/ScheduleInput';
-import Profile from './components/user/Profile';
+import Settings from './components/user/Settings';
 import AcceptInvitePage from './components/schedules/AcceptInvitePage';
 import ScheduleGroup from './components/schedules/ScheduleGroup';
 
@@ -63,8 +63,8 @@ export default function App() {
               <Route path='/clubs' element={<ClubCollection />} />
               {/** Protected routes */}
               <Route element={<ProtectedRoute />}>
-                <Route path='/user' element={<UserLayout />}>
-                  <Route index element={<Profile />} />
+                <Route path='/settings' element={<UserLayout />}>
+                  <Route index element={<Settings />} />
                   <Route path='schedule' element={<ScheduleInput />} />
                 </Route>
                 <Route path='/schedule-sharing' element={<ScheduleLayout />}>

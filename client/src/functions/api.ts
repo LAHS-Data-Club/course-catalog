@@ -92,3 +92,7 @@ export async function acceptInvite(inviteId: string) {
     body: JSON.stringify({ inviteId }),
   });
 }
+
+export async function fetchTeachers() {
+  	return fetch('/api/teachers').then((res) => res.json());
+}

@@ -18,14 +18,14 @@ export async function getUserById(id: string) {
   return rows[0];
 };
 
-export async function insertUser(sub: string, name: string, email: string) {
+export async function insertUser(sub: string, name: string, email: string, picture: string) {
   const { rows } = await pool.query(
-    `INSERT INTO users(oidc_sub, name, email)
-    VALUES ($1, $2, $3) 
+    `INSERT INTO users(oidc_sub, name, email, picture)
+    VALUES ($1, $2, $3, $4) 
     ON CONFLICT (oidc_sub) DO UPDATE 
-      SET name = EXCLUDED.name, email = EXCLUDED.email
+      SET name = EXCLUDED.name, email = EXCLUDED.email, picture = EXCLUDED.picture
     RETURNING *`,
-    [sub, name, email]
+    [sub, name, email, picture]
   );
   return rows[0];
 };
@@ -117,4 +117,12 @@ export async function addInvite(
     [groupId, invitedBy, expiryDate]
   );
   return rows[0];
+};
+
+// teachers
+export async function getAllTeachers() {
+  const { rows } = await pool.query(
+    "SELECT * FROM teachers", 
+  );
+  return rows;
 };
